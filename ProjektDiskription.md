@@ -18,15 +18,16 @@ Ohne dieses Wissen kommt es häufig zu Fehlentscheidungen bei der Auswahl oder N
 ---
 
 Vorgeschichte:
-Das Thema Hardware und PC-Komponenten ist ein zentraler Bestandteil der Informatik. 
+Das Thema Hardware und PC-Komponenten ist ein zentraler Bestandteil der Informatik und bildet die Grundlage für das Verständnis moderner Computern.
 
 ---
 
 Projektziele:
-Ziel ist es, die wichtigsten Hardware-Bausteine und deren Funktionen verständlich u+zu erklären und mit Bildern darzustellen.
+Ziel ist es, die wichtigsten Hardware-Bausteine und deren Funktionen verständlich zu erklären und mit Bildern darzustellen.
 
 ---
 
 Projektstart:
 
 Projektende:
+
