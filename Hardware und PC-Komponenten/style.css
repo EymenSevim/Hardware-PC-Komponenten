@@ -39,6 +39,58 @@
     border-bottom: none !important;
 }
 
+.component-box {
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 16px;
+    max-width: 700px;
+    margin: 40px auto;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.component-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.component-img {
+    max-height: 200px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.component-box {
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 16px;
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+}
+
+.component-img {
+    max-width: 300px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.component-box h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.component-box p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+}
+
+
 
 
 
