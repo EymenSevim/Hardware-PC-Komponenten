@@ -6,7 +6,6 @@
     transition: opacity 0.2s ease;
 }
 
-/* Hover-Effekt */
 .nav-link:hover {
     opacity: 1;
 }
@@ -17,25 +16,23 @@
     left: 0;
     bottom: 0;
     width: 0;
-    height: 4px; /* statt 2px → fetter Balken */
+    height: 4px; 
     background-color: #fcfafa;
     border-radius: 2px;
     transition: width 0.25s ease;
 }
 
 
-/* Hover: Strich fährt rein */
 .nav-link:hover::after {
     width: 100%;
     background-color: #888;
 }
 
-/* Aktiver Link: Strich bleibt */
 .nav-link.active::after {
     width: 100%;
 }
 .nav-link {
-    margin-right: 20px; /* Abstand zwischen den Balken */
+    margin-right: 20px; 
 }
 
 .bg-dark {
