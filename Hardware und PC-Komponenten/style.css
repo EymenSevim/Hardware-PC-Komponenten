@@ -1,123 +1,49 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+.nav-link {
+    position: relative;
+    padding-bottom: 6px;
+    color: #fdfdfd;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
 }
 
-body {
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
+/* Hover-Effekt */
+.nav-link:hover {
+    opacity: 1;
 }
 
-header.main-header {
-  background-color: #1f2933;
-  color: white;
-  padding: 30px;
-  text-align: center;
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 4px; /* statt 2px → fetter Balken */
+    background-color: #fcfafa;
+    border-radius: 2px;
+    transition: width 0.25s ease;
 }
 
-nav {
-  background-color: #374151;
+
+/* Hover: Strich fährt rein */
+.nav-link:hover::after {
+    width: 100%;
+    background-color: #888;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
+/* Aktiver Link: Strich bleibt */
+.nav-link.active::after {
+    width: 100%;
+}
+.nav-link {
+    margin-right: 20px; /* Abstand zwischen den Balken */
 }
 
-nav ul li {
-  margin: 10px 20px;
+.bg-dark {
+    border-bottom: none !important;
 }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
 
-nav ul li a:hover {
-  text-decoration: underline;
-}
 
-main {
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 20px;
-  background: white;
-}
 
-footer {
-  background-color: #1f2933;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-}
 
-.cpu {
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin: 20px auto;
-  border-radius: 8px;
-  background-color: #fff;
-  max-width: 900px;
-  height: 200px
-}
-.cpu img {
-  float: right;
-  margin-left: 15px;
-  width: 130px;
-  border-radius: 5px;
-  margin-top: -41px;
-}
-.ram {
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin: 20px auto;
-  border-radius: 8px;
-  background-color: #fff;
-  max-width: 900px;
-  height: 200px
-}
-.ram img {
-  float: right;
-  margin-left: 15px;
-  width: 200px;
-  border-radius: 5px;
-  margin-top: -31px;
-}
-.grafikkarte {
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin: 20px auto;
-  border-radius: 8px;
-  background-color: #fff;
-  max-width: 900px;
-  height: 200px
-}
-.grafikkarte img {
-  float: right;
-  margin-left: 15px;
-  width: 200px;
-  border-radius: 5px;
-  margin-top: -35px;
-}
-.ssd {
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin: 20px auto;
-  border-radius: 8px;
-  background-color: #fff;
-  max-width: 900px;
-  height: 200px
-}
-.ssd img {
-  float: right;
-  margin-left: 15px;
-  width: 200px;
-  border-radius: 5px;
-  margin-top: -35px;
-}
+

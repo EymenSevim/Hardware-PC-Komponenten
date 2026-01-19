@@ -1,40 +1,72 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-  <meta charset="UTF-8" />
-  <title>Startseite - PC Hardware</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Hardware & CPU Komponenten</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-  <header class="main-header">
-    <h1>Hardware und PC-Komponenten</h1>
-    <p>Tauche ein in die Welt der Computer! Entdecke, wie Hardware und PC-Komponenten zusammenarbeiten.</p>
-  </header>
+<body class="bg-light">
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Start</a></li>
-      <li><a href="Komponenten.html">Komponenten</a></li>
-      <li><a href="Aufbau.html">Aufbau</a></li>
-    </ul>
-  </nav>
+<nav class="py-3 border-bottom bg-dark">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between">
+        <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        </a>
 
-  <main>
-    <section>
-      <h2>Übersicht</h2>
-      <p>Dies ist die Startseite deiner Hardware-Website. Hier bekommst du einen Überblick über die Inhalte. 
-      Über die Navigation kannst du zu den einzelnen Bereichen wechseln: 
-      bei <strong>Komponenten</strong> erfährst du mehr über CPU, RAM und Grafikkarte, 
-      und unter <strong>Aufbau</strong> siehst du, wie alle Teile zusammenarbeiten, um einen Computer zu bilden.</p>
+        <ul class="nav">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link text-white active">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="komponenten.html" class="nav-link text-white">Komponenten</a>
+            </li>
+            <li class="nav-item">
+                <a href="aufbau.html" class="nav-link text-white">Aufbau</a>
+            </li>
+        </ul>
 
-    </section>
-  </main>
+    </div>
+</nav>
 
-  <footer>
-    © 2025 – Meine Hardware-Seite
-  </footer>
+<div class="bg-dark text-white py-5">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Hardware & PC-Komponenten</h1>
+        <p class="lead">Lerne die wichtigsten Bauteile eines PCs kennen und erfahre, wie ein PC aufgebaut wird.</p>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row g-4 align-items-stretch">
+
+        <div class="col-md-6">
+            <div class="p-4 bg-light rounded shadow-sm h-100">
+                <h2>Was ist ein Computer überhaupt?</h2>
+                <p>
+                    Ein Computer besteht aus mehreren Bauteilen, die zusammenarbeiten, um Programme auszuführen,
+                    Spiele darzustellen oder Daten zu verarbeiten.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="p-4 bg-light rounded shadow-sm h-100">
+                <h2>Was ist Computer-Hardware?</h2>
+                <p>
+                    Computerhardware bezeichnet alle physischen Teile eines Computersystems. Desktop- und Laptop-PCs
+                    nutzen ähnliche Komponenten, unterscheiden sich aber in Größe und Bauform.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
 </body>
-
 </html>
+
