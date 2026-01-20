@@ -133,6 +133,10 @@ body {
     letter-spacing: 0.5px;
 }
 
+.bg-dark {
+    background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+}
+
 
 
 
