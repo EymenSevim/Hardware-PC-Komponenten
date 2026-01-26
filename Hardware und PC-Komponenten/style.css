@@ -136,7 +136,6 @@ body {
 
 
 .dropdown-menu {
-    display: none;
     position: absolute;
     background: #ffffff;
     padding: 10px 0;
@@ -152,9 +151,29 @@ body {
     display: block;
     transition: background 0.2s ease;
 }
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block !important;
+    pointer-events: auto;
+}
 
-.dropdown-item:hover {
-    background: #f0f0f0;
+
+/* Damit das Dropdown nicht verschwindet, wenn man runterfährt */
+.nav-item.dropdown:hover > a {
+    color: #fff;
+}
+
+/* Wichtig: Dropdown über anderen Elementen anzeigen */
+.dropdown-menu {
+    z-index: 2000;
+}
+
+.nav-item.dropdown:hover {
+    position: relative;
+}
+
+.dropdown-menu {
+    top: 100%;
+    left: 0;
 }
 
 
