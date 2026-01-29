@@ -176,6 +176,10 @@ body {
     left: 0;
 }
 
+.p-5.bg-light.rounded.shadow-lg.fade-in h2 {
+  color: #5989eb;  
+}
+
 
 
 
