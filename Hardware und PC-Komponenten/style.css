@@ -1,139 +1,47 @@
+/* ----------------------------- */
+/* NAVIGATION – OHNE UNTERSTRICH */
+/* ----------------------------- */
+
 .nav-link {
-    position: relative;
+    margin-right: 20px;
     padding-bottom: 6px;
-    color: #fdfdfd;
+    color: #ffffff !important;
     opacity: 0.8;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, color 0.2s ease;
 }
 
+/* Hover-Farbe */
 .nav-link:hover {
     opacity: 1;
+    color: #cccccc !important;
 }
 
-.nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 4px; 
-    background-color: #fcfafa;
-    border-radius: 2px;
-    transition: width 0.25s ease;
-}
-
-
-.nav-link:hover::after {
-    width: 100%;
-    background-color: #888;
-}
-
+/* Unterstrich komplett deaktiviert */
+.nav-link::after,
+.nav-link:hover::after,
 .nav-link.active::after {
-    width: 100%;
-}
-.nav-link {
-    margin-right: 20px; 
+    content: none !important;
 }
 
+/* Aktiver Link */
+.nav-link.active {
+    opacity: 1;
+    color: #ffffff !important;
+}
+
+/* Dropdown soll sich normal verhalten */
+.nav-item.dropdown:hover > .nav-link {
+    color: #cccccc !important;
+}
+
+/* Navbar-Hintergrund */
 .bg-dark {
     border-bottom: none !important;
 }
 
-.component-box {
-    background: #ffffff;
-    padding: 50px;
-    border-radius: 16px;
-    max-width: 700px;
-    margin: 40px auto;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.component-box:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-}
-
-.component-img {
-    max-height: 200px;
-    margin-bottom: 25px;
-    border-radius: 12px;
-    object-fit: cover;
-}
-
-.component-box {
-    background: #ffffff;
-    padding: 50px;
-    border-radius: 16px;
-    max-width: 800px;
-    margin: 50px auto;
-    text-align: center;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-}
-
-.component-img {
-    max-width: 300px;
-    border-radius: 12px;
-    margin-bottom: 25px;
-}
-
-.component-box h3 {
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.component-box p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #444;
-}
-
-.component-box {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards;
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-.delay-1 { animation-delay: 0.1s; }
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-body {
-    background: #f5f6f8;
-}
-
-.component-box {
-    margin: 60px auto;
-}
-
-
-.component-box h3 {
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-
+/* ----------------------------- */
+/* DROPDOWN                      */
+/* ----------------------------- */
 
 .dropdown-menu {
     position: absolute;
@@ -141,7 +49,10 @@ body {
     padding: 10px 0;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    margin-top: 10px;
+    margin-top: 0;
+    z-index: 2000;
+    top: 100%;
+    left: 0;
 }
 
 .dropdown-item {
@@ -149,36 +60,26 @@ body {
     color: #333;
     text-decoration: none;
     display: block;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease;
 }
+
+.dropdown-item:hover {
+    background: #f2f2f2;
+    color: #000;
+}
+
 .nav-item.dropdown:hover .dropdown-menu {
     display: block !important;
     pointer-events: auto;
 }
 
-
-/* Damit das Dropdown nicht verschwindet, wenn man runterfährt */
-.nav-item.dropdown:hover > a {
-    color: #fff;
-}
-
-/* Wichtig: Dropdown über anderen Elementen anzeigen */
-.dropdown-menu {
-    z-index: 2000;
-}
-
 .nav-item.dropdown:hover {
     position: relative;
 }
-
-.dropdown-menu {
-    top: 100%;
-    left: 0;
+.section-box {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    border: 1px solid rgba(255,255,255,0.4);
 }
-
-
-
-
-
-
-
