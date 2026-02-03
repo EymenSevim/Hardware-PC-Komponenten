@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Aufbau</title>
+    <title>Aufbau – Computer</title>
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,20 +13,16 @@
   </head>
 
   <body class="bg-light">
+    <!-- Navigation -->
     <nav class="py-3 border-bottom bg-dark">
       <div
         class="container d-flex flex-wrap align-items-center justify-content-between"
       >
-        <a
-          href="#"
-          class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
-        >
-        </a>
-
-        <ul class="nav">
+        <ul class="nav ms-auto">
           <li class="nav-item">
             <a href="index.html" class="nav-link text-white">Home</a>
           </li>
+
           <li class="nav-item dropdown">
             <a
               class="nav-link text-white dropdown-toggle"
@@ -56,9 +53,18 @@
       </div>
     </nav>
 
-    <div class="p-5 bg-light rounded shadow-lg fade-in">
-      <h1 class="text-center">Aufbau und Funktionsweise eines Computers</h1>
-      <br />
+    <!-- Header -->
+    <div class="bg-dark text-white py-5">
+      <div class="container">
+        <h1 class="display-4 fw-bold">
+          Aufbau und Funktionsweise eines Computers
+        </h1>
+        <p class="lead">Wie alle Komponenten zusammenarbeiten</p>
+      </div>
+    </div>
+
+    <!-- Inhalt -->
+    <div class="container my-5 section-box">
       <p>
         Der Aufbau eines Computers beschreibt sowohl die physische Anordnung der
         Hardware-Komponenten als auch deren Zusammenarbeit. Jede einzelne
@@ -67,7 +73,9 @@
         ausführen, Daten verarbeiten und Informationen ausgeben.
       </p>
 
-      <h2>Das Gehäuse – Basis und Schutz</h2>
+      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
+        Das Gehäuse – Basis und Schutz
+      </h3>
       <p>
         Das Gehäuse bildet die äußere Hülle des Computers. Es dient als stabile
         Grundlage, in der alle Komponenten befestigt werden. Im Inneren befinden
@@ -76,7 +84,9 @@
         Hardware vor Staub, Berührung und mechanischen Schäden.
       </p>
 
-      <h2>Das Mainboard – Verbindung aller Komponenten</h2>
+      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
+        Das Mainboard – Verbindung aller Komponenten
+      </h3>
       <p>
         Das Mainboard ist die zentrale Platine des Computers und wird fest im
         Gehäuse verschraubt. Auf ihm befinden sich Steckplätze und Anschlüsse
@@ -85,7 +95,9 @@
         Bauteile miteinander kommunizieren können.
       </p>
 
-      <h2>Der Prozessor (CPU) – Steuerung und Berechnung</h2>
+      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
+        Der Prozessor (CPU) – Steuerung und Berechnung
+      </h3>
       <p>
         Der Prozessor wird in einen speziellen Sockel auf dem Mainboard
         eingesetzt. Er verarbeitet Befehle des Betriebssystems und von
@@ -94,7 +106,9 @@
         anderen Komponenten über das Mainboard.
       </p>
 
-      <h2>Der CPU-Kühler – Temperaturkontrolle</h2>
+      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
+        Der CPU-Kühler – Temperaturkontrolle
+      </h3>
       <p>
         Direkt auf dem Prozessor wird ein Kühler montiert. Dieser besteht aus
         einem Kühlkörper und meist einem Lüfter. Da die CPU beim Arbeiten viel
@@ -102,7 +116,9 @@
         Leistungsverlust zu verhindern.
       </p>
 
-      <h2>Der Arbeitsspeicher (RAM) – Kurzzeitspeicher</h2>
+      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
+        Der Arbeitsspeicher (RAM) – Kurzzeitspeicher
+      </h3>
       <p>
         Der Arbeitsspeicher wird in spezielle Steckplätze auf dem Mainboard
         eingesetzt. Er speichert temporär Daten, die aktuell von der CPU
@@ -111,7 +127,9 @@
         Echtzeit nicht möglich.
       </p>
 
-      <h2>Die Grafikkarte – Bildverarbeitung</h2>
+      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
+        Die Grafikkarte – Bildverarbeitung
+      </h3>
       <p>
         Die Grafikkarte wird in einen PCIe-Steckplatz auf dem Mainboard
         eingesetzt. Sie übernimmt die Berechnung von Grafiken, Bildern und
@@ -120,7 +138,9 @@
         Prozessor und eigenen Speicher.
       </p>
 
-      <h2>Massenspeicher – SSD und HDD</h2>
+      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
+        Massenspeicher – SSD und HDD
+      </h3>
       <p>
         Der Massenspeicher wird im Gehäuse montiert und über Datenkabel mit dem
         Mainboard verbunden. Auf ihm befinden sich das Betriebssystem, Programme
@@ -128,7 +148,9 @@
         Daten vom Massenspeicher in den Arbeitsspeicher.
       </p>
 
-      <h2>Das Netzteil – Energieversorgung</h2>
+      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
+        Das Netzteil – Energieversorgung
+      </h3>
       <p>
         Das Netzteil ist meist im unteren oder oberen Bereich des Gehäuses
         montiert. Es wandelt den Strom aus der Steckdose in nutzbare Spannungen
@@ -136,7 +158,7 @@
         Kabel mit Energie.
       </p>
 
-      <h2>Lüfter und Luftstrom</h2>
+      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">Lüfter und Luftstrom</h3>
       <p>
         Mehrere Gehäuselüfter sorgen für einen kontrollierten Luftstrom. Kühle
         Luft wird angesaugt, warme Luft abgeführt. Dadurch bleiben alle
@@ -144,13 +166,62 @@
         Lebensdauer erhöht.
       </p>
 
-      <h2>Zusammenarbeit aller Komponenten</h2>
+      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
+        Zusammenarbeit aller Komponenten
+      </h3>
       <p>
         Beim Start des Computers liefert das Netzteil Strom an das Mainboard.
         Dieses aktiviert die CPU, welche das Betriebssystem vom Massenspeicher
         in den Arbeitsspeicher lädt. Programme werden verarbeitet, Daten im RAM
         zwischengespeichert und Ergebnisse über die Grafikkarte ausgegeben.
         Jeder Schritt ist Teil eines abgestimmten Systems.
+      </p>
+
+      <!-- NEUE ABSCHNITTE -->
+
+      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
+        Ein- und Ausgabegeräte (Peripherie)
+      </h3>
+      <p>
+        Neben den internen Komponenten gehören auch Ein- und Ausgabegeräte zu
+        einem vollständigen Computersystem. Eingabegeräte wie Tastatur, Maus
+        oder Mikrofon ermöglichen die Eingabe von Befehlen und Daten.
+        Ausgabegeräte wie Monitor, Lautsprecher oder Drucker geben die vom
+        Computer verarbeiteten Informationen aus. Diese Geräte werden extern
+        über verschiedene Anschlüsse mit dem Computer verbunden.
+      </p>
+
+      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
+        Schnittstellen und Anschlüsse
+      </h3>
+      <p>
+        Damit Komponenten und Peripheriegeräte miteinander kommunizieren können,
+        besitzt ein Computer zahlreiche Schnittstellen. Zu den wichtigsten
+        externen Anschlüssen gehören USB für Eingabegeräte, HDMI oder
+        DisplayPort für Bildausgabe sowie Netzwerkanschlüsse für
+        Internetverbindungen. Intern werden Bauteile über Schnittstellen wie
+        SATA, PCIe oder M.2 verbunden, die einen schnellen Datenaustausch
+        ermöglichen.
+      </p>
+
+      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
+        BIOS/UEFI – Start des Computers
+      </h3>
+      <p>
+        Beim Einschalten des Computers wird zunächst das BIOS beziehungsweise
+        das moderne UEFI gestartet. Diese Firmware ist auf dem Mainboard
+        gespeichert und überprüft die angeschlossene Hardware. Erst wenn alle
+        wichtigen Komponenten korrekt erkannt wurden, wird das Betriebssystem
+        vom Massenspeicher geladen.
+      </p>
+
+      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">Das Betriebssystem</h3>
+      <p>
+        Das Betriebssystem steuert den gesamten Computerbetrieb. Es verwaltet
+        die Hardware-Ressourcen, ermöglicht die Ausführung von Programmen und
+        stellt die Benutzeroberfläche bereit. Bekannte Betriebssysteme sind
+        Windows, Linux und macOS. Ohne ein Betriebssystem wäre der Computer
+        nicht nutzbar.
       </p>
     </div>
 
