@@ -76,10 +76,19 @@
 .nav-item.dropdown:hover {
     position: relative;
 }
+
 .section-box {
     background: #ffffff;
     padding: 2.5rem;
     border-radius: 14px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     border: 1px solid rgba(255,255,255,0.4);
+}
+
+/* -------------------------------- */
+/* H2 wieder schwarz statt blau     */
+/* -------------------------------- */
+
+h2.text-primary {
+    color: #000 !important;
 }
