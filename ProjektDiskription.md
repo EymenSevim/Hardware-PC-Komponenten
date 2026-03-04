@@ -24,7 +24,9 @@ Das Thema Hardware und PC-Komponenten ist ein zentraler Bestandteil der Informat
 Projektziele:
 Ziel ist es, die wichtigsten Hardware-Bausteine und deren Funktionen verständlich zu erklären und mit Bildern darzustellen.
 Zusätzlich soll ein KI-basierter Tutor in die Website integriert werden, der Nutzerinnen und Nutzern ermöglicht, Fragen zu Hardware-Themen zu stellen und individuell angepasste Erklärungen zu erhalten. Der KI-Tutor soll sich am Wissensstand orientieren und komplexe Inhalte einfach und verständlich erklären.
+
 ---
+
 
 
 
