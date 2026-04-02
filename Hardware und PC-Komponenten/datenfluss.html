@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Datenfluss - Computer</title>
+    <title>Datenfluss & Bootvorgang - Computer</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -16,17 +16,22 @@
     <link rel="stylesheet" href="style.css" />
 
     <style>
+      /* Zusätzliches minimales Styling für einen professionellen Look */
       .timeline-card {
-        transition: transform 0.2s;
-      } /* Karte bewegt sich leicht beim Drüberfahren */
+        transition: transform 0.2s ease-in-out;
+      }
       .timeline-card:hover {
         transform: translateY(-3px);
+      }
+      .phase-badge {
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
       }
     </style>
   </head>
 
   <body class="bg-light">
-    <nav class="py-3 border-bottom bg-dark">
+    <nav class="py-3 border-bottom bg-dark shadow-sm">
       <div
         class="container d-flex flex-wrap align-items-center justify-content-between"
       >
@@ -34,7 +39,6 @@
           <li class="nav-item">
             <a href="index.html" class="nav-link text-white">Home</a>
           </li>
-
           <li class="nav-item dropdown">
             <a
               class="nav-link text-white dropdown-toggle"
@@ -57,12 +61,11 @@
               <li><a class="dropdown-item" href="case.html">Gehäuse</a></li>
             </ul>
           </li>
-
           <li class="nav-item">
             <a href="aufbau.html" class="nav-link text-white">Aufbau</a>
           </li>
           <li class="nav-item">
-            <a href="datenfluss.html" class="nav-link text-white active"
+            <a href="datenfluss.html" class="nav-link text-white active fw-bold"
               >Datenfluss</a
             >
           </li>
@@ -70,124 +73,235 @@
       </div>
     </nav>
 
-    <div class="bg-dark text-white py-5">
+    <div class="bg-dark text-white py-5 mb-5">
       <div class="container">
-        <h1 class="display-4 fw-bold">Datenfluss in einem Computer</h1>
-        <p class="lead">Wie Daten durch die Hardware eines Computers wandern</p>
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <h1 class="display-4 fw-bold">Datenfluss & Bootvorgang</h1>
+            <p class="lead text-light">
+              Von der ersten elektrischen Spannung bis zur grafischen
+              Benutzeroberfläche: Wie Hardware und Software interagieren.
+            </p>
+          </div>
+          <div class="col-lg-4 text-center d-none d-lg-block">
+            <i class="bi bi-cpu" style="font-size: 6rem; opacity: 0.8"></i>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="container my-5 section-box">
-      <h3>Was bedeutet eigentlich "Datenfluss"?</h3>
-      <p>
-        Der Datenfluss beschreibt den Weg, den Daten innerhalb eines Systems von
-        der Quelle bis zum Ziel zurücklegen. Es bezieht sich auf die Bewegung
-        von Daten, einschließlich ihrer Transformation, Verarbeitung und
-        Speicherung.
-      </p>
-
-      <h2 class="fw-bold mt-5 mb-4">Startvorgang eines PCs</h2>
-
-      <div class="list-group">
-        <div class="list-group-item">
-          <h5 class="fw-bold">1. Stromversorgung wird aktiviert</h5>
-          <p>
-            Beim Einschalten des Computers liefert das Netzteil elektrische
-            Energie an die Hauptkomponenten. Erst wenn stabile Spannungen
-            anliegen, kann das Mainboard den Startprozess einleiten.
+    <div class="container mb-5">
+      <div class="card border-0 shadow-sm mb-5 p-3">
+        <div class="card-body">
+          <h3 class="fw-bold">
+            <i class="bi bi-diagram-3-fill text-primary me-2"></i>Was bedeutet
+            eigentlich "Datenfluss"?
+          </h3>
+          <p class="text-secondary mb-0">
+            Der Datenfluss beschreibt den Weg, den Daten und Befehle innerhalb
+            eines Systems von der Quelle bis zum Ziel zurücklegen. Der
+            komplexeste und wichtigste Datenfluss findet direkt beim Einschalten
+            des Computers statt (dem sogenannten <strong>Bootvorgang</strong>).
+            Hierbei übergibt die Hardware Schritt für Schritt die Kontrolle an
+            die Firmware (UEFI) und schlussendlich an die Software
+            (Betriebssystem).
           </p>
         </div>
+      </div>
 
-        <div class="list-group-item">
-          <h5 class="fw-bold">2. CPU startet das BIOS/UEFI</h5>
-          <p>
-            Die CPU beginnt sofort nach dem Einschalten mit der Ausführung eines
-            fest hinterlegten Programms. Dieses befindet sich im BIOS bzw.
-            modernen UEFI-Chip auf dem Mainboard und liegt an einer
-            vordefinierten Speicheradresse.
-          </p>
+      <h2 class="fw-bold mb-4 border-bottom pb-2">
+        Der Startvorgang (Boot-Sequenz) im Detail
+      </h2>
+
+      <div class="row g-4">
+        <div class="col-12">
+          <div
+            class="card timeline-card h-100 shadow-sm border-0 border-start border-danger border-4"
+          >
+            <div class="card-body">
+              <div
+                class="d-flex justify-content-between align-items-center mb-2"
+              >
+                <h5 class="card-title fw-bold mb-0">
+                  <i class="bi bi-lightning-charge-fill text-danger me-2"></i>1.
+                  Stromversorgung & Power Good Signal
+                </h5>
+                <span class="badge bg-danger phase-badge">Hardware-Phase</span>
+              </div>
+              <p class="card-text mt-3">
+                Beim Drücken des Power-Buttons beginnt das Netzteil (PSU),
+                Wechselstrom in Gleichstrom umzuwandeln. Sobald die internen
+                Spannungen (3.3V, 5V, 12V) stabil anliegen, sendet das Netzteil
+                das <strong>"Power Good"-Signal</strong> an das Mainboard. Erst
+                durch dieses Signal wird der Reset-Schalter des Prozessors
+                freigegeben, und die CPU beginnt zu arbeiten.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="list-group-item">
-          <h5 class="fw-bold">3. POST - Power-On Self Test</h5>
-          <p>
-            Das BIOS/UEFI überprüft die grundlegende Hardwarefunktion. Dabei
-            werden unter anderem Arbeitsspeicher, Prozessor, Grafikausgabe und
-            angeschlossene Geräte getestet. Fehler werden oft durch Pieptöne
-            oder Meldungen signalisiert.
-          </p>
+        <div class="col-12">
+          <div
+            class="card timeline-card h-100 shadow-sm border-0 border-start border-warning border-4"
+          >
+            <div class="card-body">
+              <div
+                class="d-flex justify-content-between align-items-center mb-2"
+              >
+                <h5 class="card-title fw-bold mb-0">
+                  <i class="bi bi-memory text-warning me-2"></i>2. Reset Vector
+                  & UEFI-Initialisierung
+                </h5>
+                <span class="badge bg-warning text-dark phase-badge"
+                  >Firmware-Phase</span
+                >
+              </div>
+              <p class="card-text mt-3">
+                Da der RAM zu diesem Zeitpunkt komplett leer ist, sucht die CPU
+                an einer fest verdrahteten Speicheradresse (dem
+                <strong>Reset Vector</strong>) nach dem ersten Befehl. Dieser
+                Befehl verweist auf den ROM-Chip (Read-Only Memory) auf dem
+                Mainboard, in dem sich das <strong>UEFI</strong> (Unified
+                Extensible Firmware Interface) befindet. Das UEFI wird geladen
+                und übernimmt die Steuerung.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="list-group-item">
-          <h5 class="fw-bold">4. Laden des Bootloaders</h5>
-          <p>
-            Nach erfolgreichem Selbsttest sucht die Firmware nach einem
-            startfähigen Massenspeicher (SSD/HDD/USB). Aus einem fest
-            definierten Bereich des Datenträgers wird der Bootloader in den
-            Arbeitsspeicher geladen und ausgeführt.
-          </p>
+        <div class="col-12">
+          <div
+            class="card timeline-card h-100 shadow-sm border-0 border-start border-warning border-4"
+          >
+            <div class="card-body">
+              <div
+                class="d-flex justify-content-between align-items-center mb-2"
+              >
+                <h5 class="card-title fw-bold mb-0">
+                  <i class="bi bi-check-circle-fill text-warning me-2"></i>3.
+                  POST (Power-On Self-Test)
+                </h5>
+                <span class="badge bg-warning text-dark phase-badge"
+                  >Firmware-Phase</span
+                >
+              </div>
+              <p class="card-text mt-3">
+                Das UEFI führt den POST aus. Dabei werden essenzielle
+                Komponenten wie CPU, Arbeitsspeicher (RAM) und Grafikkarte auf
+                Funktionstüchtigkeit geprüft. Fehlt der RAM oder die
+                Grafikkarte, stoppt der Prozess hier und das Mainboard gibt
+                Fehlercodes aus (z.B. durch Diagnose-LEDs oder Beep-Codes).
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="list-group-item">
-          <h5 class="fw-bold">5. Auswahl des Betriebssystems</h5>
-          <p>
-            Der Bootloader kann ein Auswahlmenü anzeigen. Bei Linux-Systemen
-            wird häufig ein Kernel ausgewählt, während Windows optional
-            Reparatur- oder Wiederherstellungsoptionen anbietet.
-          </p>
+        <div class="col-12">
+          <div
+            class="card timeline-card h-100 shadow-sm border-0 border-start border-info border-4"
+          >
+            <div class="card-body">
+              <div
+                class="d-flex justify-content-between align-items-center mb-2"
+              >
+                <h5 class="card-title fw-bold mb-0">
+                  <i class="bi bi-hdd-fill text-info me-2"></i>4. Bootloader &
+                  EFI System Partition (ESP)
+                </h5>
+                <span class="badge bg-info text-dark phase-badge"
+                  >Übergabe-Phase</span
+                >
+              </div>
+              <p class="card-text mt-3">
+                Das UEFI durchsucht die angeschlossenen Speichermedien (SSD/HDD)
+                nach der sogenannten
+                <strong>EFI System Partition (ESP)</strong>. Auf dieser
+                Partition befindet sich der Bootloader (z.B. der Windows Boot
+                Manager oder GRUB für Linux). Dieser kleine Programmcode wird
+                vom Datenträger in den RAM kopiert und ausgeführt.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="list-group-item">
-          <h5 class="fw-bold">6. Start des Kernels</h5>
-          <p>
-            Der Kernel ist der zentrale Bestandteil des Betriebssystems. Er wird
-            in den Arbeitsspeicher geladen und übernimmt die Kontrolle über die
-            Hardware sowie die Verwaltung von Prozessen und Speicher.
-          </p>
+        <div class="col-12">
+          <div
+            class="card timeline-card h-100 shadow-sm border-0 border-start border-primary border-4"
+          >
+            <div class="card-body">
+              <div
+                class="d-flex justify-content-between align-items-center mb-2"
+              >
+                <h5 class="card-title fw-bold mb-0">
+                  <i class="bi bi-windows text-primary me-2"></i>5. Start des
+                  Betriebssystem-Kernels
+                </h5>
+                <span class="badge bg-primary phase-badge">Software-Phase</span>
+              </div>
+              <p class="card-text mt-3">
+                Der Bootloader lädt nun den <strong>Kernel</strong> (den Kern
+                des Betriebssystems) in den Arbeitsspeicher. Der Kernel entpackt
+                sich und richtet den sogenannten <em>Kernel Space</em> ein.
+                Gleichzeitig wird der
+                <strong>HAL (Hardware Abstraction Layer)</strong> geladen – eine
+                Übersetzungsschicht, die es der Software ermöglicht,
+                standardisiert mit der verbauten Hardware zu kommunizieren.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="list-group-item">
-          <h5 class="fw-bold">7. Laden der Hardware-Treiber</h5>
-          <p>
-            Das Betriebssystem initialisiert nun spezifische Gerätetreiber. Sie
-            ermöglichen die Kommunikation mit Komponenten wie Grafikkarte,
-            Netzwerkkarte, USB-Geräten oder Massenspeichern.
-          </p>
+        <div class="col-12">
+          <div
+            class="card timeline-card h-100 shadow-sm border-0 border-start border-primary border-4"
+          >
+            <div class="card-body">
+              <div
+                class="d-flex justify-content-between align-items-center mb-2"
+              >
+                <h5 class="card-title fw-bold mb-0">
+                  <i class="bi bi-device-ssd-fill text-primary me-2"></i>6.
+                  Initialisierung der Hardware-Treiber
+                </h5>
+                <span class="badge bg-primary phase-badge">Software-Phase</span>
+              </div>
+              <p class="card-text mt-3">
+                Das Betriebssystem scannt den PCIe-Bus und die USB-Controller
+                nach angeschlossenen Geräten (Plug & Play). Der Kernel lädt nun
+                die passenden <strong>Treiber</strong> in den Arbeitsspeicher.
+                Ab diesem Zeitpunkt kann das System beispielsweise die volle
+                Auflösung der Grafikkarte nutzen, anstatt der groben
+                UEFI-Standardauflösung.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="list-group-item">
-          <h5 class="fw-bold">8. Start der Systemdienste</h5>
-          <p>
-            Wichtige Hintergrunddienste werden gestartet, zum Beispiel
-            Benutzerverwaltung, Netzwerk/WLAN, Druckdienste und weitere
-            Systemprozesse, die für den normalen Betrieb notwendig sind.
-          </p>
-        </div>
-
-        <div class="list-group-item">
-          <h5 class="fw-bold">9. Anmeldebildschirm (Login)</h5>
-          <p>
-            Nachdem das System bereit ist, erscheint die Anmeldeoberfläche. Der
-            Benutzer authentifiziert sich mit Benutzername und Passwort, um
-            Zugriff auf das System zu erhalten.
-          </p>
-        </div>
-
-        <div class="list-group-item">
-          <h5 class="fw-bold">10. Laden der grafischen Oberfläche</h5>
-          <p>
-            Nach erfolgreicher Anmeldung wird die Desktop-Umgebung (GUI)
-            gestartet. Sie stellt Fenster, Icons, Taskleiste und weitere
-            Bedienelemente bereit.
-          </p>
-        </div>
-
-        <div class="list-group-item">
-          <h5 class="fw-bold">11. Benutzer startet Anwendungen</h5>
-          <p>
-            Jetzt ist das System vollständig betriebsbereit. Der Benutzer kann
-            Programme öffnen, Dateien bearbeiten und mit dem Computer arbeiten.
-          </p>
+        <div class="col-12">
+          <div
+            class="card timeline-card h-100 shadow-sm border-0 border-start border-success border-4"
+          >
+            <div class="card-body">
+              <div
+                class="d-flex justify-content-between align-items-center mb-2"
+              >
+                <h5 class="card-title fw-bold mb-0">
+                  <i class="bi bi-person-workspace text-success me-2"></i>7.
+                  Systemdienste & User Space
+                </h5>
+                <span class="badge bg-success phase-badge">User-Phase</span>
+              </div>
+              <p class="card-text mt-3">
+                Der erste Systemprozess (unter Linux z.B. <code>systemd</code>,
+                unter Windows <code>smss.exe</code>) wird gestartet. Wichtige
+                Hintergrunddienste (Netzwerk, Audio, Sicherheit) fahren hoch.
+                Schließlich wird die grafische Benutzeroberfläche (GUI) geladen
+                und der Anmeldebildschirm (Login) erscheint. Sobald der Nutzer
+                eingeloggt ist, ist der <em>User Space</em> vollständig geladen
+                und der PC betriebsbereit.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
