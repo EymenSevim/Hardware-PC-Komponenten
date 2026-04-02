@@ -4,216 +4,197 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Aufbau & Funktionsweise – Computer</title>
-
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body class="bg-light">
-    <nav class="py-3 border-bottom bg-dark">
-      <div
-        class="container d-flex flex-wrap align-items-center justify-content-between"
-      >
-        <ul class="nav ms-auto">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link text-white">Home</a>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link text-white dropdown-toggle"
-              href="#"
-              id="komponentenDropdown"
-              data-bs-toggle="dropdown"
-            >
-              Komponenten
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="cpu.html">CPU</a></li>
-              <li><a class="dropdown-item" href="gpu.html">Grafikkarte</a></li>
-              <li><a class="dropdown-item" href="ram.html">RAM</a></li>
-              <li>
-                <a class="dropdown-item" href="mainboard.html">Mainboard</a>
-              </li>
-              <li><a class="dropdown-item" href="ssd.html">SSD / HDD</a></li>
-              <li><a class="dropdown-item" href="psu.html">Netzteil</a></li>
-              <li><a class="dropdown-item" href="cooler.html">Kühler</a></li>
-              <li><a class="dropdown-item" href="case.html">Gehäuse</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item">
-            <a href="aufbau.html" class="nav-link text-white active">Aufbau</a>
-          </li>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-secondary"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Hardware-Guide</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-            <a href="datenfluss.html" class="nav-link text-white">Datenfluss</a>
-          </li>
-        </ul>
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-info"
+                href="#"
+                data-bs-toggle="dropdown"
+                >Komponenten</a
+              >
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="cpu.html">CPU</a></li>
+                <li>
+                  <a class="dropdown-item" href="gpu.html">Grafikkarte</a>
+                </li>
+                <li><a class="dropdown-item" href="ram.html">RAM</a></li>
+                <li>
+                  <a class="dropdown-item" href="mainboard.html">Mainboard</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="aufbau.html" class="nav-link active">Aufbau</a>
+            </li>
+            <li class="nav-item">
+              <a href="datenfluss.html" class="nav-link">Datenfluss</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
-    <div class="bg-dark text-white py-5">
-      <div class="container">
-        <h1 class="display-4 fw-bold">Zusammenbau & System-Integration</h1>
-        <p class="lead">
-          Vom Einzelteil zum funktionierenden System: Montage und Datenfluss
+    <header class="hero-section text-white d-flex align-items-center">
+      <div class="container text-center">
+        <h1 class="display-3 fw-bold">System-Architektur</h1>
+        <p class="lead opacity-75">
+          Vom physischen Zusammenbau zum intelligenten Datenfluss.
         </p>
       </div>
-    </div>
+    </header>
 
-    <div class="container my-5 section-box">
-      <p>
-        Ein Computer ist mehr als die Summe seiner Teile. Um ein
-        funktionierendes System zu erhalten, müssen die Komponenten in einer
-        logischen Reihenfolge montiert und verkabelt werden. Anschließend sorgt
-        das Zusammenspiel von Hardware und Software für die Funktion. Hier
-        erklären wir den Weg vom leeren Gehäuse bis zum fertigen Rechenprozess.
-      </p>
+    <main class="container my-5">
+      <div class="row">
+        <aside class="col-lg-3 d-none d-lg-block">
+          <div class="sticky-top" style="top: 100px">
+            <h5 class="fw-bold mb-3">Inhalt</h5>
+            <nav id="toc" class="nav flex-column border-start border-2 ps-3">
+              <a class="nav-link" href="#montage">1. Die Montage</a>
+              <a class="nav-link" href="#logik">2. Funktionsweise</a>
+              <a class="nav-link" href="#thermik">3. Thermik</a>
+            </nav>
+          </div>
+        </aside>
 
-      <h2 class="fw-bold mt-5 mb-4 text-primary">Der Zusammenbau</h2>
+        <div class="col-lg-9">
+          <section id="montage" class="mb-5">
+            <h2 class="section-title">Der physische Zusammenbau</h2>
+            <p class="text-muted mb-4">
+              Ein PC entsteht schrittweise. Die richtige Reihenfolge verhindert
+              Hardwareschäden.
+            </p>
 
-      <h3 class="fw-bold mt-4 mb-3 border-bottom pb-2">
-        1. Die Vorbereitung des Mainboards
-      </h3>
-      <p>
-        Der Zusammenbau beginnt meist außerhalb des Gehäuses. Das Mainboard
-        dient als Basis. Zuerst wird der
-        <strong>Prozessor (CPU)</strong> vorsichtig in den Sockel eingesetzt und
-        verriegelt. Anschließend wird der
-        <strong>Arbeitsspeicher (RAM)</strong> in die dafür vorgesehenen Bänke
-        gedrückt, bis er hörbar einrastet.
-      </p>
-      <p>
-        Ist eine <strong>M.2 SSD</strong> vorhanden, wird diese nun direkt auf
-        dem Mainboard verschraubt. Zum Abschluss dieser Phase wird der
-        <strong>CPU-Kühler</strong> montiert. Wärmeleitpaste zwischen CPU und
-        Kühler sorgt dabei für eine lückenlose Wärmeübertragung.
-      </p>
+            <div class="timeline">
+              <div
+                class="timeline-item mb-4 p-4 bg-white shadow-sm rounded border-start border-primary border-4"
+              >
+                <h4 class="fw-bold text-primary">01. Die Basis (Mainboard)</h4>
+                <p>
+                  CPU, RAM und M.2 SSDs werden außerhalb des Gehäuses montiert.
+                  Die <strong>Wärmeleitpaste</strong> ist hierbei die kritische
+                  Schnittstelle zum Kühler.
+                </p>
+              </div>
 
-      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
-        2. Vorbereitung des Gehäuses
-      </h3>
-      <p>
-        Das Gehäuse wird geöffnet. Zuerst wird das <strong>Netzteil</strong> an
-        seiner Position (meist unten hinten) verschraubt und die Kabelstränge
-        werden zur Seite gelegt. Wichtig ist nun das Einsetzen der
-        Abstandshalter für das Mainboard, damit die Platine keinen Kontakt zum
-        Metall des Gehäuses hat (Kurzschlussgefahr). Auch die I/O-Blende für die
-        hinteren Anschlüsse wird jetzt eingesetzt.
-      </p>
+              <div
+                class="timeline-item mb-4 p-4 bg-white shadow-sm rounded border-start border-primary border-4"
+              >
+                <h4 class="fw-bold text-primary">
+                  02. Das Gehäuse & "Die Hochzeit"
+                </h4>
+                <p>
+                  Nach Einbau des Netzteils und der Abstandshalter folgt die
+                  „Hochzeit“: Das Einsetzen der Hauptplatine in das Gehäuse.
+                </p>
+              </div>
 
-      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
-        3. Einbau des Mainboards ("Die Hochzeit")
-      </h3>
-      <p>
-        Das vorbereitete Mainboard (mit CPU, RAM und Kühler) wird vorsichtig in
-        das Gehäuse gehoben und auf die Abstandshalter gesetzt. Anschließend
-        wird es mit mehreren Schrauben fixiert. Nun sitzt das Herzstück des PCs
-        fest an seinem Platz.
-      </p>
+              <div
+                class="timeline-item mb-4 p-4 bg-white shadow-sm rounded border-start border-primary border-4"
+              >
+                <h4 class="fw-bold text-primary">03. Integration & Energie</h4>
+                <p>
+                  Grafikkarte (GPU) und Laufwerke werden eingesetzt. Die
+                  <strong>Verkabelung</strong> (24-Pin, EPS, PCIe) stellt die
+                  Lebensader des Systems dar.
+                </p>
+              </div>
+            </div>
+          </section>
 
-      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
-        4. Erweiterungskarten und Laufwerke
-      </h3>
-      <p>
-        Nun folgt die <strong>Grafikkarte</strong>. Sie wird in den oberen
-        PCIe-Slot gesteckt und am Gehäuse verschraubt. Falls herkömmliche
-        2,5-Zoll SSDs oder 3,5-Zoll HDDs verbaut werden, werden diese in die
-        Laufwerksschächte geschoben und mit SATA-Datenkabeln am Mainboard
-        angeschlossen.
-      </p>
+          <hr class="my-5" />
 
-      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
-        5. Die Verkabelung (Strom und Steuerung)
-      </h3>
-      <p>
-        Der vielleicht wichtigste Schritt ist die Verkabelung. Das Netzteil
-        versorgt nun alle Komponenten:
-      </p>
-      <ul>
-        <li><strong>24-Pin Stecker:</strong> Versorgt das Mainboard.</li>
-        <li><strong>EPS-Stecker (4/8-Pin):</strong> Versorgt die CPU.</li>
-        <li><strong>PCIe-Stecker:</strong> Versorgt die Grafikkarte.</li>
-        <li><strong>SATA-Strom:</strong> Versorgt Festplatten und SSDs.</li>
-      </ul>
-      <p>
-        Zuletzt werden die feinen Kabel des Gehäuses (Power-Knopf, Reset, LEDs,
-        USB-Frontanschlüsse) mit dem Mainboard verbunden.
-      </p>
+          <section id="logik" class="mb-5">
+            <h2 class="section-title">Das logische Zusammenspiel</h2>
+            <div class="card bg-dark text-white mb-4">
+              <div class="card-body p-4">
+                <h5 class="card-title text-info">Das EVA-Prinzip</h5>
+                <p class="card-text">
+                  Eingabe – Verarbeitung – Ausgabe. Das Herzstück der
+                  Informatik.
+                </p>
+              </div>
+            </div>
 
-      <h2 class="fw-bold mt-5 mb-4 text-primary">
-        Das Zusammenspiel (Funktionsweise)
-      </h2>
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="p-4 border rounded bg-light h-100">
+                  <h5 class="fw-bold">Boot-Vorgang (POST)</h5>
+                  <p class="small">
+                    Das <strong>BIOS/UEFI</strong> fungiert als Dirigent. Es
+                    prüft per Power-On Self-Test (POST), ob alle Komponenten
+                    bereit sind, bevor das Betriebssystem von der SSD in den RAM
+                    geladen wird.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="p-4 border rounded bg-light h-100">
+                  <h5 class="fw-bold">Daten-Autobahn</h5>
+                  <p class="small">
+                    Die <strong>CPU</strong> berechnet Logik, die
+                    <strong>GPU</strong> übernimmt die Geometrie und Pixel. Der
+                    <strong>RAM</strong> dient als extrem schneller
+                    Kurzzeitspeicher, um Flaschenhälse zu vermeiden.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
 
-      <p>
-        Nach dem Zusammenbau greifen die Komponenten wie Zahnräder ineinander.
-        Dieser Prozess lässt sich am besten anhand des Datenflusses erklären
-        (EVA-Prinzip: Eingabe - Verarbeitung - Ausgabe).
-      </p>
+          <section
+            id="thermik"
+            class="p-4 bg-info bg-opacity-10 border border-info rounded"
+          >
+            <h4 class="fw-bold">
+              <i class="bi bi-thermometer-half"></i> Das thermische
+              Gleichgewicht
+            </h4>
+            <p class="mb-0">
+              Hardware wandelt elektrische Energie fast vollständig in Wärme um.
+              Ein kontrollierter <strong>Airflow</strong> (Kaltluft von vorn,
+              Warmluft nach hinten/oben) ist essentiell für die Langlebigkeit.
+            </p>
+          </section>
+        </div>
+      </div>
+    </main>
 
-      <h3 class="fw-bold mt-4 mb-3 border-bottom pb-2">
-        Der Startvorgang (POST & Boot)
-      </h3>
-      <p>
-        Beim Drücken des Power-Knopfes sendet das Netzteil das "Power
-        Good"-Signal. Das Mainboard erwacht und das
-        <strong>BIOS/UEFI</strong> startet einen Selbsttest (POST). Es prüft:
-        Ist RAM da? Funktioniert die CPU? Wird die Grafikkarte erkannt? Wenn
-        alles in Ordnung ist, gibt das BIOS den Befehl an die SSD, das
-        Betriebssystem (z. B. Windows) in den schnellen Arbeitsspeicher zu
-        laden.
-      </p>
-
-      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
-        Verarbeitung von Befehlen
-      </h3>
-      <p>
-        Wenn der Nutzer nun ein Programm startet (<strong>Eingabe</strong> per
-        Maus), passiert Folgendes im Millisekunden-Takt:
-      </p>
-      <ol>
-        <li>
-          Die <strong>SSD</strong> lädt die Programmdaten in den
-          <strong>RAM</strong>, da die SSD für Echtzeitberechnungen zu langsam
-          wäre.
-        </li>
-        <li>
-          Die <strong>CPU</strong> holt sich die Befehle aus dem RAM. Sie ist
-          das Gehirn, das rechnet und entscheidet ("Wenn Klick hier, dann tue
-          das").
-        </li>
-        <li>
-          Komplexe Berechnungen für die Darstellung (z. B. 3D-Welten oder
-          Fenster) lagert die CPU an die <strong>Grafikkarte (GPU)</strong> aus.
-        </li>
-      </ol>
-
-      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
-        Ausgabe und Speicherung
-      </h3>
-      <p>
-        Die Grafikkarte wandelt die berechneten Daten in ein Bildsignal um und
-        sendet es an den Monitor (<strong>Ausgabe</strong>). Gleichzeitig werden
-        Ergebnisse, die dauerhaft behalten werden sollen (z. B. ein
-        gespeichertes Dokument), vom flüchtigen RAM zurück auf die
-        <strong>SSD/HDD</strong>
-        geschrieben.
-      </p>
-
-      <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">
-        Das thermische Gleichgewicht
-      </h3>
-      <p>
-        Während all diese Daten fließen, produzieren CPU und GPU massive Hitze.
-        Hier schließt sich der Kreis zum Gehäuse: Die Frontlüfter saugen kühle
-        Luft an, der CPU-Kühler und GPU-Lüfter geben die Hitze an diese Luft ab,
-        und die hinteren Lüfter befördern die warme Luft aus dem Gehäuse. Das
-        System bleibt stabil.
-      </p>
-    </div>
+    <footer class="bg-dark text-secondary py-4 mt-5">
+      <div class="container text-center">
+        <small
+          >&copy; 2024 Schulprojekt: IT-Systeme | Erstellt mit Bootstrap</small
+        >
+      </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
