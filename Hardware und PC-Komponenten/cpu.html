@@ -78,20 +78,74 @@
 
 </div>
 
-<h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">Die Rolle der CPU</h3>
-<p>
-    Die CPU ist für die Ausführung von Millionen von Befehlen pro Sekunde verantwortlich. Sie holt Daten
-    aus dem Speicher, dekodiert sie und führt sie anschließend aus. Moderne Prozessoren besitzen mehrere
-    Kerne, die gleichzeitig arbeiten können, wodurch mehrere Aufgaben parallel verarbeitet werden können.
-</p>
-
 <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">Wie funktioniert die CPU?</h3>
 <p>
     Die CPU arbeitet nach einem festen Ablauf, dem sogenannten Fetch-Decode-Execute-Zyklus. Dabei holt sie
     zuerst einen Befehl aus dem Speicher, entschlüsselt ihn und führt ihn anschließend aus. Dieser Vorgang
     wiederholt sich ununterbrochen, solange der Computer eingeschaltet ist.
 </p>
+<div class="container my-5">
+    <div class="cpu-player shadow-lg rounded-4 overflow-hidden bg-dark style=max-width: 100px; width: 100%;">
+        <div class="bg-primary p-3 text-center">
+            <h3 class="m-0 fw-bold text-white">Aufgabe der CPU: Verarbeitungs-Zyklus</h3>
+        </div>
 
+        <div class="row g-0">
+            <div class="col-md-7 p-4 bg-dark-subtle">
+                <div class="step-list">
+                    <div class="step-item active" id="step-1" onclick="showStep(1)">
+                        <span class="step-num">1</span>
+                        <div class="step-content">
+                            <strong>Abrufen (Fetch)</strong>
+                            <p class="small m-0">Lesen des Befehls als Binärcode</p>
+                        </div>
+                        <div class="bin-code">001010</div>
+                    </div>
+
+                    <div class="step-item" id="step-2" onclick="showStep(2)">
+                        <span class="step-num">2</span>
+                        <div class="step-content">
+                            <strong>Dekodieren (Decode)</strong>
+                            <p class="small m-0">Entschlüsseln der Anweisung 💡</p>
+                        </div>
+                    </div>
+
+                    <div class="step-item" id="step-3" onclick="showStep(3)">
+                        <span class="step-num">3</span>
+                        <div class="step-content">
+                            <strong>Operanden abrufen</strong>
+                            <p class="small m-0">Daten aus dem Speicher holen</p>
+                        </div>
+                    </div>
+
+                    <div class="step-item" id="step-4" onclick="showStep(4)">
+                        <span class="step-num">4</span>
+                        <div class="step-content">
+                            <strong>Ausführen (Execute)</strong>
+                            <p class="small m-0">Befehl wird durchgeführt</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 d-flex align-items-center justify-content-center p-4 bg-black bg-opacity-25">
+                <div id="visual-screen" class="text-center">
+                    <div class="monitor-frame">
+                        <div class="screen-content" id="screen-display">
+                            <i class="bi bi-cpu display-1 text-primary"></i>
+                            <p class="mt-3">Bereit für Befehl...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="p-2 bg-dark border-top border-secondary d-flex justify-content-center gap-2">
+            <button class="btn btn-sm btn-outline-light" onclick="prevStep()">Zurück</button>
+            <button class="btn btn-sm btn-primary px-4" id="next-btn" onclick="nextStep()">Nächster Schritt</button>
+        </div>
+    </div>
+</div>
 <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">CPU-Geschwindigkeit</h3>
 <p>
     Die Geschwindigkeit einer CPU wird in Gigahertz gemessen. Je höher die Taktfrequenz, desto mehr Befehle
@@ -116,8 +170,59 @@
 
 <br><br><br>
 
+
 </div>
 
+<script>
+let currentStep = 1;
 
+function showStep(n) {
+    currentStep = n;
+    
+    // Alle Schritte zurücksetzen
+    document.querySelectorAll('.step-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // Aktuellen Schritt markieren
+    document.getElementById(`step-${n}`).classList.add('active');
+    
+    // Bildschirm-Inhalt ändern
+    const display = document.getElementById('screen-display');
+    const nextBtn = document.getElementById('next-btn');
+    
+    switch(n) {
+        case 1:
+            display.innerHTML = '<div class="text-success h3">001010</div><p class="small">Lade Daten...</p>';
+            break;
+        case 2:
+            display.innerHTML = '<div class="text-warning display-4">💡</div><p class="small">Dekodiere Befehl...</p>';
+            break;
+        case 3:
+            display.innerHTML = '<i class="bi bi-database-fill-down display-4 text-info"></i><p class="small">Hole Operanden...</p>';
+            break;
+        case 4:
+            display.innerHTML = '<div class="spinner-border text-primary"></div><p class="mt-2">Führe aus!</p>';
+            nextBtn.innerText = "Neustart";
+            break;
+    }
+    
+    if(n < 4) nextBtn.innerText = "Nächster Schritt";
+}
+
+function nextStep() {
+    if(currentStep >= 4) {
+        showStep(1);
+    } else {
+        showStep(currentStep + 1);
+    }
+}
+
+function prevStep() {
+    if(currentStep > 1) {
+        showStep(currentStep - 1);
+    }
+}
+</script>
 </body>
 </html>
