@@ -261,26 +261,16 @@
                 </div>
 
                 <p class="card-text mt-3">
-                  Zum Schluss müssen alle Komponenten miteinander und mit Strom
-                  verbunden werden.
+                  Die Verkabelung ist die "Königsdisziplin" des PC-Baus. Es geht hierbei nicht nur um Ästhetik, sondern um Systemsicherheit und Airflow:
+                  <ul>
+                    <li><strong>Energieversorgung (Power Delivery):</strong> 
+                    <p>Das System benötigt unterschiedliche Spannungen. Der <strong>24-Pin-ATX-Stecker</strong> versorgt die Logik des Boards, während der <strong>8-Pin-EPS-Stecker</strong> die CPU dediziert mit Strom speist. Moderne Grafikkarten erfordern oft mehrere <strong>6+2-Pin PCIe-Kabel</strong>, um Lastspitzen bei intensivem Gaming oder Rendering abzufangen.</p></li>
+                    <li><strong>Signalübertragung (Front Panel & Data):</strong>
+                    <p>Die filigranen Header für Power-Button, LEDs und Front-USB verbinden die Gehäuse-Bedienelemente mit dem Mainboard-Chipsatz. Hier ist höchste Präzision gefragt, um Fehlfunktionen zu vermeiden.</p></li>
+                    <li><strong>Kabelmanagement als Kühlfaktor:</strong>
+                    <p>Kabel werden idealerweise hinter dem Mainboard-Tray verlegt. Ein "sauberes" Inneres verhindert Luftverwirbelungen und Hotspots, da der Luftstrom ungehindert von den Frontlüftern zu den Kühlkörpern gelangen kann.</p></li>
+                  </ul>
                 </p>
-
-                <ul class="mt-2 mb-0">
-                  <li>
-                    <strong>Strom:</strong> Der 24-Pin-ATX-Stecker versorgt das
-                    Mainboard. CPU und Grafikkarte bekommen separate PCIe- und
-                    EPS-Stromkabel direkt vom Netzteil.
-                  </li>
-                  <li>
-                    <strong>Daten:</strong> SATA-Laufwerke werden per Datenkabel
-                    mit dem Mainboard verbunden.
-                  </li>
-                  <li>
-                    <strong>Gehäuse-I/O:</strong> Die feinen Kabel für Power-,
-                    Reset-Knopf und USB-Anschlüsse werden auf die Header des
-                    Mainboards gesteckt.
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
@@ -300,9 +290,7 @@
                   >Bus-Systeme (PCIe-Lanes)
                 </h5>
                 <p class="text-secondary">
-                  Die wichtigste "Autobahn" ist der
-                  <strong>PCI-Express-Bus</strong>, der eine extrem schnelle
-                  Kommunikation zwischen CPU, GPU und SSD ermöglicht.
+                 Die interne Kommunikation basiert auf dem PCI-Express-Standard. Man kann sich dies als Autobahn mit mehreren Spuren (Lanes) vorstellen. Eine moderne CPU stellt meist 16 bis 24 Lanes direkt zur Verfügung. Wenn eine Grafikkarte (x16) und eine NVMe-SSD (x4) gleichzeitig Daten senden, koordiniert der Prozessor diesen massiven Datenstrom in Millisekunden. Ein Engpass hier (Bottleneck) würde die schnellste Hardware ausbremsen.
                 </p>
               </div>
             </div>
@@ -316,9 +304,10 @@
                   Zusammenspiel (Airflow)
                 </h5>
                 <p class="text-secondary">
-                  Ein guter Luftstrom sorgt dafür, dass kühle Luft angesaugt und
-                  warme Luft effizient abgeführt wird – entscheidend für stabile
-                  Leistung.
+                  Ein PC ist ein thermodynamisches System. Das Ziel ist ein kontrollierter Austausch:
+                  <ul>
+                    
+                  </ul>
                 </p>
               </div>
             </div>
