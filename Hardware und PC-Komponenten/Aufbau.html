@@ -208,14 +208,16 @@
           <!-- STEP 4 -->
           <div class="col-12">
             <div
-              class="card timeline-card h-100 shadow-sm border-0 border-start border-info border-4"
+              class="card timeline-card 
+              h-100 shadow-sm border-0 border-start border-info border-4"
             >
               <div class="card-body">
                 <div
                   class="d-flex justify-content-between align-items-center mb-2"
                 >
                   <h5 class="card-title fw-bold mb-0">
-                    <i class="bi bi-gpu-card text-info me-2"></i>4.
+                    <i 
+                    class="bi bi-gpu-card text-info me-2"></i>4.
                     Erweiterungskarten & Laufwerke
                   </h5>
                   <span class="badge bg-info text-dark phase-badge"
@@ -223,12 +225,12 @@
                   >
                 </div>
                 <p class="card-text mt-3">
-                  Nun wird die <strong>Grafikkarte (GPU)</strong> in den
-                  primären, oberen PCIe-Slot des Mainboards gedrückt und hinten
-                  am Gehäuse verschraubt, damit sie stabil sitzt. Falls
-                  herkömmliche 2,5-Zoll SATA-SSDs oder große 3,5-Zoll
-                  Festplatten verbaut werden, finden diese in entsprechenden
-                  Laufwerkskäfigen Platz.
+                <p>Nachdem das Fundament steht, folgt die Bestückung der spezifischen Schnittstellen:</p>
+                <ul>
+                  <li><strong>Grafikkarte (GPU) & PCIe-Bus:</strong> Die GPU wird in den primären PCIe-x16-Slot eingesetzt. Dieser bietet die direkte Anbindung an die CPU-Lanes für minimale Latenz. Beim Einrasten sorgt der mechanische Verschluss für festen Sitz, während die Verschraubung am Gehäuserahmen das "GPU-Sagging" (Durchbiegen der Karte) minimiert.</li>
+                  <li><strong>Sekundäre Massenspeicher:</strong>Während M.2-SSDs oft direkt auf dem Board sitzen, werden SATA-Laufwerke (SSD/HDD) in speziellen Schlitten oder Käfigen montiert. Dies dient der <strong>Vibrationsentkopplung</strong> (besonders bei mechanischen HDDs) und sorgt für eine geordnete Struktur innerhalb des Gehäuses.</li>
+                  <li><strong>Schnittstellen-Logik:</strong> Hier wird entschieden, welche Komponenten Priorität beim Datendurchsatz haben. Professionelles Bauen bedeutet hier, Slots so zu wählen, dass sich Erweiterungskarten nicht gegenseitig in der Kühlung behindern.</li>
+                </ul>
                 </p>
               </div>
             </div>
