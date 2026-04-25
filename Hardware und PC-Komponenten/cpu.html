@@ -110,58 +110,86 @@
 <br><br><br>
 
 
-</div>
+<div class="cpu-container">
+        <div id="ram" class="component">
+            <span class="label">RAM</span>
+            <small>Befehl: "2+3"</small>
+        </div>
+
+        <div id="cu" class="component">
+            <span class="label">Control Unit</span>
+            <small>Taktgeber & Logik</small>
+        </div>
+
+        <div id="alu" class="component">
+            <span class="label">ALU</span>
+            <small>Mathematik</small>
+        </div>
+
+        <div id="register" class="component">
+            <span class="label">Register</span>
+            <small id="reg-val">0</small>
+        </div>
+
+        <div id="data-packet"></div>
+    </div>
+
+    <div class="status" id="status-text">Bereit zum Start...</div>
+    <button onclick="startCycle()">Nächster Schritt</button>
 
 <script>
-let currentStep = 1;
+    let step = 0;
+    const packet = document.getElementById('data-packet');
+    const statusText = document.getElementById('status-text');
 
-function showStep(n) {
-    currentStep = n;
-    
-    // Alle Schritte zurücksetzen
-    document.querySelectorAll('.step-item').forEach(item => {
-        item.classList.remove('active');
-    });
-    
-    // Aktuellen Schritt markieren
-    document.getElementById(`step-${n}`).classList.add('active');
-    
-    // Bildschirm-Inhalt ändern
-    const display = document.getElementById('screen-display');
-    const nextBtn = document.getElementById('next-btn');
-    
-    switch(n) {
-        case 1:
-            display.innerHTML = '<div class="text-success h3">001010</div><p class="small">Lade Daten...</p>';
-            break;
-        case 2:
-            display.innerHTML = '<div class="text-warning display-4">💡</div><p class="small">Dekodiere Befehl...</p>';
-            break;
-        case 3:
-            display.innerHTML = '<i class="bi bi-database-fill-down display-4 text-info"></i><p class="small">Hole Operanden...</p>';
-            break;
-        case 4:
-            display.innerHTML = '<div class="spinner-border text-primary"></div><p class="mt-2">Führe aus!</p>';
-            nextBtn.innerText = "Neustart";
-            break;
+    function moveElement(el, startTop, startLeft, endTop, endLeft, duration) {
+        el.style.display = 'block';
+        el.animate([
+            { top: startTop + 'px', left: startLeft + 'px' },
+            { top: endTop + 'px', left: endLeft + 'px' }
+        ], { duration: duration, fill: 'forwards' });
     }
-    
-    if(n < 4) nextBtn.innerText = "Nächster Schritt";
-}
 
-function nextStep() {
-    if(currentStep >= 4) {
-        showStep(1);
-    } else {
-        showStep(currentStep + 1);
+    function startCycle() {
+        if (!packet) return; // Sicherheitscheck
+        switch(step) {
+            case 0: // FETCH
+                statusText.innerText = "1. FETCH: Befehl aus dem RAM laden...";
+                moveElement(packet, 100, 100, 70, 430, 1000);
+                document.getElementById('ram').style.background = '#2ecc71';
+                step++;
+                break;
+            case 1: // DECODE
+                statusText.innerText = "2. DECODE: Steuereinheit interpretiert den Befehl.";
+                document.getElementById('cu').style.background = '#e74c3c';
+                setTimeout(() => {
+                    moveElement(packet, 130, 500, 220, 500, 800);
+                }, 500);
+                step++;
+                break;
+            case 2: // EXECUTE
+                statusText.innerText = "3. EXECUTE: ALU führt Berechnung aus (2+3).";
+                document.getElementById('alu').style.background = '#3498db';
+                setTimeout(() => {
+                    moveElement(packet, 260, 430, 180, 320, 800);
+                    document.getElementById('reg-val').innerText = "5";
+                }, 500);
+                step++;
+                break;
+            case 3: // RESET
+                statusText.innerText = "Ergebnis gespeichert. Zyklus beendet.";
+                step = 0;
+                setTimeout(() => {
+                    packet.style.display = 'none';
+                    document.querySelectorAll('.component').forEach(c => c.style.background = '');
+                    document.getElementById('ram').style.background = '#198754';
+                    document.getElementById('cu').style.background = '#dc3545';
+                    document.getElementById('alu').style.background = '#0d6efd';
+                    document.getElementById('reg-val').innerText = "0";
+                }, 1000);
+                break;
+        }
     }
-}
-
-function prevStep() {
-    if(currentStep > 1) {
-        showStep(currentStep - 1);
-    }
-}
 </script>
 </body>
 </html>
