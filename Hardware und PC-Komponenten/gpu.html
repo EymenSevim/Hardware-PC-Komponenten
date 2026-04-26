@@ -98,207 +98,146 @@
         Anwendungen wichtig ist. Im Gegenzug arbeiten CPUs mit wenigen, aber sehr leistungsstarken Kernen. Dadurch sind sie besonders gut in Aufgaben, die Präzision, schnelle Entscheidungen und flexible Abläufe erfordern - also genau das, was eine GPU nicht leisten soll. 
 </p>
 
-<div class="section">
-        <div class="section-label">Interaktiv</div>
-        <div class="anim-section">
-            <div class="anim-header">
-                <div class="anim-title">Aufgabe: 1 Bild rendern (256 Pixel-Blöcke)</div>
-                <div class="anim-task-label" id="taskLabel">Bereit</div>
-            </div>
- 
-            <div class="processor-row">
-                <!-- CPU -->
-                <div class="proc-box">
-                    <div class="proc-name cpu">CPU</div>
-                    <div class="proc-desc">4 Kerne · seriell / sequenziell</div>
-                    <div class="cpu-cores-wrap" id="cpuCores"></div>
-                    <div class="proc-stats">
-                        <div class="proc-stat">Aktiv: <span id="cpuActive">0</span> / 4</div>
-                        <div class="proc-stat">Blöcke fertig: <span id="cpuDone">0</span> / 256</div>
-                    </div>
-                </div>
- 
-                <!-- GPU -->
-                <div class="proc-box">
-                    <div class="proc-name gpu">GPU</div>
-                    <div class="proc-desc">256 Kerne · massiv parallel</div>
-                    <div class="gpu-pixel-grid" id="gpuPixels"></div>
-                    <div class="proc-stats">
-                        <div class="proc-stat">Aktiv: <span id="gpuActive">0</span> / 256</div>
-                        <div class="proc-stat">Fertig: <span id="gpuDone">0</span> / 256</div>
-                    </div>
-                </div>
-            </div>
- 
-            <div class="speed-compare">
-                <div class="speed-box">
-                    <div class="s-label">CPU – Zeit</div>
-                    <div><span class="s-val" id="cpuTime">0.0</span> <span class="s-unit">s</span></div>
-                    <div class="speed-bar-wrap"><div class="speed-bar cpu" id="cpuSpeedBar"></div></div>
-                </div>
-                <div class="speed-box">
-                    <div class="s-label">GPU – Zeit</div>
-                    <div><span class="s-val" id="gpuTime">0.0</span> <span class="s-unit">s</span></div>
-                    <div class="speed-bar-wrap"><div class="speed-bar gpu" id="gpuSpeedBar"></div></div>
-                </div>
-            </div>
- 
-            <div class="anim-status" id="animStatus">
-                <div class="dot"></div>
-                <span id="animStatusText">Drücke Start, um die Simulation zu beginnen</span>
-            </div>
-            <div class="anim-controls">
-                <button class="btn-start" id="startBtn" onclick="startAnimation()">▶ Simulation starten</button>
-            </div>
-        </div>
+<!-- HTML -->
+<div class="vs-grid">
+  <div class="vs-box">
+    <div class="vs-label">CPU</div>
+    <div class="vs-title">4 starke Kerne</div>
+    <div class="vs-sub">Wenige, aber sehr leistungsstarke Kerne</div>
+    <div class="cpu-cores-row">
+      <div class="cpu-core-card" id="cpu-0">
+        <div class="cpu-core-name">Kern 1</div>
+        <div class="cpu-core-bar-wrap"><div class="cpu-core-bar" id="cpu-bar-0"></div></div>
+        <div class="cpu-core-task" id="cpu-task-0">–</div>
+      </div>
+      <div class="cpu-core-card" id="cpu-1">
+        <div class="cpu-core-name">Kern 2</div>
+        <div class="cpu-core-bar-wrap"><div class="cpu-core-bar" id="cpu-bar-1"></div></div>
+        <div class="cpu-core-task" id="cpu-task-1">–</div>
+      </div>
+      <div class="cpu-core-card" id="cpu-2">
+        <div class="cpu-core-name">Kern 3</div>
+        <div class="cpu-core-bar-wrap"><div class="cpu-core-bar" id="cpu-bar-2"></div></div>
+        <div class="cpu-core-task" id="cpu-task-2">–</div>
+      </div>
+      <div class="cpu-core-card" id="cpu-3">
+        <div class="cpu-core-name">Kern 4</div>
+        <div class="cpu-core-bar-wrap"><div class="cpu-core-bar" id="cpu-bar-3"></div></div>
+        <div class="cpu-core-task" id="cpu-task-3">–</div>
+      </div>
     </div>
+    <div class="vs-stat">Aktiv: <span id="cpu-active">0</span> / 4 Kerne</div>
+  </div>
+  <div class="vs-box">
+    <div class="vs-label">GPU</div>
+    <div class="vs-title">256 kleine Kerne</div>
+    <div class="vs-sub">Tausende kleine Kerne parallel</div>
+    <div class="cores-grid" id="gpu-cores"></div>
+    <div class="vs-stat">Aktiv: <span id="gpu-active">0</span> / 256 Kerne</div>
+  </div>
+</div>
+
+<div class="time-compare">
+  <div class="time-box">
+    <div class="t-label">CPU – Zeit</div>
+    <div><span class="t-val" id="cpu-time">–</span> <span class="t-unit">Sek.</span></div>
+    <div class="time-bar-wrap"><div class="time-bar cpu" id="cpu-speed-bar"></div></div>
+  </div>
+  <div class="time-box">
+    <div class="t-label">GPU – Zeit</div>
+    <div><span class="t-val" id="gpu-time">–</span> <span class="t-unit">Sek.</span></div>
+    <div class="time-bar-wrap"><div class="time-bar gpu" id="gpu-speed-bar"></div></div>
+  </div>
+</div>
+
+<div class="btn-wrap">
+  <button id="btn" onclick="startAnim()">Start</button>
+</div>
+
 <script>
-// ========== CPU/GPU ANIMATION ==========
-const TOTAL_BLOCKS = 256;
-const CPU_CORES = 4;
-const TASKS = ['Schatten', 'Licht', 'Textur', 'Normal-Map', 'Pixel-Shader', 'Anti-Aliasing', 'Beleuchtung', 'Reflexion'];
- 
-// Build CPU cores
-const cpuCoresEl = document.getElementById('cpuCores');
-for (let i = 0; i < CPU_CORES; i++) {
-    cpuCoresEl.innerHTML += `
-        <div class="cpu-core-block" id="cpuCore${i}">
-            <div class="core-label">KERN ${i + 1}</div>
-            <div class="cpu-progress"><div class="cpu-progress-bar" id="cpuProg${i}"></div></div>
-            <div class="cpu-task-text" id="cpuTask${i}">–</div>
-        </div>`;
+const TASKS = ['Schatten', 'Textur', 'Licht', 'Normal-Map', 'Shader', 'Anti-Alias', 'Reflexion', 'Beleuchtung'];
+
+const gpuGrid = document.getElementById('gpu-cores');
+for (let i = 0; i < 256; i++) {
+  const c = document.createElement('div');
+  c.className = 'core gpu-core';
+  c.id = 'gpu-' + i;
+  gpuGrid.appendChild(c);
 }
- 
-// Build GPU pixels
-const gpuPixelsEl = document.getElementById('gpuPixels');
-for (let i = 0; i < TOTAL_BLOCKS; i++) {
-    gpuPixelsEl.innerHTML += `<div class="gpu-pixel" id="gp${i}"></div>`;
-}
- 
+
 let running = false;
- 
-function resetAnim() {
-    for (let i = 0; i < CPU_CORES; i++) {
-        document.getElementById('cpuCore' + i).classList.remove('busy');
-        document.getElementById('cpuProg' + i).style.width = '0%';
-        document.getElementById('cpuTask' + i).textContent = '–';
-    }
-    for (let i = 0; i < TOTAL_BLOCKS; i++) {
-        const p = document.getElementById('gp' + i);
-        p.classList.remove('lit', 'dim');
-    }
-    document.getElementById('cpuActive').textContent = '0';
-    document.getElementById('cpuDone').textContent = '0';
-    document.getElementById('gpuActive').textContent = '0';
-    document.getElementById('gpuDone').textContent = '0';
-    document.getElementById('cpuTime').textContent = '0.0';
-    document.getElementById('gpuTime').textContent = '0.0';
-    document.getElementById('cpuSpeedBar').style.width = '0%';
-    document.getElementById('gpuSpeedBar').style.width = '0%';
-    setStatus('idle', 'Drücke Start, um die Simulation zu beginnen');
-    document.getElementById('taskLabel').textContent = 'Bereit';
+
+function reset() {
+  for (let i = 0; i < 4; i++) {
+    document.getElementById('cpu-' + i).classList.remove('active-cpu');
+    document.getElementById('cpu-bar-' + i).style.width = '0%';
+    document.getElementById('cpu-task-' + i).textContent = '–';
+  }
+  document.querySelectorAll('.gpu-core').forEach(c => c.classList.remove('active-gpu'));
+  document.getElementById('cpu-active').textContent = '0';
+  document.getElementById('gpu-active').textContent = '0';
+  document.getElementById('cpu-time').textContent = '–';
+  document.getElementById('gpu-time').textContent = '–';
+  document.getElementById('cpu-speed-bar').style.width = '0%';
+  document.getElementById('gpu-speed-bar').style.width = '0%';
 }
- 
-function setStatus(state, text) {
-    const el = document.getElementById('animStatus');
-    el.className = 'anim-status ' + state;
-    document.getElementById('animStatusText').textContent = text;
+
+async function animateCoreBar(coreIdx, task) {
+  const bar = document.getElementById('cpu-bar-' + coreIdx);
+  const taskEl = document.getElementById('cpu-task-' + coreIdx);
+  taskEl.textContent = task;
+  bar.style.transition = 'none';
+  bar.style.width = '0%';
+  await new Promise(r => setTimeout(r, 20));
+  bar.style.transition = 'width 0.45s linear';
+  bar.style.width = '100%';
+  await new Promise(r => setTimeout(r, 460));
 }
- 
-function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
- 
-async function startAnimation() {
-    if (running) return;
-    running = true;
-    const btn = document.getElementById('startBtn');
-    btn.disabled = true;
-    resetAnim();
- 
-    // ---- CPU Phase ----
-    setStatus('running', 'CPU verarbeitet Pixel-Blöcke nacheinander...');
-    document.getElementById('taskLabel').textContent = 'CPU läuft';
- 
-    let cpuDone = 0;
-    const cpuStartTime = Date.now();
- 
-    // CPU processes blocks one-at-a-time per core, cycling through cores
-    // Simulate 256 blocks processed by 4 cores sequentially
-    // For visual: each "batch" activates all 4 cores with a fake task
-    const blocksPerBatch = 4;
-    const cpuBatches = TOTAL_BLOCKS / blocksPerBatch; // 64 batches
- 
-    for (let b = 0; b < cpuBatches; b++) {
-        // Activate all 4 cores for this batch
-        document.getElementById('cpuActive').textContent = '4';
-        for (let c = 0; c < CPU_CORES; c++) {
-            const coreEl = document.getElementById('cpuCore' + c);
-            coreEl.classList.add('busy');
-            document.getElementById('cpuTask' + c).textContent = TASKS[(b * CPU_CORES + c) % TASKS.length];
-        }
- 
-        // Animate progress bars filling
-        for (let p = 0; p <= 100; p += 20) {
-            for (let c = 0; c < CPU_CORES; c++) {
-                document.getElementById('cpuProg' + c).style.width = p + '%';
-            }
-            await sleep(18);
-        }
- 
-        cpuDone += blocksPerBatch;
-        document.getElementById('cpuDone').textContent = cpuDone;
- 
-        // reset bars
-        for (let c = 0; c < CPU_CORES; c++) {
-            document.getElementById('cpuProg' + c).style.width = '0%';
-        }
+
+async function startAnim() {
+  if (running) return;
+  running = true;
+  document.getElementById('btn').disabled = true;
+  reset();
+
+  // ---- CPU Phase ----
+  const cpuStart = performance.now();
+
+  for (let i = 0; i < 4; i++) {
+    document.getElementById('cpu-' + i).classList.add('active-cpu');
+    document.getElementById('cpu-active').textContent = i + 1;
+    await animateCoreBar(i, TASKS[i]);
+    await new Promise(r => setTimeout(r, 150));
+  }
+  await new Promise(r => setTimeout(r, 400));
+
+  const cpuSek = ((performance.now() - cpuStart) / 1000).toFixed(1);
+  document.getElementById('cpu-time').textContent = cpuSek;
+  document.getElementById('cpu-speed-bar').style.width = '100%';
+
+  await new Promise(r => setTimeout(r, 700));
+
+  // ---- GPU Phase ----
+  const gpuStart = performance.now();
+
+  const batchSize = 32;
+  for (let b = 0; b < 256; b += batchSize) {
+    await new Promise(r => setTimeout(r, 60));
+    for (let i = b; i < Math.min(b + batchSize, 256); i++) {
+      document.getElementById('gpu-' + i).classList.add('active-gpu');
     }
- 
-    const cpuElapsed = ((Date.now() - cpuStartTime) / 1000).toFixed(1);
-    document.getElementById('cpuTime').textContent = cpuElapsed;
-    document.getElementById('cpuSpeedBar').style.width = '100%';
-    setStatus('running', 'CPU fertig. Starte GPU-Phase...');
-    document.getElementById('taskLabel').textContent = 'GPU startet';
- 
-    await sleep(700);
- 
-    // ---- GPU Phase ----
-    setStatus('running', 'GPU aktiviert alle 256 Kerne gleichzeitig...');
- 
-    // Dim all first
-    for (let i = 0; i < TOTAL_BLOCKS; i++) {
-        document.getElementById('gp' + i).classList.add('dim');
-    }
-    document.getElementById('gpuActive').textContent = TOTAL_BLOCKS;
- 
-    const gpuStartTime = Date.now();
- 
-    // Light up in random wave
-    const shuffled = [...Array(TOTAL_BLOCKS).keys()].sort(() => Math.random() - 0.5);
-    const batchSize = 16;
-    let gpuDone = 0;
- 
-    for (let b = 0; b < TOTAL_BLOCKS; b += batchSize) {
-        await sleep(40);
-        for (let i = b; i < Math.min(b + batchSize, TOTAL_BLOCKS); i++) {
-            const pxEl = document.getElementById('gp' + shuffled[i]);
-            pxEl.classList.remove('dim');
-            pxEl.classList.add('lit');
-        }
-        gpuDone = Math.min(b + batchSize, TOTAL_BLOCKS);
-        document.getElementById('gpuDone').textContent = gpuDone;
-    }
- 
-    const gpuElapsed = ((Date.now() - gpuStartTime) / 1000).toFixed(1);
-    document.getElementById('gpuTime').textContent = gpuElapsed;
-    document.getElementById('gpuSpeedBar').style.width = '30%'; // GPU is much faster
- 
-    await sleep(400);
-    setStatus('done', `Ergebnis: GPU war ~${Math.round(cpuElapsed / gpuElapsed)}× schneller als die CPU!`);
-    document.getElementById('taskLabel').textContent = 'Fertig';
- 
-    btn.disabled = false;
-    btn.textContent = '↺ Nochmal';
-    running = false;
+    document.getElementById('gpu-active').textContent = Math.min(b + batchSize, 256);
+  }
+
+  await new Promise(r => setTimeout(r, 200));
+  const gpuSek = ((performance.now() - gpuStart) / 1000).toFixed(1);
+  document.getElementById('gpu-time').textContent = gpuSek;
+  const ratio = parseFloat(gpuSek) / parseFloat(cpuSek);
+  document.getElementById('gpu-speed-bar').style.width = Math.round(ratio * 100) + '%';
+
+  document.getElementById('btn').disabled = false;
+  document.getElementById('btn').textContent = 'Nochmal';
+  running = false;
 }
 </script>
 
