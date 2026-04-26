@@ -66,11 +66,7 @@
 
     <p>
         Eine GPU (Graphics Processing Unit) ist die Grafikeinheit eines Computers. Sie ist dafür verantwortlich,
-        Bilder, Videos und 3D-Grafiken zu berechnen. Während die CPU allgemeine Aufgaben übernimmt, ist die GPU
-        speziell für parallele Berechnungen optimiert – ideal für Spiele, Rendering und Videobearbeitung.
-        Moderne GPUs bestehen aus tausenden kleinen Recheneinheiten, die gleichzeitig arbeiten. Dadurch können
-        sie extrem komplexe Grafiken in Echtzeit darstellen, was besonders für Gaming und professionelle
-        Anwendungen wichtig ist.
+        Bilder, Videos und 3D-Grafiken zu berechnen. 
     </p>
 
 </div>
@@ -84,19 +80,228 @@
 
 <!-- Weitere Abschnitte -->
 
-<h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">Die Rolle der GPU</h3>
-<p>
-    Die GPU übernimmt alle grafikintensiven Aufgaben. Dazu gehören das Rendern von Spielen, das Bearbeiten von
-    Videos, das Anzeigen von 3D-Modellen und sogar KI-Berechnungen. Je leistungsstärker die GPU, desto höher
-    die Bildqualität und die Bildrate.
-</p>
+
 
 <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">Wie funktioniert eine GPU?</h3>
 <p>
     Eine GPU besteht aus vielen kleinen Kernen, die parallel arbeiten. Während eine CPU wenige, aber sehr
     starke Kerne besitzt, hat eine GPU oft mehrere tausend kleinere Kerne. Dadurch kann sie viele Aufgaben
-    gleichzeitig bearbeiten – ideal für Grafikberechnungen.
+    gleichzeitig bearbeiten - ideal für Grafikberechnungen.
 </p>
+
+<h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">Vergleich von GPU und CPU</h3>
+<p>
+    Während die CPU allgemeine Aufgaben übernimmt, ist die GPU
+        speziell für parallele Berechnungen optimiert - ideal für Spiele, Rendering und Videobearbeitung.
+        Moderne GPUs bestehen aus tausenden kleinen Recheneinheiten, die gleichzeitig arbeiten. Dadurch können
+        sie extrem komplexe Grafiken in Echtzeit darstellen, was besonders für Gaming und professionelle
+        Anwendungen wichtig ist. Im Gegenzug arbeiten CPUs mit wenigen, aber sehr leistungsstarken Kernen. Dadurch sind sie besonders gut in Aufgaben, die Präzision, schnelle Entscheidungen und flexible Abläufe erfordern - also genau das, was eine GPU nicht leisten soll. 
+</p>
+
+<div class="section">
+        <div class="section-label">Interaktiv</div>
+        <div class="anim-section">
+            <div class="anim-header">
+                <div class="anim-title">Aufgabe: 1 Bild rendern (256 Pixel-Blöcke)</div>
+                <div class="anim-task-label" id="taskLabel">Bereit</div>
+            </div>
+ 
+            <div class="processor-row">
+                <!-- CPU -->
+                <div class="proc-box">
+                    <div class="proc-name cpu">CPU</div>
+                    <div class="proc-desc">4 Kerne · seriell / sequenziell</div>
+                    <div class="cpu-cores-wrap" id="cpuCores"></div>
+                    <div class="proc-stats">
+                        <div class="proc-stat">Aktiv: <span id="cpuActive">0</span> / 4</div>
+                        <div class="proc-stat">Blöcke fertig: <span id="cpuDone">0</span> / 256</div>
+                    </div>
+                </div>
+ 
+                <!-- GPU -->
+                <div class="proc-box">
+                    <div class="proc-name gpu">GPU</div>
+                    <div class="proc-desc">256 Kerne · massiv parallel</div>
+                    <div class="gpu-pixel-grid" id="gpuPixels"></div>
+                    <div class="proc-stats">
+                        <div class="proc-stat">Aktiv: <span id="gpuActive">0</span> / 256</div>
+                        <div class="proc-stat">Fertig: <span id="gpuDone">0</span> / 256</div>
+                    </div>
+                </div>
+            </div>
+ 
+            <div class="speed-compare">
+                <div class="speed-box">
+                    <div class="s-label">CPU – Zeit</div>
+                    <div><span class="s-val" id="cpuTime">0.0</span> <span class="s-unit">s</span></div>
+                    <div class="speed-bar-wrap"><div class="speed-bar cpu" id="cpuSpeedBar"></div></div>
+                </div>
+                <div class="speed-box">
+                    <div class="s-label">GPU – Zeit</div>
+                    <div><span class="s-val" id="gpuTime">0.0</span> <span class="s-unit">s</span></div>
+                    <div class="speed-bar-wrap"><div class="speed-bar gpu" id="gpuSpeedBar"></div></div>
+                </div>
+            </div>
+ 
+            <div class="anim-status" id="animStatus">
+                <div class="dot"></div>
+                <span id="animStatusText">Drücke Start, um die Simulation zu beginnen</span>
+            </div>
+            <div class="anim-controls">
+                <button class="btn-start" id="startBtn" onclick="startAnimation()">▶ Simulation starten</button>
+            </div>
+        </div>
+    </div>
+<script>
+// ========== CPU/GPU ANIMATION ==========
+const TOTAL_BLOCKS = 256;
+const CPU_CORES = 4;
+const TASKS = ['Schatten', 'Licht', 'Textur', 'Normal-Map', 'Pixel-Shader', 'Anti-Aliasing', 'Beleuchtung', 'Reflexion'];
+ 
+// Build CPU cores
+const cpuCoresEl = document.getElementById('cpuCores');
+for (let i = 0; i < CPU_CORES; i++) {
+    cpuCoresEl.innerHTML += `
+        <div class="cpu-core-block" id="cpuCore${i}">
+            <div class="core-label">KERN ${i + 1}</div>
+            <div class="cpu-progress"><div class="cpu-progress-bar" id="cpuProg${i}"></div></div>
+            <div class="cpu-task-text" id="cpuTask${i}">–</div>
+        </div>`;
+}
+ 
+// Build GPU pixels
+const gpuPixelsEl = document.getElementById('gpuPixels');
+for (let i = 0; i < TOTAL_BLOCKS; i++) {
+    gpuPixelsEl.innerHTML += `<div class="gpu-pixel" id="gp${i}"></div>`;
+}
+ 
+let running = false;
+ 
+function resetAnim() {
+    for (let i = 0; i < CPU_CORES; i++) {
+        document.getElementById('cpuCore' + i).classList.remove('busy');
+        document.getElementById('cpuProg' + i).style.width = '0%';
+        document.getElementById('cpuTask' + i).textContent = '–';
+    }
+    for (let i = 0; i < TOTAL_BLOCKS; i++) {
+        const p = document.getElementById('gp' + i);
+        p.classList.remove('lit', 'dim');
+    }
+    document.getElementById('cpuActive').textContent = '0';
+    document.getElementById('cpuDone').textContent = '0';
+    document.getElementById('gpuActive').textContent = '0';
+    document.getElementById('gpuDone').textContent = '0';
+    document.getElementById('cpuTime').textContent = '0.0';
+    document.getElementById('gpuTime').textContent = '0.0';
+    document.getElementById('cpuSpeedBar').style.width = '0%';
+    document.getElementById('gpuSpeedBar').style.width = '0%';
+    setStatus('idle', 'Drücke Start, um die Simulation zu beginnen');
+    document.getElementById('taskLabel').textContent = 'Bereit';
+}
+ 
+function setStatus(state, text) {
+    const el = document.getElementById('animStatus');
+    el.className = 'anim-status ' + state;
+    document.getElementById('animStatusText').textContent = text;
+}
+ 
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+ 
+async function startAnimation() {
+    if (running) return;
+    running = true;
+    const btn = document.getElementById('startBtn');
+    btn.disabled = true;
+    resetAnim();
+ 
+    // ---- CPU Phase ----
+    setStatus('running', 'CPU verarbeitet Pixel-Blöcke nacheinander...');
+    document.getElementById('taskLabel').textContent = 'CPU läuft';
+ 
+    let cpuDone = 0;
+    const cpuStartTime = Date.now();
+ 
+    // CPU processes blocks one-at-a-time per core, cycling through cores
+    // Simulate 256 blocks processed by 4 cores sequentially
+    // For visual: each "batch" activates all 4 cores with a fake task
+    const blocksPerBatch = 4;
+    const cpuBatches = TOTAL_BLOCKS / blocksPerBatch; // 64 batches
+ 
+    for (let b = 0; b < cpuBatches; b++) {
+        // Activate all 4 cores for this batch
+        document.getElementById('cpuActive').textContent = '4';
+        for (let c = 0; c < CPU_CORES; c++) {
+            const coreEl = document.getElementById('cpuCore' + c);
+            coreEl.classList.add('busy');
+            document.getElementById('cpuTask' + c).textContent = TASKS[(b * CPU_CORES + c) % TASKS.length];
+        }
+ 
+        // Animate progress bars filling
+        for (let p = 0; p <= 100; p += 20) {
+            for (let c = 0; c < CPU_CORES; c++) {
+                document.getElementById('cpuProg' + c).style.width = p + '%';
+            }
+            await sleep(18);
+        }
+ 
+        cpuDone += blocksPerBatch;
+        document.getElementById('cpuDone').textContent = cpuDone;
+ 
+        // reset bars
+        for (let c = 0; c < CPU_CORES; c++) {
+            document.getElementById('cpuProg' + c).style.width = '0%';
+        }
+    }
+ 
+    const cpuElapsed = ((Date.now() - cpuStartTime) / 1000).toFixed(1);
+    document.getElementById('cpuTime').textContent = cpuElapsed;
+    document.getElementById('cpuSpeedBar').style.width = '100%';
+    setStatus('running', 'CPU fertig. Starte GPU-Phase...');
+    document.getElementById('taskLabel').textContent = 'GPU startet';
+ 
+    await sleep(700);
+ 
+    // ---- GPU Phase ----
+    setStatus('running', 'GPU aktiviert alle 256 Kerne gleichzeitig...');
+ 
+    // Dim all first
+    for (let i = 0; i < TOTAL_BLOCKS; i++) {
+        document.getElementById('gp' + i).classList.add('dim');
+    }
+    document.getElementById('gpuActive').textContent = TOTAL_BLOCKS;
+ 
+    const gpuStartTime = Date.now();
+ 
+    // Light up in random wave
+    const shuffled = [...Array(TOTAL_BLOCKS).keys()].sort(() => Math.random() - 0.5);
+    const batchSize = 16;
+    let gpuDone = 0;
+ 
+    for (let b = 0; b < TOTAL_BLOCKS; b += batchSize) {
+        await sleep(40);
+        for (let i = b; i < Math.min(b + batchSize, TOTAL_BLOCKS); i++) {
+            const pxEl = document.getElementById('gp' + shuffled[i]);
+            pxEl.classList.remove('dim');
+            pxEl.classList.add('lit');
+        }
+        gpuDone = Math.min(b + batchSize, TOTAL_BLOCKS);
+        document.getElementById('gpuDone').textContent = gpuDone;
+    }
+ 
+    const gpuElapsed = ((Date.now() - gpuStartTime) / 1000).toFixed(1);
+    document.getElementById('gpuTime').textContent = gpuElapsed;
+    document.getElementById('gpuSpeedBar').style.width = '30%'; // GPU is much faster
+ 
+    await sleep(400);
+    setStatus('done', `Ergebnis: GPU war ~${Math.round(cpuElapsed / gpuElapsed)}× schneller als die CPU!`);
+    document.getElementById('taskLabel').textContent = 'Fertig';
+ 
+    btn.disabled = false;
+    btn.textContent = '↺ Nochmal';
+    running = false;
+}
+</script>
+
 
 <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">GPU-Speicher (VRAM)</h3>
 <p>
@@ -105,12 +310,6 @@
     zwischen 4 GB und 24 GB VRAM.
 </p>
 
-<h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">Warum ist die GPU wichtig?</h3>
-<p>
-    Ohne eine leistungsstarke GPU wären moderne Spiele, 3D-Animationen und Videobearbeitung kaum möglich.
-    Außerdem spielt die GPU eine immer größere Rolle in Bereichen wie künstlicher Intelligenz, Simulationen
-    und wissenschaftlichen Berechnungen.
-</p>
 
 <br><br><br>
 
