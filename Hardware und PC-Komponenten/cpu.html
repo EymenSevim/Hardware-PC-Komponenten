@@ -124,72 +124,60 @@
     }
 
     function startCycle() {
-        if (!packet) return; // Sicherheitscheck
+        if (!packet) return;
         switch(step) {
-    case 0: // FETCH - Kreis erscheint bei RAM
-        btn.innerText = "Nächster Schritt";
-        statusText.innerText = "Schritt 1: Fetch";
-        explanation.style.display = 'block';
-        explanation.innerText = "Der Prozessor liest den nächsten Befehl aus dem RAM. Dazu wird der Program Counter (PC) verwendet, der die Speicheradresse des nächsten Befehls enthält. Der Befehl wird über den Adressbus angefordert und über den Datenbus in das Instruction Register (IR) geladen.";
-        packet.style.display = 'block';
-        packet.style.top = '100px';
-        packet.style.left = '100px';
-        document.getElementById('ram').style.background = '#2ecc71';
-        step++;
-        break;
+            case 0: // FETCH
+                btn.innerText = "Nächster Schritt";
+                statusText.innerText = "Schritt 1: Fetch";
+                explanation.style.display = 'block';
+                explanation.innerText = "Der Prozessor liest den nächsten Befehl aus dem RAM. Dazu wird der Program Counter (PC) verwendet, der die Speicheradresse des nächsten Befehls enthält. Der Befehl wird über den Adressbus angefordert und über den Datenbus in das Instruction Register (IR) geladen.";
+                packet.style.display = 'block';
+                packet.style.top = '100px';
+                packet.style.left = '100px';
+                step++;
+                break;
 
-    case 1: // FETCH → CU - Kreis bewegt sich zur Control Unit
-        statusText.innerText = "Schritt 2: Decode";
-        explanation.innerText = "Die Control Unit dekodiert den geladenen Befehl aus dem Instruction Register. Sie analysiert den Opcode, um festzustellen, welche Operation ausgeführt werden soll, und aktiviert die entsprechenden Steuerleitungen für ALU, Register und Speicher.";
-        document.getElementById('cu').style.background = '#e74c3c';
-        moveElement(packet, 100, 100, 130, 500, 1000);
-        step++;
-        break;
+            case 1: // DECODE
+                statusText.innerText = "Schritt 2: Decode";
+                explanation.innerText = "Die Control Unit dekodiert den geladenen Befehl aus dem Instruction Register. Sie analysiert den Opcode, um festzustellen, welche Operation ausgeführt werden soll, und aktiviert die entsprechenden Steuerleitungen für ALU, Register und Speicher.";
+                moveElement(packet, 100, 100, 130, 500, 1000);
+                step++;
+                break;
 
-    case 2: // EXECUTE
-        statusText.innerText = "Schritt 3: Execute";
-        explanation.innerText = "Die ALU (Arithmetic Logic Unit) führt die eigentliche Operation aus - z. B. eine Addition, Subtraktion oder einen logischen Vergleich. Die Operanden stammen aus den Registern, das Ergebnis wird zwischengespeichert und Statusflags (Zero, Carry, Overflow) werden gesetzt.";
-        document.getElementById('alu').style.background = '#3498db';
-        setTimeout(() => {
-            moveElement(packet, 130, 500, 260, 430, 800);
-        }, 500);
-        step++;
-        break;
+            case 2: // EXECUTE
+                statusText.innerText = "Schritt 3: Execute";
+                explanation.innerText = "Die ALU (Arithmetic Logic Unit) führt die eigentliche Operation aus - z. B. eine Addition, Subtraktion oder einen logischen Vergleich. Die Operanden stammen aus den Registern, das Ergebnis wird zwischengespeichert und Statusflags (Zero, Carry, Overflow) werden gesetzt.";
+                setTimeout(() => {
+                    moveElement(packet, 130, 500, 260, 430, 800);
+                }, 500);
+                step++;
+                break;
 
-    case 3: // WRITEBACK
-        statusText.innerText = "Schritt 4: Writeback";
-        explanation.innerText = "Das Ergebnis der ALU wird zurück in ein Register oder in den RAM geschrieben. Dieser Schritt schließt den Zyklus ab und stellt sicher, dass das Ergebnis für nachfolgende Befehle zur Verfügung steht. Der Program Counter wird anschließend inkrementiert.";
-        setTimeout(() => {
-            moveElement(packet, 260, 430, 180, 320, 800);
-        }, 500);
-        step++;
-        break;
+            case 3: // WRITEBACK
+                statusText.innerText = "Schritt 4: Writeback";
+                explanation.innerText = "Das Ergebnis der ALU wird zurück in ein Register oder in den RAM geschrieben. Dieser Schritt schließt den Zyklus ab und stellt sicher, dass das Ergebnis für nachfolgende Befehle zur Verfügung steht. Der Program Counter wird anschließend inkrementiert.";
+                setTimeout(() => {
+                    moveElement(packet, 260, 430, 180, 320, 800);
+                }, 500);
+                step++;
+                break;
 
-    case 4: // RESET
-    statusText.innerText = "Ergebnis gespeichert. Zyklus beendet.";
-    step = 0;
-    btn.innerText = "Neu Starten";
-    
-    explanation.style.display = 'none';
-    explanation.innerText = "";
-
-    // Animationen entfernen + verstecken
-    packet.getAnimations().forEach(a => a.cancel());
-    packet.style.display = 'none';
-    packet.style.top = '100px';
-    packet.style.left = '100px';
-    
-    setTimeout(() => {
-        explanation.style.display = 'none'; // verstecken
-        explanation.innerText = "";
-        document.querySelectorAll('.component').forEach(c => c.style.background = '');
-        document.getElementById('ram').style.background = '#198754';
-        document.getElementById('cu').style.background = '#dc3545';
-        document.getElementById('alu').style.background = '#0d6efd';
-        document.getElementById('reg-val').innerText = "0";
-    }, 1000);
-    break;
-    }
+            case 4: // RESET
+                statusText.innerText = "Ergebnis gespeichert. Zyklus beendet.";
+                step = 0;
+                btn.innerText = "Neu Starten";
+                explanation.style.display = 'none';
+                explanation.innerText = "";
+                packet.getAnimations().forEach(a => a.cancel());
+                packet.style.display = 'none';
+                packet.style.top = '100px';
+                packet.style.left = '100px';
+                setTimeout(() => {
+                    explanation.style.display = 'none';
+                    explanation.innerText = "";
+                }, 1000);
+                break;
+        }
     }
 </script>
 
