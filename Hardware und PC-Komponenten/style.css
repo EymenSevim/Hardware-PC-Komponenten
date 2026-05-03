@@ -97,273 +97,317 @@
   height: 60px;
   fill: #1a1d20;
 }
-  .footer-content {
-    background-color: #1a1d20;
-    color: white;
-    padding: 40px 0;
-    margin-top: -1px;
-  }
 
-  .footer-nav a {
-    color: #9ca3af;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 0.95rem;
-    transition: color 0.3s;
-  }
+.footer-content {
+  background-color: #1a1d20;
+  color: white;
+  padding: 40px 0;
+  margin-top: -1px;
+}
 
-  .footer-nav a:hover {
-    color: #ffffff;
-  }
+.footer-nav a {
+  color: #9ca3af;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
 
-  .timeline-card {
-    transition: transform 0.2s ease-in-out;
-  }
-  .timeline-card:hover {
-    transform: translateY(-3px);
-  }
-  .phase-badge {
-    font-size: 0.8rem;
-    letter-spacing: 0.5px;
-  }
+.footer-nav a:hover {
+  color: #ffffff;
+}
 
-  .motherboard-image {
-    margin-bottom: 20px;
-  }
+.timeline-card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.timeline-card:hover {
+  transform: translateY(-3px);
+}
+
+.phase-badge {
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+.motherboard-image {
+  margin-bottom: 20px;
+}
 
 .cpu-player {
-    border: 1px solid #444;
-    min-height: 450px;
+  border: 1px solid #444;
+  min-height: 450px;
 }
 
 .step-item {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    margin-bottom: 10px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 10px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
 .step-item:hover {
-    background: rgba(13, 110, 253, 0.1);
+  background: rgba(13, 110, 253, 0.1);
 }
 
 .step-item.active {
-    background: rgba(13, 110, 253, 0.2);
-    border-color: #0d6efd;
-    transform: translateX(10px);
+  background: rgba(13, 110, 253, 0.2);
+  border-color: #0d6efd;
+  transform: translateX(10px);
 }
 
 .step-num {
-    width: 40px;
-    height: 40px;
-    background: #333;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    margin-right: 15px;
-    flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 15px;
+  flex-shrink: 0;
 }
 
 .step-item.active .step-num {
-    background: #0d6efd;
+  background: #0d6efd;
 }
 
 .bin-code {
-    font-family: monospace;
-    background: #111;
-    padding: 2px 8px;
-    border-radius: 4px;
-    color: #00ff00;
-    margin-left: auto;
-    font-size: 0.8rem;
+  font-family: monospace;
+  background: #111;
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: #00ff00;
+  margin-left: auto;
+  font-size: 0.8rem;
 }
 
-/* Monitor-Simulation */
 .monitor-frame {
-    width: 200px;
-    height: 150px;
-    border: 10px solid #333;
-    border-radius: 10px;
-    background: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    box-shadow: 0 0 20px rgba(13, 110, 253, 0.3);
+  width: 200px;
+  height: 150px;
+  border: 10px solid #333;
+  border-radius: 10px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 20px rgba(13, 110, 253, 0.3);
 }
 
 .monitor-frame::after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    width: 60px;
-    height: 10px;
-    background: #333;
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  width: 60px;
+  height: 10px;
+  background: #333;
 }
 
-/* Container für die CPU Animation */
 .cpu-container {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    height: 400px;
-    border: 4px solid #495057;
-    border-radius: 15px;
-    margin: 20px auto;
-    background: #212529; /* Dunkler Hintergrund passend zum Dark-Mode */
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  border: 4px solid #495057;
+  border-radius: 15px;
+  margin: 20px auto;
+  background: #212529;
+  overflow: hidden;
 }
 
-/* Einzelne CPU-Komponenten */
 .component {
-    position: absolute;
-    border: 2px solid #f8f9fa;
-    padding: 10px;
-    text-align: center;
-    border-radius: 8px;
-    transition: background 0.4s ease;
-    color: white;
+  position: absolute;
+  border: 2px solid #f8f9fa;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  transition: background 0.4s ease;
+  color: white;
 }
 
-#ram { top: 50px; left: 20px; width: 100px; height: 280px; background: #198754; }
-#cu { top: 50px; right: 20px; width: 160px; height: 90px; background: #dc3545; }
-#alu { top: 240px; right: 20px; width: 160px; height: 90px; background: #0d6efd; }
+#ram      { top: 50px;  left: 20px;  width: 100px; height: 280px; background: #198754; }
+#cu       { top: 50px;  right: 20px; width: 160px; height: 90px;  background: #dc3545; }
+#alu      { top: 240px; right: 20px; width: 160px; height: 90px;  background: #0d6efd; }
 #register { top: 160px; right: 220px; width: 130px; background: #fd7e14; }
 
 #data-packet {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background: #ffc107;
-    border-radius: 50%;
-    display: none;
-    z-index: 100;
-    box-shadow: 0 0 15px #ffc107;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: #ffc107;
+  border-radius: 50%;
+  display: none;
+  z-index: 100;
+  box-shadow: 0 0 15px #ffc107;
 }
 
 .label {
-    font-weight: bold;
-    display: block;
-    font-size: 1.1rem;
-    margin-bottom: 5px;
+  font-weight: bold;
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
 }
 
 .status {
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 15px 0;
-    color: #0d6efd;
-    height: 30px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 15px 0;
+  color: #0d6efd;
+  height: 30px;
 }
 
-/* Button Zentrierung */
 button {
-    display: block;
-    margin: 0 auto 50px auto;
-    padding: 10px 25px;
+  display: block;
+  margin: 0 auto 50px auto;
+  padding: 10px 25px;
 }
 
 .explanation {
-    display: none;
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 20px;
-    font-size: 15px;
-    color: #555;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-    background: #f8f9fa;
-    border-radius: 8px;
-    padding: 12px 20px;
+  display: none;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: #555;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 12px 20px;
 }
 
-.vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 1rem 0; }
-.vs-box { background: #f5f5f5; border: 1px solid #ddd; border-radius: 12px; padding: 1.25rem; }
-.vs-label { font-size: 13px; font-weight: 600; color: #555; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
-.vs-title { font-size: 18px; font-weight: 600; color: #111; margin-bottom: 4px; }
-.vs-sub { font-size: 13px; color: #888; margin-bottom: 16px; }
-.cores-grid { display: flex; flex-wrap: wrap; gap: 5px; }
-
-/* CPU Kerne */
-.cpu-cores-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
-.cpu-core-card {
-  border-radius: 10px;
-  background: #dbeafe;
-  border: 2px solid #93c5fd;
-  padding: 10px 12px;
-  transition: all 0.3s ease;
+/* PC Komponenten Seite */
+.pc-wrapper {
   position: relative;
-  overflow: hidden;
+  width: 340px;
+  margin: 0 auto;
 }
-.cpu-core-card::before {
+
+.pc-case {
+  width: 340px;
+  height: 420px;
+  background: #2c2f33;
+  border-radius: 12px;
+  border: 3px solid #495057;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.pc-case::before {
   content: '';
   position: absolute;
-  top: 0; left: -100%; width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  transition: none;
+  top: 10px;
+  left: 20px;
+  right: 20px;
+  height: 4px;
+  background: #0d6efd;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #0d6efd;
 }
-.cpu-core-card.active-cpu::before {
-  animation: shimmer 0.8s ease forwards;
-}
-@keyframes shimmer {
-  from { left: -100%; }
-  to { left: 100%; }
-}
-.cpu-core-card.active-cpu {
-  background: #2563eb;
-  border-color: #1d4ed8;
-  box-shadow: 0 4px 12px rgba(37,99,235,0.35);
-}
-.cpu-core-name {
-  font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
-  color: #3b82f6; text-transform: uppercase; margin-bottom: 6px;
-}
-.cpu-core-card.active-cpu .cpu-core-name { color: #93c5fd; }
-.cpu-core-bar-wrap { background: #bfdbfe; border-radius: 3px; height: 5px; overflow: hidden; }
-.cpu-core-card.active-cpu .cpu-core-bar-wrap { background: #1d4ed8; }
-.cpu-core-bar {
-  height: 100%; width: 0%; border-radius: 3px;
-  background: #2563eb;
-  transition: none;
-}
-.cpu-core-card.active-cpu .cpu-core-bar { background: #93c5fd; }
-.cpu-core-task { font-size: 11px; color: #60a5fa; margin-top: 5px; height: 14px; }
-.cpu-core-card.active-cpu .cpu-core-task { color: #bfdbfe; }
 
-/* GPU Kerne */
-.core.gpu-core {
-  width: 14px; height: 14px; border-radius: 2px;
-  background: #ede9fe; border: 1px solid #c4b5fd;
-  transition: background 0.1s, border-color 0.1s;
+.pc-btn {
+  position: absolute;
+  background: #495057;
+  border: 2px solid #6c757d;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  padding: 4px;
+  transition: background 0.2s, transform 0.2s;
 }
-.core.gpu-core.active-gpu { background: #7c3aed; border-color: #6d28d9; }
 
-.vs-stat { font-size: 13px; color: #666; margin-top: 12px; }
-.vs-stat span { font-weight: 600; color: #111; }
+.pc-btn:hover {
+  background: #0d6efd;
+  border-color: #0d6efd;
+  transform: scale(1.05);
+}
 
-/* Zeitvergleich */
-.time-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
-.time-box { background: #f5f5f5; border: 1px solid #ddd; border-radius: 10px; padding: 1rem; }
-.time-box .t-label { font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
-.time-box .t-val { font-size: 28px; font-weight: 700; color: #111; font-family: monospace; }
-.time-box .t-unit { font-size: 13px; color: #888; }
-.time-bar-wrap { background: #e0e0e0; border-radius: 4px; height: 8px; margin-top: 10px; overflow: hidden; }
-.time-bar { height: 100%; border-radius: 4px; width: 0%; transition: width 0.6s ease; }
-.time-bar.cpu { background: #2563eb; }
-.time-bar.gpu { background: #7c3aed; }
+.pc-btn.aktiv {
+  background: #0d6efd;
+  border-color: #0d6efd;
+  box-shadow: 0 0 10px rgba(13,110,253,0.5);
+}
 
-.status-bar { text-align: center; font-size: 14px; color: #555; margin-top: 1rem; padding: 0.6rem 1rem; background: #f0f0f0; border-radius: 8px; min-height: 38px; }
-.btn-wrap { text-align: center; margin-top: 1rem; }
-.btn-wrap button { background: #2563eb; color: #fff; border: none; border-radius: 8px; padding: 0.55rem 2rem; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 0.2s; }
-.btn-wrap button:hover { background: #1d4ed8; }
-.btn-wrap button:disabled { background: #bbb; cursor: not-allowed; }
+#btn-cpu       { top: 30px;  left: 80px;  width: 100px; height: 60px; }
+#btn-gpu       { top: 130px; left: 30px;  width: 140px; height: 50px; }
+#btn-ram       { top: 30px;  left: 200px; width: 80px;  height: 120px; }
+#btn-mainboard { top: 200px; left: 80px;  width: 110px; height: 50px; }
+#btn-ssd       { top: 200px; left: 210px; width: 90px;  height: 50px; }
+#btn-psu       { top: 300px; left: 30px;  width: 130px; height: 70px; }
+#btn-kühler    { top: 300px; left: 180px; width: 110px; height: 70px; }
+
+.info-box {
+  display: none;
+  background: #ffffff;
+  border: 2px solid #0d6efd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  animation: fadeIn 0.3s ease;
+}
+
+.info-box.sichtbar {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.info-box h5 {
+  color: #0d6efd;
+  font-weight: bold;
+}
+
+.timeline-card {
+        transition: transform 0.2s ease-in-out;
+      }
+      .timeline-card:hover {
+        transform: translateY(-3px);
+      }
+      .phase-badge {
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+      }
+       .pc-teil {
+            cursor: pointer;
+        }
+
+        .pc-teil:hover rect, .pc-teil:hover circle {
+            opacity: 0.8;
+        }
+
+        .info-box {
+            display: none;
+            border: 2px solid #0d6efd;
+            border-radius: 10px;
+            padding: 20px;
+            background: white;
+            margin-top: 15px;
+            animation: reinkommen 0.3s ease;
+        }
+
+        @keyframes reinkommen {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        .info-box h5 {
+            color: #0d6efd;
+            font-weight: bold;
+        }
