@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interaktiver PC - Computer</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        .pc-teil {
+            cursor: pointer;
+        }
+
+        .pc-teil:hover rect, .pc-teil:hover circle {
+            opacity: 0.8;
+        }
+
+        .info-box {
+            display: none;
+            border: 2px solid #0d6efd;
+            border-radius: 10px;
+            padding: 20px;
+            background: white;
+            margin-top: 15px;
+            animation: reinkommen 0.3s ease;
+        }
+
+        @keyframes reinkommen {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        .info-box h5 {
+            color: #0d6efd;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+<!-- Navigation -->
+<nav class="py-3 border-bottom bg-dark shadow-sm">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between">
+        <ul class="nav ms-auto">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link text-white">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link text-white dropdown-toggle" href="#" id="komponentenDropdown" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">
+                    Komponenten
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="komponentenDropdown">
+                    <li><a class="dropdown-item" href="cpu.html">CPU</a></li>
+                    <li><a class="dropdown-item" href="gpu.html">Grafikkarte</a></li>
+                    <li><a class="dropdown-item" href="ram.html">RAM</a></li>
+                    <li><a class="dropdown-item" href="mainboard.html">Mainboard</a></li>
+                    <li><a class="dropdown-item" href="ssd.html">SSD / HDD</a></li>
+                    <li><a class="dropdown-item" href="psu.html">Netzteil</a></li>
+                    <li><a class="dropdown-item" href="cooler.html">Kühler</a></li>
+                    <li><a class="dropdown-item" href="case.html">Gehäuse</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="aufbau.html" class="nav-link text-white">Aufbau</a>
+            </li>
+            <li class="nav-item">
+                <a href="datenfluss.html" class="nav-link text-white">Datenfluss</a>
+            </li>
+            <li class="nav-item">
+                <a href="PC.html" class="nav-link text-white active">PC</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Header -->
+<div class="bg-dark text-white py-5 mb-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-4 fw-bold">Interaktiver PC</h1>
+                <p class="lead text-light">
+                    Klicke auf eine Komponente und erfahre mehr darüber!
+                </p>
+            </div>
+            <div class="col-lg-4 text-center d-none d-lg-block">
+                <i class="bi bi-pc-display" style="font-size: 6rem; opacity: 0.8;" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hauptinhalt -->
+<main>
+    <div class="container mb-5">
+        <div class="section-box">
+
+            <div class="row">
+
+                <!-- PC Bild links -->
+                <div class="col-md-6">
+                    <h4 class="fw-bold mb-3">Klicke auf ein Teil:</h4>
+
+                    <svg width="100%" viewBox="0 0 350 500" xmlns="http://www.w3.org/2000/svg">
+
+                        <!-- Gehäuse -->
+                        <g class="pc-teil" onclick="zeigeInfo('gehaeuse')">
+                            <rect x="10" y="10" width="330" height="480" rx="10"
+                                  fill="#2c2f33" stroke="#555" stroke-width="2" />
+                            <circle cx="30" cy="30" r="8" fill="#1db954" />
+                            <rect x="15" y="50" width="25" height="3" fill="#444" />
+                            <rect x="15" y="58" width="25" height="3" fill="#444" />
+                            <rect x="15" y="66" width="25" height="3" fill="#444" />
+                            <rect x="15" y="74" width="25" height="3" fill="#444" />
+                            <rect x="15" y="82" width="25" height="3" fill="#444" />
+                            <text x="175" y="497" text-anchor="middle" font-size="11" fill="#888">Gehäuse</text>
+                        </g>
+
+                        <!-- Mainboard -->
+                        <g class="pc-teil" onclick="zeigeInfo('mainboard')">
+                            <rect x="50" y="30" width="280" height="330" rx="5"
+                                  fill="#1a3a1a" stroke="#2d6a2d" stroke-width="1.5" />
+                            <text x="290" y="355" text-anchor="end" font-size="9" fill="#3a8a3a">Mainboard</text>
+                        </g>
+
+                        <!-- CPU -->
+                        <g class="pc-teil" onclick="zeigeInfo('cpu')">
+                            <rect x="65" y="45" width="110" height="110" rx="4"
+                                  fill="#b8860b" stroke="#8B6914" stroke-width="2" />
+                            <rect x="75" y="55" width="90" height="90" rx="2" fill="#d4a520" />
+                            <text x="120" y="105" text-anchor="middle" font-size="13"
+                                  font-weight="bold" fill="#3a2000">CPU</text>
+                            <text x="120" y="122" text-anchor="middle" font-size="9" fill="#5a3500">Prozessor</text>
+                        </g>
+
+                        <!-- Kühler (gestrichelter Rahmen über CPU) -->
+                        <g class="pc-teil" onclick="zeigeInfo('kuehler')">
+                            <rect x="60" y="40" width="120" height="120" rx="5"
+                                  fill="none" stroke="#888" stroke-width="2" stroke-dasharray="5,3" />
+                            <circle cx="120" cy="100" r="45" fill="none" stroke="#666" stroke-width="1.5" />
+                            <circle cx="120" cy="100" r="12" fill="#555" />
+                            <text x="120" y="175" text-anchor="middle" font-size="9" fill="#999">Kühler</text>
+                        </g>
+
+                        <!-- RAM -->
+                        <g class="pc-teil" onclick="zeigeInfo('ram')">
+                            <rect x="205" y="45" width="22" height="120" rx="2"
+                                  fill="#2222cc" stroke="#4444ff" stroke-width="1.5" />
+                            <rect x="208" y="48" width="16" height="5" rx="1" fill="#4488ff" />
+                            <rect x="233" y="45" width="22" height="120" rx="2"
+                                  fill="#2222cc" stroke="#4444ff" stroke-width="1.5" />
+                            <rect x="236" y="48" width="16" height="5" rx="1" fill="#aa44ff" />
+                            <text x="233" y="180" text-anchor="middle" font-size="9" fill="#6666ff">RAM</text>
+                        </g>
+
+                        <!-- GPU -->
+                        <g class="pc-teil" onclick="zeigeInfo('gpu')">
+                            <rect x="55" y="220" width="270" height="90" rx="5"
+                                  fill="#1a0a2a" stroke="#7733bb" stroke-width="2" />
+                            <circle cx="130" cy="265" r="32" fill="#110520" stroke="#5a2580" stroke-width="1.5" />
+                            <circle cx="130" cy="265" r="10" fill="#2a1040" />
+                            <circle cx="220" cy="265" r="32" fill="#110520" stroke="#5a2580" stroke-width="1.5" />
+                            <circle cx="220" cy="265" r="10" fill="#2a1040" />
+                            <text x="190" y="243" text-anchor="middle" font-size="9" fill="#bb88ff">Grafikkarte (GPU)</text>
+                        </g>
+
+                        <!-- SSD -->
+                        <g class="pc-teil" onclick="zeigeInfo('ssd')">
+                            <rect x="55" y="185" width="120" height="25" rx="3"
+                                  fill="#0a1830" stroke="#1a5a9a" stroke-width="1.5" />
+                            <rect x="60" y="189" width="20" height="14" rx="1" fill="#0a3060" />
+                            <rect x="85" y="189" width="20" height="14" rx="1" fill="#0a3060" />
+                            <rect x="110" y="189" width="20" height="14" rx="1" fill="#0a3060" />
+                            <text x="115" y="200" text-anchor="middle" font-size="8" fill="#4499cc">SSD</text>
+                        </g>
+
+                        <!-- Netzteil -->
+                        <g class="pc-teil" onclick="zeigeInfo('netzteil')">
+                            <rect x="55" y="330" width="150" height="110" rx="5"
+                                  fill="#1e1200" stroke="#7a4a00" stroke-width="1.5" />
+                            <circle cx="130" cy="385" r="38" fill="#0e0800" stroke="#6a3d00" stroke-width="1.5" />
+                            <circle cx="130" cy="385" r="12" fill="#1e1000" />
+                            <text x="130" y="432" text-anchor="middle" font-size="9" fill="#cc8800">Netzteil</text>
+                        </g>
+
+                    </svg>
+                </div>
+
+                <!-- Info rechts -->
+                <div class="col-md-6">
+                    <h4 class="fw-bold mb-3">Informationen:</h4>
+
+                    <div style="background: #f8f9fa; border-radius: 10px; padding: 20px; min-height: 200px;" id="standard-text">
+                        <p class="text-muted">
+                            <i class="bi bi-arrow-left-circle me-2"></i>
+                            Klicke links auf eine Komponente um mehr zu erfahren.
+                        </p>
+                    </div>
+
+                    <!-- CPU -->
+                    <div class="info-box" id="info-cpu">
+                        <h5><i class="bi bi-cpu-fill me-2"></i>CPU – Prozessor</h5>
+                        <p>Die CPU ist das "Gehirn" des Computers. Sie führt alle Berechnungen und Anweisungen aus.</p>
+                        <ul>
+                            <li>Hersteller: Intel und AMD</li>
+                            <li>Taktfrequenz: ca. 3 – 6 GHz</li>
+                            <li>Hat mehrere Kerne (z.B. 6, 8, 12...)</li>
+                        </ul>
+                        <a href="cpu.html" class="btn btn-primary btn-sm">Mehr erfahren</a>
+                    </div>
+
+                    <!-- GPU -->
+                    <div class="info-box" id="info-gpu">
+                        <h5><i class="bi bi-gpu-card me-2"></i>GPU – Grafikkarte</h5>
+                        <p>Die GPU berechnet Grafiken und Bilder. Sie ist besonders wichtig für Gaming und Videobearbeitung.</p>
+                        <ul>
+                            <li>Hersteller: NVIDIA und AMD</li>
+                            <li>Hat einen eigenen Speicher (VRAM)</li>
+                            <li>Hat tausende kleine Kerne</li>
+                        </ul>
+                        <a href="gpu.html" class="btn btn-primary btn-sm">Mehr erfahren</a>
+                    </div>
+
+                    <!-- RAM -->
+                    <div class="info-box" id="info-ram">
+                        <h5><i class="bi bi-memory me-2"></i>RAM – Arbeitsspeicher</h5>
+                        <p>Der RAM speichert Daten die gerade benutzt werden. Mehr RAM bedeutet besseres Multitasking.</p>
+                        <ul>
+                            <li>Üblich: 16 GB oder 32 GB</li>
+                            <li>Sehr schnell aber kein dauerhafter Speicher</li>
+                            <li>Wird auch DDR4 oder DDR5 genannt</li>
+                        </ul>
+                        <a href="ram.html" class="btn btn-primary btn-sm">Mehr erfahren</a>
+                    </div>
+
+                    <!-- Mainboard -->
+                    <div class="info-box" id="info-mainboard">
+                        <h5><i class="bi bi-motherboard-fill me-2"></i>Mainboard</h5>
+                        <p>Das Mainboard verbindet alle Teile des PCs miteinander. Alles wird daran angesteckt.</p>
+                        <ul>
+                            <li>Hat Slots für CPU, RAM, GPU usw.</li>
+                            <li>Bestimmt welche Komponenten kompatibel sind</li>
+                            <li>Hat auch USB- und Audio-Anschlüsse</li>
+                        </ul>
+                        <a href="mainboard.html" class="btn btn-primary btn-sm">Mehr erfahren</a>
+                    </div>
+
+                    <!-- SSD -->
+                    <div class="info-box" id="info-ssd">
+                        <h5><i class="bi bi-device-ssd-fill me-2"></i>SSD – Festplatte</h5>
+                        <p>Die SSD speichert alle Daten dauerhaft, also auch wenn der PC ausgeschaltet ist.</p>
+                        <ul>
+                            <li>Viel schneller als alte HDDs</li>
+                            <li>Kapazität: meistens 500 GB bis 2 TB</li>
+                            <li>Keine beweglichen Teile, deswegen leise</li>
+                        </ul>
+                        <a href="ssd.html" class="btn btn-primary btn-sm">Mehr erfahren</a>
+                    </div>
+
+                    <!-- Netzteil -->
+                    <div class="info-box" id="info-netzteil">
+                        <h5><i class="bi bi-lightning-charge-fill me-2"></i>Netzteil</h5>
+                        <p>Das Netzteil versorgt alle Komponenten mit Strom. Ohne Netzteil läuft nichts.</p>
+                        <ul>
+                            <li>Wandelt Strom aus der Steckdose um</li>
+                            <li>Leistung z.B. 550W oder 750W</li>
+                            <li>Wichtig: genug Leistung für alle Teile</li>
+                        </ul>
+                        <a href="psu.html" class="btn btn-primary btn-sm">Mehr erfahren</a>
+                    </div>
+
+                    <!-- Kühler -->
+                    <div class="info-box" id="info-kuehler">
+                        <h5><i class="bi bi-wind me-2"></i>CPU-Kühler</h5>
+                        <p>Der Kühler kühlt die CPU damit sie nicht zu heiß wird und beschädigt wird.</p>
+                        <ul>
+                            <li>Es gibt Luft- und Wasserkühler</li>
+                            <li>Hat einen oder mehrere Lüfter</li>
+                            <li>Besonders wichtig bei leistungsstarken CPUs</li>
+                        </ul>
+                        <a href="cooler.html" class="btn btn-primary btn-sm">Mehr erfahren</a>
+                    </div>
+
+                    <!-- Gehäuse -->
+                    <div class="info-box" id="info-gehaeuse">
+                        <h5><i class="bi bi-pc-display me-2"></i>Gehäuse</h5>
+                        <p>Das Gehäuse ist die "Hülle" des PCs. Es schützt alle Teile und sorgt für Luftzirkulation.</p>
+                        <ul>
+                            <li>Verschiedene Größen: Mini, Mid-Tower, Full-Tower</li>
+                            <li>Wichtig ist guter Luftstrom (Airflow)</li>
+                            <li>Viele haben ein Glas-Seitenfenster</li>
+                        </ul>
+                        <a href="case.html" class="btn btn-primary btn-sm">Mehr erfahren</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function alleVerstecken() {
+        var boxen = document.querySelectorAll('.info-box');
+        for (var i = 0; i < boxen.length; i++) {
+            boxen[i].style.display = 'none';
+        }
+        document.getElementById('standard-text').style.display = 'none';
+    }
+
+    function zeigeInfo(teil) {
+        alleVerstecken();
+        var box = document.getElementById('info-' + teil);
+        if (box) {
+            box.style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
