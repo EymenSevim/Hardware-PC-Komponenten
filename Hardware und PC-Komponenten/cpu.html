@@ -35,20 +35,20 @@
             </li>
 
             <li class="nav-item">
-                <a href="Aufbau.html" class="nav-link text-white">Aufbau</a>
+                <a href="aufbau.html" class="nav-link text-white">Aufbau</a>
             </li>
               <li class="nav-item">
             <a href="datenfluss.html" class="nav-link text-white">Datenfluss</a>
           </li>
           <li class="nav-item">
-            <a href="PC.html" class="nav-link text-white active">PC</a>
+            <a href="PC.html" class="nav-link text-white">PC</a>
           </li>
           <li class="nav-item">
             <a href="quiz.html" class="nav-link text-white">Quiz</a>
           </li>
         </ul>
     </div>
-</nav> | 
+</nav> 
 
 <div class="bg-dark text-white py-5">
     <div class="container">
@@ -143,14 +143,14 @@
                 step++;
                 break;
 
-            case 1: // DECODE
+            case 1: 
                 statusText.innerText = "Schritt 2: Decode";
                 explanation.innerText = "Die Control Unit dekodiert den geladenen Befehl aus dem Instruction Register. Sie analysiert den Opcode, um festzustellen, welche Operation ausgeführt werden soll, und aktiviert die entsprechenden Steuerleitungen für ALU, Register und Speicher.";
                 moveElement(packet, 100, 100, 130, 500, 1000);
                 step++;
                 break;
 
-            case 2: // EXECUTE
+            case 2: 
                 statusText.innerText = "Schritt 3: Execute";
                 explanation.innerText = "Die ALU (Arithmetic Logic Unit) führt die eigentliche Operation aus - z. B. eine Addition, Subtraktion oder einen logischen Vergleich. Die Operanden stammen aus den Registern, das Ergebnis wird zwischengespeichert und Statusflags (Zero, Carry, Overflow) werden gesetzt.";
                 setTimeout(() => {
@@ -159,7 +159,7 @@
                 step++;
                 break;
 
-            case 3: // WRITEBACK
+            case 3: 
                 statusText.innerText = "Schritt 4: Writeback";
                 explanation.innerText = "Das Ergebnis der ALU wird zurück in ein Register oder in den RAM geschrieben. Dieser Schritt schließt den Zyklus ab und stellt sicher, dass das Ergebnis für nachfolgende Befehle zur Verfügung steht. Der Program Counter wird anschließend inkrementiert.";
                 setTimeout(() => {
@@ -168,7 +168,7 @@
                 step++;
                 break;
 
-            case 4: // RESET
+            case 4: 
                 statusText.innerText = "Ergebnis gespeichert. Zyklus beendet.";
                 step = 0;
                 btn.innerText = "Neu Starten";
@@ -193,9 +193,6 @@
 
     <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">CPU-Kerne</h3>
     <p>Neben der Taktfrequenz haben CPUs auch Kerne, die mit mehreren Verarbeitungseinheiten in einem Chip vergleichbar sind. Jeder Kern kann mehrere Befehle gleichzeitig ausführen, was zu einer effizienteren Verarbeitung von Aufgaben und damit zu einer besseren Leistung im Vergleich zu CPUs mit nur einem Kern führt. Moderne Prozessoren verfügen in der Regel über zwei bis acht Kerne, je nach Verwendungszweck wie Spiele oder produktivitätsbezogene Aufgaben wie Videobearbeitung oder 3D-Rendering.</p>
-
-    <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">Arten von Computer-CPUs</h3>
-    <p>Es gibt zwei Hauptkategorien von CPUs: x86/x64 und ARM. Beide führen zwar die gleichen Grundfunktionen aus, weisen jedoch einige wesentliche Unterschiede auf, die je nach Gerätetyp zu einer Bevorzugung der einen gegenüber der anderen führen können. x86/x64-CPUs sind für Desktop-Computer, Laptops und Server konzipiert. Es handelt sich um leistungsstarke Prozessoren, die problemlos größere Arbeitslasten bewältigen können. Beispiele sind die Core i3-, i5- und i7-Serien von Intel sowie die Ryzen-Serie von AMD.</p>
 
     <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">Was ist CPU-Leistung?</h3>
     <p>Die CPU-Leistung bezieht sich darauf, wie schnell eine CPU die Anweisungen ihrer Programme verarbeiten kann. Diese Leistung wird in der Anzahl der Anweisungen pro Sekunde (IPS) gemessen. Je höher die IPS, desto schneller können die Aufgaben erledigt werden. Die Anzahl der Anweisungen, die eine CPU verarbeiten kann, hängt von ihrer Taktfrequenz und anderen Faktoren wie Architektur und Cache-Größe ab.</p>

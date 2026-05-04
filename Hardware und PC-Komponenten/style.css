@@ -601,3 +601,129 @@ button {
 #btn:hover  { background: #f5f5f5; }
 #btn:active { transform: scale(0.98); }
 #btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.vs-box li {
+  list-style: none;
+}
+
+
+/* RAM Animation */
+.ram-anim-wrap {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  border: 1px solid #e0e0e0;
+}
+
+.ram-power-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+#pdot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #E24B4A;
+  transition: background .3s;
+}
+
+#power-label {
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+
+.ram-power-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.ram-power-bar-label {
+  font-size: 11px;
+  color: #666;
+  min-width: 55px;
+}
+
+.ram-power-track {
+  flex: 1;
+  height: 8px;
+  background: #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#pfill {
+  height: 100%;
+  width: 0%;
+  background: #1D9E75;
+  border-radius: 4px;
+  transition: width .1s linear;
+}
+
+#cgrid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.ram-addr-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #aaa;
+  margin-bottom: 14px;
+}
+
+.ram-status-box {
+  background: #f1f1f1;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  min-height: 48px;
+  border: 1px solid #e0e0e0;
+}
+
+#stxt {
+  font-size: 12px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.ram-btn-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.ram-anim-btn {
+  padding: 6px 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: transparent;
+  color: #1a1a1a;
+  cursor: pointer;
+}
+
+.ram-anim-btn:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: .2; }
+}
+
+#pdot {
+  display: none;
+}
