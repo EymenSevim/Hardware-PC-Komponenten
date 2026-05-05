@@ -11,7 +11,6 @@
 
 <body class="bg-light">
 
-<!-- Navigation -->
 <nav class="py-3 border-bottom bg-dark">
     <div class="container d-flex flex-wrap align-items-center justify-content-between">
         <ul class="nav ms-auto">
@@ -48,7 +47,7 @@
     </div>
 </nav>
 
-<!-- Header -->
+
 <div class="bg-dark text-white py-5">
     <div class="container">
         <h1 class="display-4 fw-bold">GPU - Grafikkarte</h1>
@@ -56,11 +55,11 @@
     </div>
 </div>
 
-<!-- Inhalt -->
+
 <div class="container my-5 section-box">
 <div class="row align-items-start">
 
-<!-- Text links -->
+
 <div class="col-md-6">
 
     <h2 class="fw-bold mb-3 border-bottom pb-2">
@@ -75,7 +74,6 @@ Ursprünglich nur für Spiele und Grafik entwickelt, werden GPUs heute auch für
 
 </div>
 
-<!-- Bild rechts -->
 <div class="col-md-6 p-0">
     <img src="img3.png" class="img-fluid" style="max-width: 85%; margin-top: 30px; margin-left: 20px;" alt="GPU Bild">
 </div>
@@ -91,12 +89,13 @@ Ursprünglich nur für Spiele und Grafik entwickelt, werden GPUs heute auch für
         Anwendungen wichtig ist. Im Gegenzug arbeiten CPUs mit wenigen, aber sehr leistungsstarken Kernen. Dadurch sind sie besonders gut in Aufgaben, die Präzision, schnelle Entscheidungen und flexible Abläufe erfordern - also genau das, was eine GPU nicht leisten soll. 
 </p>
 <br><br>
-<!-- HTML -->
+<div class="demo-wrap">
 <div class="vs-grid">
   <div class="vs-box">
     <div class="vs-label">CPU</div>
     <div class="vs-title">4 starke Kerne</div>
-    <div class="vs-sub">Wenige, aber sehr leistungsstarke Kerne</div>
+    <li class="nav-item">
+    <div class="vs-sub"></div>
     <div class="cpu-cores-row">
       <div class="cpu-core-card" id="cpu-0">
         <div class="cpu-core-name">Kern 1</div>
@@ -124,7 +123,7 @@ Ursprünglich nur für Spiele und Grafik entwickelt, werden GPUs heute auch für
   <div class="vs-box">
     <div class="vs-label">GPU</div>
     <div class="vs-title">256 kleine Kerne</div>
-    <div class="vs-sub">Tausende kleine Kerne parallel</div>
+    <div class="vs-sub"></div>
     <div class="cores-grid" id="gpu-cores"></div>
     <div class="vs-stat">Aktiv: <span id="gpu-active">0</span> / 256 Kerne</div>
   </div>
@@ -145,6 +144,7 @@ Ursprünglich nur für Spiele und Grafik entwickelt, werden GPUs heute auch für
 
 <div class="btn-wrap">
   <button id="btn" onclick="startAnim()">Start</button>
+</div>
 </div>
 
 <script>
