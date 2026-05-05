@@ -51,12 +51,13 @@
             <a href="Aufbau.html" class="nav-link text-white">Aufbau</a>
           </li>
           <li class="nav-item">
-            <a href="datenfluss.html" class="nav-link text-white active fw-bold">Datenfluss</a>
+            <a href="datenfluss.html" class="nav-link text-white active fw-bold"
+              >Datenfluss</a
+            >
           </li>
           <li class="nav-item">
             <a href="quiz.html" class="nav-link text-white">Quiz</a>
-          </li>
-        </ul>
+          </li>        </ul>
       </div>
     </nav>
 
@@ -70,6 +71,9 @@
               Benutzeroberfläche: Wie Hardware und Software interagieren.
             </p>
           </div>
+          <div class="col-lg-4 text-center d-none d-lg-block">
+            <i class="bi bi-cpu" style="font-size: 6rem; opacity: 0.8"></i>
+          </div>
         </div>
       </div>
     </div>
@@ -77,7 +81,10 @@
     <div class="container mb-5">
       <div class="card border-0 shadow-sm mb-5 p-3">
         <div class="card-body">
-          <h3 class="fw-bold">Was bedeutet eigentlich "Datenfluss"?</h3>
+          <h3 class="fw-bold">
+            <i class="bi bi-diagram-3-fill text-primary me-2"></i>Was bedeutet
+            eigentlich "Datenfluss"?
+          </h3>
           <p class="text-secondary mb-0">
             Der Datenfluss beschreibt den Weg, den Daten und Befehle innerhalb
             eines Systems von der Quelle bis zum Ziel zurücklegen. Der
@@ -96,13 +103,18 @@
 
       <div class="row g-4">
         <div class="col-12">
-          <div class="card timeline-card h-100 shadow-sm border-0 border-start border-4">
+          <div
+            class="card timeline-card h-100 shadow-sm border-0 border-start border-danger border-4"
+          >
             <div class="card-body">
-              <div class="d-flex justify-content-between align-items-center mb-2">
+              <div
+                class="d-flex justify-content-between align-items-center mb-2"
+              >
                 <h5 class="card-title fw-bold mb-0">
-                  1. Stromversorgung & Power Good Signal
+                  <i class="bi bi-lightning-charge-fill text-danger me-2"></i>1.
+                  Stromversorgung & Power Good Signal
                 </h5>
-                <span class="badge bg-secondary phase-badge">Hardware-Phase</span>
+                <span class="badge bg-danger phase-badge">Hardware-Phase</span>
               </div>
               <p class="card-text mt-3">
                 Beim Drücken des Power-Buttons beginnt das Netzteil (PSU),
@@ -117,13 +129,20 @@
         </div>
 
         <div class="col-12">
-          <div class="card timeline-card h-100 shadow-sm border-0 border-start border-4">
+          <div
+            class="card timeline-card h-100 shadow-sm border-0 border-start border-warning border-4"
+          >
             <div class="card-body">
-              <div class="d-flex justify-content-between align-items-center mb-2">
+              <div
+                class="d-flex justify-content-between align-items-center mb-2"
+              >
                 <h5 class="card-title fw-bold mb-0">
-                  2. Reset Vector & UEFI-Initialisierung
+                  <i class="bi bi-memory text-warning me-2"></i>2. Reset Vector
+                  & UEFI-Initialisierung
                 </h5>
-                <span class="badge bg-secondary phase-badge">Firmware-Phase</span>
+                <span class="badge bg-warning text-dark phase-badge"
+                  >Firmware-Phase</span
+                >
               </div>
               <p class="card-text mt-3">
                 Da der RAM zu diesem Zeitpunkt komplett leer ist, sucht die CPU
@@ -139,13 +158,20 @@
         </div>
 
         <div class="col-12">
-          <div class="card timeline-card h-100 shadow-sm border-0 border-start border-4">
+          <div
+            class="card timeline-card h-100 shadow-sm border-0 border-start border-warning border-4"
+          >
             <div class="card-body">
-              <div class="d-flex justify-content-between align-items-center mb-2">
+              <div
+                class="d-flex justify-content-between align-items-center mb-2"
+              >
                 <h5 class="card-title fw-bold mb-0">
-                  3. POST (Power-On Self-Test)
+                  <i class="bi bi-check-circle-fill text-warning me-2"></i>3.
+                  POST (Power-On Self-Test)
                 </h5>
-                <span class="badge bg-secondary phase-badge">Firmware-Phase</span>
+                <span class="badge bg-warning text-dark phase-badge"
+                  >Firmware-Phase</span
+                >
               </div>
               <p class="card-text mt-3">
                 Das UEFI führt den POST aus. Dabei werden essenzielle
@@ -159,13 +185,20 @@
         </div>
 
         <div class="col-12">
-          <div class="card timeline-card h-100 shadow-sm border-0 border-start border-4">
+          <div
+            class="card timeline-card h-100 shadow-sm border-0 border-start border-info border-4"
+          >
             <div class="card-body">
-              <div class="d-flex justify-content-between align-items-center mb-2">
+              <div
+                class="d-flex justify-content-between align-items-center mb-2"
+              >
                 <h5 class="card-title fw-bold mb-0">
-                  4. Bootloader & EFI System Partition (ESP)
+                  <i class="bi bi-hdd-fill text-info me-2"></i>4. Bootloader &
+                  EFI System Partition (ESP)
                 </h5>
-                <span class="badge bg-secondary phase-badge">Übergabe-Phase</span>
+                <span class="badge bg-info text-dark phase-badge"
+                  >Übergabe-Phase</span
+                >
               </div>
               <p class="card-text mt-3">
                 Das UEFI durchsucht die angeschlossenen Speichermedien (SSD/HDD)
@@ -180,13 +213,18 @@
         </div>
 
         <div class="col-12">
-          <div class="card timeline-card h-100 shadow-sm border-0 border-start border-4">
+          <div
+            class="card timeline-card h-100 shadow-sm border-0 border-start border-primary border-4"
+          >
             <div class="card-body">
-              <div class="d-flex justify-content-between align-items-center mb-2">
+              <div
+                class="d-flex justify-content-between align-items-center mb-2"
+              >
                 <h5 class="card-title fw-bold mb-0">
-                  5. Start des Betriebssystem-Kernels
+                  <i class="bi bi-windows text-primary me-2"></i>5. Start des
+                  Betriebssystem-Kernels
                 </h5>
-                <span class="badge bg-secondary phase-badge">Software-Phase</span>
+                <span class="badge bg-primary phase-badge">Software-Phase</span>
               </div>
               <p class="card-text mt-3">
                 Der Bootloader lädt nun den <strong>Kernel</strong> (den Kern
@@ -202,13 +240,18 @@
         </div>
 
         <div class="col-12">
-          <div class="card timeline-card h-100 shadow-sm border-0 border-start border-4">
+          <div
+            class="card timeline-card h-100 shadow-sm border-0 border-start border-primary border-4"
+          >
             <div class="card-body">
-              <div class="d-flex justify-content-between align-items-center mb-2">
+              <div
+                class="d-flex justify-content-between align-items-center mb-2"
+              >
                 <h5 class="card-title fw-bold mb-0">
-                  6. Initialisierung der Hardware-Treiber
+                  <i class="bi bi-device-ssd-fill text-primary me-2"></i>6.
+                  Initialisierung der Hardware-Treiber
                 </h5>
-                <span class="badge bg-secondary phase-badge">Software-Phase</span>
+                <span class="badge bg-primary phase-badge">Software-Phase</span>
               </div>
               <p class="card-text mt-3">
                 Das Betriebssystem scannt den PCIe-Bus und die USB-Controller
@@ -223,13 +266,18 @@
         </div>
 
         <div class="col-12">
-          <div class="card timeline-card h-100 shadow-sm border-0 border-start border-4">
+          <div
+            class="card timeline-card h-100 shadow-sm border-0 border-start border-success border-4"
+          >
             <div class="card-body">
-              <div class="d-flex justify-content-between align-items-center mb-2">
+              <div
+                class="d-flex justify-content-between align-items-center mb-2"
+              >
                 <h5 class="card-title fw-bold mb-0">
-                  7. Systemdienste & User Space
+                  <i class="bi bi-person-workspace text-success me-2"></i>7.
+                  Systemdienste & User Space
                 </h5>
-                <span class="badge bg-secondary phase-badge">User-Phase</span>
+                <span class="badge bg-success phase-badge">User-Phase</span>
               </div>
               <p class="card-text mt-3">
                 Der erste Systemprozess (unter Linux z.B. <code>systemd</code>,
