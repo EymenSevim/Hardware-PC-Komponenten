@@ -35,21 +35,17 @@
             </li>
 
             <li class="nav-item">
-                <a href="aufbau.html" class="nav-link text-white">Aufbau</a>
+                <a href="Aufbau.html" class="nav-link text-white">Aufbau</a>
             </li>
-              <li class="nav-item">
+            <li class="nav-item">
             <a href="datenfluss.html" class="nav-link text-white">Datenfluss</a>
-          </li>
-          <li class="nav-item">
-            <a href="PC.html" class="nav-link text-white">PC</a>
-          </li>
-          <li class="nav-item">
+        </li>
+        <li class="nav-item">
             <a href="quiz.html" class="nav-link text-white">Quiz</a>
-          </li>
+        </li>
         </ul>
     </div>
-</nav> 
-
+</nav>                              
 <div class="bg-dark text-white py-5">
     <div class="container">
         <h1 class="display-4 fw-bold">CPU - Der Prozessor</h1>
@@ -118,6 +114,7 @@
 <script>
     let step = 0;
     const packet = document.getElementById('data-packet');
+    const btn = document.getElementById('btn');
     const statusText = document.getElementById('status-text');
     const explanation = document.getElementById('explanation');
 
@@ -130,7 +127,7 @@
     }
 
     function startCycle() {
-        if (!packet) return;
+        if (!packet || !btn || !statusText || !explanation) return;
         switch(step) {
             case 0: // FETCH
                 btn.innerText = "Nächster Schritt";
@@ -200,6 +197,8 @@
     <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">Warum ist die CPU-Leistung wichtig?</h3>
     <p>Die Leistung Ihrer CPU hat einen direkten Einfluss auf die Gesamtleistung des Systems. Ein leistungsstarker Prozessor ermöglicht schnellere Startzeiten für Anwendungen, reibungsloseres Multitasking zwischen Programmen und ein besseres Erlebnis bei Videospielen. Außerdem sorgt ein leistungsstarker Prozessor dafür, dass Ihr Computer mit den neuesten Software-Updates Schritt halten kann. Wenn Ihr Prozessor nicht leistungsfähig genug ist, kann er mit diesen Aktualisierungen nicht Schritt halten und Ihr System wird langsamer oder friert ein.</p>
 
+</div>
+</div>
 
 <br><br><br>
 
