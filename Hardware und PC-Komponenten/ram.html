@@ -168,7 +168,7 @@
           if (level >= 100) {
             clearInterval(powerInterval);
             document.getElementById('btn-write').disabled = false;
-            setStatus('RAM hat Spannung. Die Speicherzellen sind bereit – aber noch leer. Ohne Strom können sie keine Daten halten.');
+            setStatus('RAM hat Spannung. Die Speicherzellen sind bereit - aber noch leer. Ohne Strom können sie keine Daten halten.');
           }
         }, 30);
       }
@@ -180,7 +180,7 @@
         const t = setInterval(() => {
           if (i >= 32) {
             clearInterval(t);
-            setStatus('Alle 32 Zellen beschrieben. Jede Zelle hält 1 Bit – eine 0 oder 1. Zusammen ergeben sie Daten. Drücke jetzt "Strom aus".');
+            setStatus('Alle 32 Zellen beschrieben. Jede Zelle hält 1 Bit - eine 0 oder 1. Zusammen ergeben sie Daten. Drücke jetzt "Strom aus".');
             return;
           }
           cells[i] = BITS[i];
@@ -225,7 +225,7 @@
               cells[i] = null;
               if (cells.every(x => x === null)) {
                 setTimeout(() => {
-                  setStatus('Alle Daten verloren. RAM ist flüchtiger Speicher – ohne Strom hält er nichts. Drücke "Strom ein" um neu zu starten.');
+                  setStatus('Alle Daten verloren. RAM ist flüchtiger Speicher - ohne Strom hält er nichts. Drücke "Strom ein" um neu zu starten.');
                   document.getElementById('btn-power').disabled = false;
                   buildGrid();
                   cells = new Array(32).fill(null);
