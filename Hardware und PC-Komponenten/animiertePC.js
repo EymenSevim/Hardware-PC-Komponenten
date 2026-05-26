@@ -13,3 +13,4 @@ function zeige(komponente) {
     document.getElementById('info-' + komponente).classList.add('sichtbar');
     document.getElementById('btn-' + komponente).classList.add('aktiv');
 }
+

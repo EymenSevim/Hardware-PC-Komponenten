@@ -1,0 +1,512 @@
+{
+  "komponenten": [
+    {
+      "id": 1,
+      "slug": "cpu",
+      "titel": "CPU - Der Prozessor",
+      "untertitel": "Das Gehirn des Computers",
+      "datei": "cpu.html",
+      "bild": "photos/img2.png",
+      "kurzBeschreibung": "Die CPU (Central Processing Unit) ist die zentrale Recheneinheit eines Computers. Sie führt Befehle aus, verarbeitet Daten und steuert alle anderen Komponenten.",
+      "abschnitte": [
+        {
+          "titel": "Was ist eine CPU?",
+          "inhalt": "Die CPU, also die Central Processing Unit, ist die zentrale Recheneinheit eines Computers. Sie führt Befehle aus, verarbeitet Daten und steuert alle anderen Komponenten. Ohne CPU kann kein Computer funktionieren, da sie alle Anweisungen interpretiert und ausführt, die Programme und das Betriebssystem vorgeben."
+        },
+        {
+          "titel": "Wie funktioniert die CPU?",
+          "inhalt": "Die CPU arbeitet nach einem festen Ablauf, dem sogenannten Fetch-Decode-Execute-Zyklus."
+        },
+        {
+          "titel": "CPU-Geschwindigkeit",
+          "inhalt": "Die Geschwindigkeit, mit der eine CPU arbeitet, wird in Hertz (Hz) gemessen. Je höher der Hertz-Wert des Prozessors ist, desto schneller kann er Anweisungen verarbeiten. Das bedeutet, dass Sie mit einem Prozessor mit einer höheren Taktfrequenz Aufgaben schneller erledigen können als mit einem Prozessor mit einer niedrigeren Taktfrequenz. Bei modernen Prozessoren kann die Taktfrequenz zwischen 1 GHz und 5 GHz liegen."
+        },
+        {
+          "titel": "CPU-Kerne",
+          "inhalt": "Neben der Taktfrequenz haben CPUs auch Kerne, die mit mehreren Verarbeitungseinheiten in einem Chip vergleichbar sind. Jeder Kern kann mehrere Befehle gleichzeitig ausführen, was zu einer effizienteren Verarbeitung von Aufgaben und damit zu einer besseren Leistung im Vergleich zu CPUs mit nur einem Kern führt. Moderne Prozessoren verfügen in der Regel über zwei bis acht Kerne, je nach Verwendungszweck wie Spiele oder produktivitätsbezogene Aufgaben wie Videobearbeitung oder 3D-Rendering."
+        },
+        {
+          "titel": "Was ist CPU-Leistung?",
+          "inhalt": "Die CPU-Leistung bezieht sich darauf, wie schnell eine CPU die Anweisungen ihrer Programme verarbeiten kann. Diese Leistung wird in der Anzahl der Anweisungen pro Sekunde (IPS) gemessen. Je höher die IPS, desto schneller können die Aufgaben erledigt werden. Die Anzahl der Anweisungen, die eine CPU verarbeiten kann, hängt von ihrer Taktfrequenz und anderen Faktoren wie Architektur und Cache-Größe ab."
+        },
+        {
+          "titel": "Warum ist die CPU-Leistung wichtig?",
+          "inhalt": "Die Leistung Ihrer CPU hat einen direkten Einfluss auf die Gesamtleistung des Systems. Ein leistungsstarker Prozessor ermöglicht schnellere Startzeiten für Anwendungen, reibungsloseres Multitasking zwischen Programmen und ein besseres Erlebnis bei Videospielen. Außerdem sorgt ein leistungsstarker Prozessor dafür, dass Ihr Computer mit den neuesten Software-Updates Schritt halten kann. Wenn Ihr Prozessor nicht leistungsfähig genug ist, kann er mit diesen Aktualisierungen nicht Schritt halten und Ihr System wird langsamer oder friert ein."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "gpu",
+      "titel": "GPU - Grafikkarte",
+      "untertitel": "Die Kraft hinter Grafik & Gaming",
+      "datei": "gpu.html",
+      "bild": "photos/img3.png",
+      "kurzBeschreibung": "Eine GPU (Graphics Processing Unit) ist der spezialisierte Prozessor, der für die Berechnung von Grafiken zuständig ist – von einfachen Desktopfenstern bis zu komplexen 3D-Welten.",
+      "abschnitte": [
+        {
+          "titel": "Was ist eine GPU?",
+          "inhalt": "Eine GPU (Graphics Processing Unit) ist der spezialisierte Prozessor eines Computers, der für die Berechnung von Grafiken zuständig ist. Anders als die CPU ist die GPU darauf ausgelegt, viele gleichzeitige Rechenoperationen durchzuführen."
+        },
+        {
+          "titel": "Vergleich von GPU und CPU",
+          "inhalt": "Während die CPU allgemeine Aufgaben übernimmt, ist die GPU speziell für parallele Berechnungen optimiert – ideal für Spiele, Rendering und Videobearbeitung. Moderne GPUs bestehen aus tausenden kleinen Recheneinheiten, die gleichzeitig arbeiten."
+        },
+        {
+          "titel": "GPU-Speicher (VRAM)",
+          "inhalt": "VRAM ist der Videospeicher der Grafikkarte. Er speichert Texturen, Modelle und Bilddaten. Je mehr VRAM vorhanden ist, desto besser kann die GPU hochauflösende Grafiken verarbeiten. Moderne Grafikkarten besitzen zwischen 4 GB und 24 GB VRAM."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "ram",
+      "titel": "RAM - Arbeitsspeicher",
+      "untertitel": "Der schnelle Zwischenspeicher des Computers",
+      "datei": "ram.html",
+      "bild": "photos/crucial-ddr3-4gb-dimm-image.png",
+      "kurzBeschreibung": "RAM (Random Access Memory) ist der Arbeitsspeicher eines Computers. Er speichert Daten, auf die das System schnell zugreifen muss, während Programme ausgeführt werden.",
+      "abschnitte": [
+        {
+          "titel": "Was ist RAM?",
+          "inhalt": "RAM (Random Access Memory) ist der Arbeitsspeicher eines Computers. Er speichert Daten, auf die das System schnell zugreifen muss, während Programme ausgeführt werden. Im Gegensatz zu einer SSD oder HDD ist RAM extrem schnell, verliert seine Daten jedoch, sobald der Computer ausgeschaltet wird."
+        },
+        {
+          "titel": "Die Rolle des RAM",
+          "inhalt": "RAM dient als schneller Zwischenspeicher zwischen CPU und Massenspeicher. Wenn Programme gestartet werden, lädt das System wichtige Daten in den Arbeitsspeicher, damit die CPU schnell darauf zugreifen kann."
+        },
+        {
+          "titel": "Wie funktioniert RAM?",
+          "inhalt": "RAM speichert Daten in kleinen Speicherzellen, die extrem schnell gelesen und beschrieben werden können. Diese Zellen benötigen jedoch eine konstante Stromversorgung. Sobald der Computer ausgeschaltet wird, gehen die gespeicherten Informationen verloren."
+        },
+        {
+          "titel": "RAM-Geschwindigkeit",
+          "inhalt": "Die Geschwindigkeit von RAM wird in Megahertz (MHz) oder Gigahertz (GHz) angegeben. Moderne DDR4- und DDR5-Module erreichen Geschwindigkeiten von 2400 MHz bis über 6000 MHz."
+        },
+        {
+          "titel": "RAM-Kapazität",
+          "inhalt": "Für alltägliche Aufgaben reichen 8 GB aus, während moderne Spiele und professionelle Anwendungen oft 16 GB oder mehr benötigen. High-End-Systeme verwenden 32 GB oder sogar 64 GB RAM."
+        },
+        {
+          "titel": "Warum ist RAM wichtig?",
+          "inhalt": "Ohne ausreichend RAM wird ein Computer langsam, Programme reagieren verzögert und Multitasking wird schwierig. Mehr RAM sorgt für flüssigeres Arbeiten und bessere Performance."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "mainboard",
+      "titel": "Mainboard - Das Herz des Computers",
+      "untertitel": "Die zentrale Verbindung aller Komponenten",
+      "datei": "mainboard.html",
+      "bild": "photos/img4.png",
+      "kurzBeschreibung": "Das Mainboard, auch Motherboard genannt, ist die zentrale Platine eines Computers. Es verbindet alle wichtigen Komponenten wie CPU, RAM, Grafikkarte, Speicher und Netzteil miteinander.",
+      "abschnitte": [
+        {
+          "titel": "Was ist ein Mainboard?",
+          "inhalt": "Das Mainboard, auch Motherboard genannt, ist die zentrale Platine eines Computers. Es verbindet alle wichtigen Komponenten wie CPU, RAM, Grafikkarte, Speicher und Netzteil miteinander. Ohne ein Mainboard könnten die einzelnen Teile nicht miteinander kommunizieren."
+        },
+        {
+          "titel": "Die Rolle des Mainboards",
+          "inhalt": "Das Mainboard sorgt dafür, dass alle Komponenten miteinander kommunizieren können. Es verteilt Strom, Daten und Signale zwischen CPU, RAM, GPU und Speicher. Außerdem stellt es wichtige Schnittstellen wie USB, Audio, Netzwerk und PCIe bereit."
+        },
+        {
+          "titel": "Wie funktioniert ein Mainboard?",
+          "inhalt": "Auf dem Mainboard befinden sich Leiterbahnen, Chipsätze und Anschlüsse. Der Chipsatz steuert den Datenfluss zwischen CPU, RAM und anderen Komponenten. Moderne Mainboards besitzen außerdem BIOS/UEFI-Firmware, die den Startvorgang des Computers kontrolliert."
+        },
+        {
+          "titel": "Mainboard-Formfaktoren",
+          "inhalt": "Mainboards gibt es in verschiedenen Größen, z.B. ATX, Micro-ATX oder Mini-ITX. Größere Boards bieten mehr Anschlüsse und Erweiterungsmöglichkeiten, während kleinere kompakter und platzsparender sind."
+        },
+        {
+          "titel": "Warum ist das Mainboard wichtig?",
+          "inhalt": "Ein gutes Mainboard sorgt für Stabilität, Kompatibilität und Erweiterbarkeit. Es bestimmt, welche Hardware du später nachrüsten kannst und wie leistungsfähig dein System insgesamt ist."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "ssd",
+      "titel": "SSD / HDD – Speicherlösungen",
+      "untertitel": "Der Platz für deine Daten",
+      "datei": "ssd.html",
+      "bild": "photos/img.png",
+      "kurzBeschreibung": "SSDs und HDDs sind die wichtigsten Speichergeräte eines Computers. Sie speichern dauerhaft Daten wie Programme, Spiele, Dokumente und das Betriebssystem.",
+      "abschnitte": [
+        {
+          "titel": "Was ist eine SSD / HDD?",
+          "inhalt": "SSDs (Solid State Drives) und HDDs (Hard Disk Drives) sind die wichtigsten Speichergeräte eines Computers. Eine SSD ist deutlich schneller als eine HDD, da sie keine beweglichen Teile besitzt."
+        },
+        {
+          "titel": "Unterschied zwischen SSD und HDD",
+          "inhalt": "Eine HDD speichert Daten auf rotierenden Magnetscheiben. Sie ist günstiger, aber langsamer und anfälliger für Schäden. Eine SSD speichert Daten auf Flash-Speicherchips und ist extrem schnell, leise und robust."
+        },
+        {
+          "titel": "Wie funktioniert eine SSD?",
+          "inhalt": "SSDs nutzen NAND-Flash-Speicher. Daten werden elektronisch gespeichert und können ohne mechanische Bewegung ausgelesen werden. Dadurch sind SSDs nahezu lautlos und bieten extrem kurze Ladezeiten."
+        },
+        {
+          "titel": "Wie funktioniert eine HDD?",
+          "inhalt": "Eine HDD besitzt rotierende Scheiben und einen Schreib-/Lesekopf, ähnlich wie ein Plattenspieler. Sie ist langsamer, bietet aber viel Speicherplatz für wenig Geld."
+        },
+        {
+          "titel": "Warum ist eine SSD wichtig?",
+          "inhalt": "Eine SSD ist eine der effektivsten Upgrades für jeden Computer. Sie sorgt für schnellere Bootzeiten, kürzere Ladezeiten in Spielen, flüssigeres Arbeiten, weniger Geräusche und weniger Wärmeentwicklung."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "slug": "psu",
+      "titel": "Netzteil - PSU",
+      "untertitel": "Die Stromquelle des Computers",
+      "datei": "psu.html",
+      "bild": "photos/img5.png",
+      "kurzBeschreibung": "Das Netzteil (PSU - Power Supply Unit) versorgt alle Komponenten des Computers mit Strom. Es wandelt die 230-Volt-Wechselspannung aus der Steckdose in verschiedene Gleichspannungen um.",
+      "abschnitte": [
+        {
+          "titel": "Was ist ein Netzteil?",
+          "inhalt": "Das Netzteil (PSU - Power Supply Unit) versorgt alle Komponenten des Computers mit Strom. Es wandelt die 230-Volt-Wechselspannung aus der Steckdose in verschiedene Gleichspannungen um, die CPU, GPU, Mainboard, Speicher und Lüfter benötigen."
+        },
+        {
+          "titel": "Die Rolle des Netzteils",
+          "inhalt": "Das Netzteil ist für die Stromversorgung des gesamten Systems verantwortlich. Es verteilt Energie an CPU, GPU, Mainboard, Laufwerke und Lüfter. Ohne ein zuverlässiges Netzteil kann kein Computer stabil laufen."
+        },
+        {
+          "titel": "Wie funktioniert ein Netzteil?",
+          "inhalt": "Ein Netzteil wandelt Wechselstrom (AC) in Gleichstrom (DC) um. Es besitzt mehrere Leitungen mit unterschiedlichen Spannungen wie 12V, 5V und 3.3V. Moderne Netzteile haben Schutzmechanismen wie Überstromschutz, Überspannungsschutz und Kurzschlussschutz."
+        },
+        {
+          "titel": "Wichtige PSU-Eigenschaften",
+          "inhalt": "Beim Kauf eines Netzteils sind folgende Punkte entscheidend: Wattzahl, Effizienz (80-Plus-Zertifizierungen wie Bronze, Gold oder Platinum), Kabelmanagement (modular, semi-modular oder non-modular) und Schutzschaltungen (OVP, OCP, SCP, UVP)."
+        },
+        {
+          "titel": "Warum ist ein gutes Netzteil wichtig?",
+          "inhalt": "Ein hochwertiges Netzteil sorgt für stabile Spannungen, längere Lebensdauer der Komponenten, weniger Abstürze und Fehler, leisen Betrieb und mehr Sicherheit."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "slug": "cooler",
+      "titel": "Kühler - CPU-Kühlung",
+      "untertitel": "Hält deinen Prozessor kühl und leistungsfähig",
+      "datei": "cooler.html",
+      "bild": "photos/img6.png",
+      "kurzBeschreibung": "Ein CPU-Kühler sorgt dafür, dass der Prozessor nicht überhitzt. Ohne ausreichende Kühlung würde der Prozessor drosseln oder sogar beschädigt werden.",
+      "abschnitte": [
+        {
+          "titel": "Was ist ein CPU-Kühler?",
+          "inhalt": "Ein CPU-Kühler sorgt dafür, dass der Prozessor nicht überhitzt. Während der Arbeit erzeugt die CPU Wärme, die abgeführt werden muss, damit das System stabil bleibt und volle Leistung bringen kann."
+        },
+        {
+          "titel": "Wie funktioniert ein CPU-Kühler?",
+          "inhalt": "Ein CPU-Kühler nimmt die Wärme über eine Metallplatte (Heatspreader) auf. Bei Luftkühlern wird die Wärme über Heatpipes zu einem Kühlkörper geleitet, wo ein Lüfter sie wegbläst. Wasserkühler nutzen eine Flüssigkeit, die die Wärme zur Radiatoreinheit transportiert."
+        },
+        {
+          "titel": "Luftkühlung",
+          "inhalt": "Luftkühler sind zuverlässig, langlebig und benötigen wenig Wartung. Sie bestehen aus einem Kühlkörper und einem oder mehreren Lüftern. Große Tower-Kühler bieten eine sehr gute Kühlleistung und sind oft leiser als erwartet."
+        },
+        {
+          "titel": "Wasserkühlung (AIO)",
+          "inhalt": "All-in-One-Wasserkühlungen bieten eine starke Kühlleistung und ein modernes Design. Sie bestehen aus einer Pumpe, Schläuchen und einem Radiator. Besonders bei leistungsstarken CPUs oder Gaming-PCs sind AIOs sehr beliebt."
+        },
+        {
+          "titel": "Warum ist Kühlung wichtig?",
+          "inhalt": "Eine gute Kühlung sorgt für stabile Leistung, längere Lebensdauer der Komponenten und geringere Lautstärke. Überhitzung kann zu Abstürzen, Leistungsverlust oder dauerhaften Schäden führen."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "slug": "case",
+      "titel": "Gehäuse - PC-Case",
+      "untertitel": "Das Zuhause aller Komponenten",
+      "datei": "case.html",
+      "bild": "photos/img7.png",
+      "kurzBeschreibung": "Das PC-Gehäuse ist die äußere Hülle des Computers. Es schützt die Hardware, sorgt für einen guten Luftstrom und bietet Platz für alle Komponenten.",
+      "abschnitte": [
+        {
+          "titel": "Was ist ein PC-Gehäuse?",
+          "inhalt": "Das PC-Gehäuse ist die äußere Hülle des Computers. Es schützt die Hardware, sorgt für einen guten Luftstrom und bietet Platz für alle Komponenten wie Mainboard, Grafikkarte, Netzteil und Speichergeräte."
+        },
+        {
+          "titel": "Wichtige Aufgaben eines Gehäuses",
+          "inhalt": "Schutz: Hält Staub, Schmutz und äußere Einflüsse fern. Kühlung: Unterstützt den Luftstrom durch Lüfterplätze. Platz: Bietet Raum für große Grafikkarten und Kühler. Kabelmanagement: Hilft, Kabel sauber zu verlegen."
+        },
+        {
+          "titel": "Arten von PC-Gehäusen",
+          "inhalt": "Mini-ITX: Sehr klein, ideal für kompakte Builds. Micro-ATX: Mittelgroß, gute Balance aus Größe und Platz. ATX-Tower: Standardgröße, viel Platz für große Hardware. Full-Tower: Sehr groß, perfekt für High-End-Systeme."
+        },
+        {
+          "titel": "Worauf sollte man beim Kauf achten?",
+          "inhalt": "Genug Platz für die Grafikkarte und den CPU-Kühler, gute Lüfterplätze für optimalen Luftstrom, Staubfilter für saubere Hardware, gutes Kabelmanagement und USB-Anschlüsse am Frontpanel."
+        }
+      ]
+    }
+  ],
+  "quizFragen": [
+    {
+      "id": 1,
+      "komponente": "cpu",
+      "frage": "Wie nennt man den Arbeitszyklus der CPU?",
+      "antworten": [
+        "Start-Stop-Zyklus",
+        "Fetch-Decode-Execute-Zyklus",
+        "Input-Output-Zyklus",
+        "Lade-Speicher-Zyklus"
+      ],
+      "richtigeAntwort": 1
+    },
+    {
+      "id": 2,
+      "komponente": "cpu",
+      "frage": "In welcher Einheit wird die CPU-Taktfrequenz gemessen?",
+      "antworten": [
+        "Byte",
+        "Watt",
+        "Hertz (Hz)",
+        "Volt"
+      ],
+      "richtigeAntwort": 2
+    },
+    {
+      "id": 3,
+      "komponente": "gpu",
+      "frage": "Wofür steht die Abkürzung VRAM?",
+      "antworten": [
+        "Virtual Random Access Memory",
+        "Video Random Access Memory",
+        "Very Rapid Access Memory",
+        "Visual RAM"
+      ],
+      "richtigeAntwort": 1
+    },
+    {
+      "id": 4,
+      "komponente": "gpu",
+      "frage": "Wofür ist eine GPU besonders optimiert?",
+      "antworten": [
+        "Serielle Berechnungen",
+        "Betriebssystem-Verwaltung",
+        "Parallele Berechnungen",
+        "Netzwerkkommunikation"
+      ],
+      "richtigeAntwort": 2
+    },
+    {
+      "id": 5,
+      "komponente": "ram",
+      "frage": "Was passiert mit den Daten im RAM, wenn der Computer ausgeschaltet wird?",
+      "antworten": [
+        "Sie werden automatisch auf der SSD gesichert",
+        "Sie bleiben erhalten",
+        "Sie werden komprimiert",
+        "Sie gehen verloren"
+      ],
+      "richtigeAntwort": 3
+    },
+    {
+      "id": 6,
+      "komponente": "ram",
+      "frage": "Welche RAM-Kapazität wird für High-End-Systeme empfohlen?",
+      "antworten": [
+        "4 GB",
+        "8 GB",
+        "16 GB",
+        "32 GB oder mehr"
+      ],
+      "richtigeAntwort": 3
+    },
+    {
+      "id": 7,
+      "komponente": "mainboard",
+      "frage": "Welche Firmware kontrolliert den Startvorgang eines modernen Computers?",
+      "antworten": [
+        "RAM-Controller",
+        "BIOS/UEFI",
+        "Chipsatz-Treiber",
+        "PCIe-Protokoll"
+      ],
+      "richtigeAntwort": 1
+    },
+    {
+      "id": 8,
+      "komponente": "mainboard",
+      "frage": "Welcher Mainboard-Formfaktor ist der kleinste?",
+      "antworten": [
+        "ATX",
+        "Micro-ATX",
+        "Mini-ITX",
+        "Full-ATX"
+      ],
+      "richtigeAntwort": 2
+    },
+    {
+      "id": 9,
+      "komponente": "ssd",
+      "frage": "Welche Technologie nutzt eine SSD zur Datenspeicherung?",
+      "antworten": [
+        "Magnetscheiben",
+        "Optische Laser",
+        "NAND-Flash-Speicher",
+        "Magnetband"
+      ],
+      "richtigeAntwort": 2
+    },
+    {
+      "id": 10,
+      "komponente": "ssd",
+      "frage": "Was ist ein Vorteil einer HDD gegenüber einer SSD?",
+      "antworten": [
+        "Schnellere Zugriffszeiten",
+        "Geringerer Preis pro GB",
+        "Geräuschloser Betrieb",
+        "Keine beweglichen Teile"
+      ],
+      "richtigeAntwort": 1
+    },
+    {
+      "id": 11,
+      "komponente": "psu",
+      "frage": "Wofür steht die Abkürzung PSU?",
+      "antworten": [
+        "Personal Storage Unit",
+        "Processor Speed Unit",
+        "Power Supply Unit",
+        "Primary System Unit"
+      ],
+      "richtigeAntwort": 2
+    },
+    {
+      "id": 12,
+      "komponente": "psu",
+      "frage": "Welche Spannungen liefert ein Netzteil typischerweise?",
+      "antworten": [
+        "1V, 2V und 3V",
+        "12V, 5V und 3.3V",
+        "24V, 12V und 6V",
+        "9V, 6V und 3V"
+      ],
+      "richtigeAntwort": 1
+    },
+    {
+      "id": 13,
+      "komponente": "cooler",
+      "frage": "Was ist ein AIO-Kühler?",
+      "antworten": [
+        "Ein besonders großer Luftkühler",
+        "Ein All-in-One-Wasserkühler",
+        "Ein aktiver Innenraum-Optimierer",
+        "Ein automatischer intelligenter Ölkühler"
+      ],
+      "richtigeAntwort": 1
+    },
+    {
+      "id": 14,
+      "komponente": "cooler",
+      "frage": "Worüber nimmt ein CPU-Kühler die Wärme auf?",
+      "antworten": [
+        "Über den PCIe-Slot",
+        "Über Lüfterblätter direkt",
+        "Über eine Metallplatte (Heatspreader)",
+        "Über den RAM"
+      ],
+      "richtigeAntwort": 2
+    },
+    {
+      "id": 15,
+      "komponente": "case",
+      "frage": "Welches Gehäuse ist für High-End-Systeme am besten geeignet?",
+      "antworten": [
+        "Mini-ITX",
+        "Micro-ATX",
+        "ATX-Tower",
+        "Full-Tower"
+      ],
+      "richtigeAntwort": 3
+    },
+    {
+      "id": 16,
+      "komponente": "case",
+      "frage": "Was hilft ein Staubfilter im Gehäuse zu bewahren?",
+      "antworten": [
+        "Saubere Hardware",
+        "Niedrige Temperaturen",
+        "Schnelle Datenübertragung",
+        "Gutes Kabelmanagement"
+      ],
+      "richtigeAntwort": 0
+    }
+  ],
+  "navigation": [
+    {
+      "id": 1,
+      "label": "Home",
+      "href": "index.html"
+    },
+    {
+      "id": 2,
+      "label": "CPU",
+      "href": "cpu.html",
+      "gruppe": "Komponenten"
+    },
+    {
+      "id": 3,
+      "label": "Grafikkarte",
+      "href": "gpu.html",
+      "gruppe": "Komponenten"
+    },
+    {
+      "id": 4,
+      "label": "RAM",
+      "href": "ram.html",
+      "gruppe": "Komponenten"
+    },
+    {
+      "id": 5,
+      "label": "Mainboard",
+      "href": "mainboard.html",
+      "gruppe": "Komponenten"
+    },
+    {
+      "id": 6,
+      "label": "SSD / HDD",
+      "href": "ssd.html",
+      "gruppe": "Komponenten"
+    },
+    {
+      "id": 7,
+      "label": "Netzteil",
+      "href": "psu.html",
+      "gruppe": "Komponenten"
+    },
+    {
+      "id": 8,
+      "label": "Kühler",
+      "href": "cooler.html",
+      "gruppe": "Komponenten"
+    },
+    {
+      "id": 9,
+      "label": "Gehäuse",
+      "href": "case.html",
+      "gruppe": "Komponenten"
+    },
+    {
+      "id": 10,
+      "label": "Aufbau",
+      "href": "Aufbau.html"
+    },
+    {
+      "id": 11,
+      "label": "Datenfluss",
+      "href": "datenfluss.html"
+    },
+    {
+      "id": 12,
+      "label": "Quiz",
+      "href": "quiz.html"
+    }
+  ]
+}
