@@ -10,157 +10,490 @@
 
 <body class="bg-light">
 
-  <nav class="py-3 border-bottom bg-dark">
-    <div class="container d-flex flex-wrap align-items-center justify-content-between">
-      <ul class="nav ms-auto">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link text-white">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link text-white dropdown-toggle" href="#" id="komponentenDropdown">
-            Komponenten
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="komponente.html?slug=cpu">CPU</a></li>
-            <li><a class="dropdown-item" href="komponente.html?slug=gpu">Grafikkarte</a></li>
-            <li><a class="dropdown-item" href="komponente.html?slug=ram">RAM</a></li>
-            <li><a class="dropdown-item" href="komponente.html?slug=mainboard">Mainboard</a></li>
-            <li><a class="dropdown-item" href="komponente.html?slug=ssd">SSD / HDD</a></li>
-            <li><a class="dropdown-item" href="komponente.html?slug=psu">Netzteil</a></li>
-            <li><a class="dropdown-item" href="komponente.html?slug=cooler">Kühler</a></li>
-            <li><a class="dropdown-item" href="komponente.html?slug=case">Gehäuse</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a href="Aufbau.html" class="nav-link text-white">Aufbau</a>
-        </li>
-        <li class="nav-item">
-          <a href="datenfluss.html" class="nav-link text-white">Datenfluss</a>
-        </li>
-        <li class="nav-item">
-          <a href="quiz.html" class="nav-link text-white">Quiz</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<nav class="py-3 border-bottom bg-dark">
+  <div class="container d-flex flex-wrap align-items-center justify-content-between">
+    <ul class="nav ms-auto">
+      <li class="nav-item"><a href="index.html" class="nav-link text-white">Home</a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link text-white dropdown-toggle" href="#" id="komponentenDropdown">Komponenten</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="komponente.html?slug=cpu">CPU</a></li>
+          <li><a class="dropdown-item" href="komponente.html?slug=gpu">Grafikkarte</a></li>
+          <li><a class="dropdown-item" href="komponente.html?slug=ram">RAM</a></li>
+          <li><a class="dropdown-item" href="komponente.html?slug=mainboard">Mainboard</a></li>
+          <li><a class="dropdown-item" href="komponente.html?slug=ssd">SSD / HDD</a></li>
+          <li><a class="dropdown-item" href="komponente.html?slug=psu">Netzteil</a></li>
+          <li><a class="dropdown-item" href="komponente.html?slug=cooler">Kühler</a></li>
+          <li><a class="dropdown-item" href="komponente.html?slug=case">Gehäuse</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="Aufbau.html" class="nav-link text-white">Aufbau</a></li>
+      <li class="nav-item"><a href="datenfluss.html" class="nav-link text-white">Datenfluss</a></li>
+      <li class="nav-item"><a href="quiz.html" class="nav-link text-white">Quiz</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <!-- Header – wird per JS befüllt -->
-  <div class="bg-dark text-white py-5">
-    <div class="container">
-      <h1 id="seiten-titel" class="display-4 fw-bold">Laden...</h1>
-      <p id="seiten-untertitel" class="lead"></p>
+<!-- Header -->
+<div class="bg-dark text-white py-5">
+  <div class="container">
+    <h1 id="seiten-titel" class="display-4 fw-bold">Laden...</h1>
+    <p id="seiten-untertitel" class="lead"></p>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div id="inhalt-container" class="section-box">
+    <div class="text-center py-5">
+      <div class="spinner-border text-primary" role="status"></div>
+      <p class="mt-3 text-muted">Inhalte werden geladen...</p>
     </div>
   </div>
+</div>
 
-  <!-- Inhalt – wird per JS befüllt -->
-  <div class="container my-5">
-    <div id="inhalt-container" class="section-box">
-      <div class="text-center py-5">
-        <div class="spinner-border text-primary" role="status"></div>
-        <p class="mt-3 text-muted">Inhalte werden geladen...</p>
-      </div>
+
+<!-- CPU Animation -->
+<div id="cpu-animation" style="display:none;">
+  <div class="cpu-container">
+    <div id="ram-box" class="component" style="top:50px;left:20px;width:100px;height:280px;background:#198754;position:absolute;border:2px solid #f8f9fa;padding:10px;text-align:center;border-radius:8px;color:white;">
+      <span class="label">RAM</span>
     </div>
+    <div id="cu-box" class="component" style="top:50px;right:20px;width:160px;height:90px;background:#dc3545;position:absolute;border:2px solid #f8f9fa;padding:10px;text-align:center;border-radius:8px;color:white;">
+      <span class="label">Control Unit</span>
+    </div>
+    <div id="alu-box" class="component" style="top:240px;right:20px;width:160px;height:90px;background:#0d6efd;position:absolute;border:2px solid #f8f9fa;padding:10px;text-align:center;border-radius:8px;color:white;">
+      <span class="label">ALU</span>
+    </div>
+    <div id="register-box" class="component" style="top:160px;right:220px;width:130px;background:#fd7e14;position:absolute;border:2px solid #f8f9fa;padding:10px;text-align:center;border-radius:8px;color:white;">
+      <span class="label">Register</span>
+    </div>
+    <div id="data-packet" style="position:absolute;width:25px;height:25px;background:#ffc107;border-radius:50%;display:none;z-index:100;box-shadow:0 0 15px #ffc107;"></div>
   </div>
+  <div class="status" id="status-text">Bereit zum Start...</div>
+  <div class="explanation" id="explanation"></div>
+  <button id="btn-cpu" onclick="startCycle()">Starten</button>
+</div>
 
-  <footer class="site-footer">
-    <div class="footer-wave">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#1a1d20"
-          d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z">
-        </path>
-      </svg>
-    </div>
-    <div class="footer-content">
-      <div class="container">
-        <div class="col-md-12 text-center">
-          <p class="text-white-50 mb-0">© 2026 Schulprojekt Hardware-Guide</p>
+<!-- GPU Animation -->
+<div id="gpu-animation" style="display:none;">
+  <div class="demo-wrap">
+    <div class="vs-grid">
+      <div class="vs-box">
+        <div class="vs-label">CPU</div>
+        <div class="vs-title">4 starke Kerne</div>
+        <div class="vs-sub"></div>
+        <div class="cpu-cores-row">
+          <div class="cpu-core-card" id="cpu-0"><div class="cpu-core-name">Kern 1</div><div class="cpu-core-bar-wrap"><div class="cpu-core-bar" id="cpu-bar-0"></div></div><div class="cpu-core-task" id="cpu-task-0">-</div></div>
+          <div class="cpu-core-card" id="cpu-1"><div class="cpu-core-name">Kern 2</div><div class="cpu-core-bar-wrap"><div class="cpu-core-bar" id="cpu-bar-1"></div></div><div class="cpu-core-task" id="cpu-task-1">-</div></div>
+          <div class="cpu-core-card" id="cpu-2"><div class="cpu-core-name">Kern 3</div><div class="cpu-core-bar-wrap"><div class="cpu-core-bar" id="cpu-bar-2"></div></div><div class="cpu-core-task" id="cpu-task-2">-</div></div>
+          <div class="cpu-core-card" id="cpu-3"><div class="cpu-core-name">Kern 4</div><div class="cpu-core-bar-wrap"><div class="cpu-core-bar" id="cpu-bar-3"></div></div><div class="cpu-core-task" id="cpu-task-3">-</div></div>
         </div>
+        <div class="vs-stat">Aktiv: <span id="cpu-active">0</span> / 4 Kerne</div>
+      </div>
+      <div class="vs-box">
+        <div class="vs-label">GPU</div>
+        <div class="vs-title">256 kleine Kerne</div>
+        <div class="vs-sub"></div>
+        <div class="cores-grid" id="gpu-cores"></div>
+        <div class="vs-stat">Aktiv: <span id="gpu-active">0</span> / 256 Kerne</div>
       </div>
     </div>
-  </footer>
+    <div class="time-compare">
+      <div class="time-box">
+        <div class="t-label">CPU - Zeit</div>
+        <div><span class="t-val" id="cpu-time">-</span> <span class="t-unit">Sek.</span></div>
+        <div class="time-bar-wrap"><div class="time-bar cpu" id="cpu-speed-bar"></div></div>
+      </div>
+      <div class="time-box">
+        <div class="t-label">GPU - Zeit</div>
+        <div><span class="t-val" id="gpu-time">-</span> <span class="t-unit">Sek.</span></div>
+        <div class="time-bar-wrap"><div class="time-bar gpu" id="gpu-speed-bar"></div></div>
+      </div>
+    </div>
+    <div class="btn-wrap">
+      <button id="btn-gpu" onclick="startAnim()">Start</button>
+    </div>
+  </div>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- RAM Animation -->
+<div id="ram-animation" style="display:none;">
+  <div class="ram-anim-wrap">
+    <div class="ram-power-row">
+      <div id="pdot"></div>
+      <span id="power-label">Strom: aus</span>
+    </div>
+    <div class="ram-power-bar-row">
+      <span class="ram-power-bar-label">Stromversorgung</span>
+      <div class="ram-power-track"><div id="pfill"></div></div>
+    </div>
+    <div id="cgrid" style="display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin-bottom:6px;"></div>
+    <div class="ram-status-box"><div id="stxt">Drücke "Strom ein" um den RAM mit Spannung zu versorgen.</div></div>
+    <div class="ram-btn-row">
+      <button id="btn-power" class="ram-anim-btn" onclick="powerOn()">Strom ein</button>
+      <button id="btn-write" class="ram-anim-btn" onclick="writeData()" disabled>Daten schreiben</button>
+      <button id="btn-off" class="ram-anim-btn" onclick="powerOff()" disabled>Strom aus</button>
+    </div>
+  </div>
+</div>
 
-  <script>
-    const API_URL = 'http://localhost:3000/komponenten';
 
-    // slug aus der URL lesen, z.B. komponente.html?slug=cpu  →  "cpu"
-    const params = new URLSearchParams(window.location.search);
-    const slug = params.get('slug');
+<footer class="site-footer">
+  <div class="footer-wave">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#1a1d20" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+    </svg>
+  </div>
+  <div class="footer-content">
+    <div class="container">
+      <div class="col-md-12 text-center">
+        <p class="text-white-50 mb-0">© 2026 Schulprojekt Hardware-Guide</p>
+      </div>
+    </div>
+  </div>
+</footer>
 
-    async function komponenteLaden() {
-      // Kein slug in der URL?
-      if (!slug) {
-        zeigeFehlermeldung('Keine Komponente angegeben. Bitte wähle eine aus dem Menü.');
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+// ── Konfiguration ──────────────────────────────────────────────────
+const API_URL = 'http://localhost:3001/komponenten';
+const params = new URLSearchParams(window.location.search);
+const slug = params.get('slug');
+
+// Bilder je nach Komponente
+const BILDER = {
+  cpu:       'photos/img2.png',
+  gpu:       'photos/img3.png',
+  ram:       'photos/crucial-ddr3-4gb-dimm-image.png',
+  mainboard: 'photos/img4.png',
+  ssd:       'photos/img.png',
+  psu:       'photos/img5.png',
+  cooler:    'photos/img6.png',
+  case:      'photos/img7.png'
+};
+
+const BILDSTILE = {
+  cpu:       'margin-top: -20px; margin-left: 90px',
+  gpu:       'max-width: 85%; margin-top: 30px; margin-left: 20px;',
+  ram:       'margin-top: 50px; margin-left: 90px',
+  mainboard: 'max-width: 85%; margin-top: 10px; margin-left: 20px;',
+  ssd:       'max-width: 55%; margin-top: 20px; margin-left: 130px;',
+  psu:       'max-width: 85%; margin-top: 10px; margin-left: 20px;',
+  cooler:    'width: 60%; margin-top: -80px;',
+  case:      'max-width: 70%; margin-top: 10px; margin-left: 40px;'
+};
+
+const ANIM_NACH = {
+  cpu: 'Wie funktioniert die CPU?',
+  gpu: 'Vergleich von GPU und CPU',
+  ram: 'Wie funktioniert RAM?'
+};
+
+async function komponenteLaden() {
+  if (!slug) { zeigeFehlermeldung('Keine Komponente angegeben.'); return; }
+  try {
+    const response = await fetch(`${API_URL}?slug=${slug}`);
+    if (!response.ok) throw new Error();
+    const daten = await response.json();
+    if (daten.length === 0) { zeigeFehlermeldung(`"${slug}" nicht gefunden.`); return; }
+    seitenAufbauen(daten[0]);
+  } catch {
+    zeigeFehlermeldung('⚠️ JSON-Server nicht erreichbar. Starte ihn mit: <code>json-server --watch db.json --port 3001</code>');
+  }
+}
+
+function seitenAufbauen(komponente) {
+  // Titel aus db.json
+  document.title = komponente.titel;
+  document.getElementById('seiten-titel').textContent = komponente.titel;
+  document.getElementById('seiten-untertitel').textContent = komponente.untertitel;
+
+  let html = '';
+
+  const ersterAbschnitt = komponente.abschnitte[0];
+  html += `
+    <div class="row align-items-start">
+      <div class="col-md-6">
+        <h2 class="fw-bold mb-3 border-bottom pb-2">${ersterAbschnitt.titel}</h2>
+        <p>${ersterAbschnitt.inhalt}</p>
+      </div>
+      <div class="col-md-6 p-0">
+        <img src="${BILDER[slug]}" class="img-fluid" style="${BILDSTILE[slug]}" alt="${komponente.titel} Bild">
+      </div>
+    </div>
+  `;
+
+  komponente.abschnitte.slice(1).forEach(abschnitt => {
+    html += `<h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">${abschnitt.titel}</h3>`;
+    html += `<p>${abschnitt.inhalt}</p>`;
+
+    if (ANIM_NACH[slug] && abschnitt.titel === ANIM_NACH[slug]) {
+      html += `<div id="anim-platzhalter"></div>`;
+    }
+  });
+
+  document.getElementById('inhalt-container').innerHTML = html;
+
+  // Animation einblenden und an die richtige Stelle verschieben
+  if (slug === 'cpu') {
+    einblenden('cpu-animation', 'anim-platzhalter');
+    initCPU();
+  }
+  if (slug === 'gpu') {
+    einblenden('gpu-animation', 'anim-platzhalter');
+    initGPU();
+  }
+  if (slug === 'ram') {
+    einblenden('ram-animation', 'anim-platzhalter');
+    initRAM();
+  }
+}
+
+// Animation aus dem hidden-Bereich in den Inhalt verschieben
+function einblenden(animId, platzhalterID) {
+  const anim = document.getElementById(animId);
+  const platz = document.getElementById(platzhalterID);
+  if (anim && platz) {
+    anim.style.display = 'block';
+    platz.replaceWith(anim);
+  }
+}
+
+// ── CPU Animation ──────────────────────────────────────────────────
+function initCPU() {
+  let step = 0;
+
+  window.startCycle = function() {
+    const packet = document.getElementById('data-packet');
+    const btn = document.getElementById('btn-cpu');
+    const statusText = document.getElementById('status-text');
+    const explanation = document.getElementById('explanation');
+    if (!packet || !btn || !statusText || !explanation) return;
+
+    switch(step) {
+      case 0:
+        btn.innerText = "Nächster Schritt";
+        statusText.innerText = "Schritt 1: Fetch";
+        explanation.style.display = 'block';
+        explanation.innerText = "Der Prozessor liest den nächsten Befehl aus dem RAM. Dazu wird der Program Counter (PC) verwendet, der die Speicheradresse des nächsten Befehls enthält. Der Befehl wird über den Adressbus angefordert und über den Datenbus in das Instruction Register (IR) geladen.";
+        packet.style.display = 'block';
+        packet.style.top = '100px';
+        packet.style.left = '100px';
+        step++; break;
+      case 1:
+        statusText.innerText = "Schritt 2: Decode";
+        explanation.innerText = "Die Control Unit dekodiert den geladenen Befehl aus dem Instruction Register. Sie analysiert den Opcode, um festzustellen, welche Operation ausgeführt werden soll, und aktiviert die entsprechenden Steuerleitungen für ALU, Register und Speicher.";
+        packet.animate([{top:'100px',left:'100px'},{top:'130px',left:'500px'}],{duration:1000,fill:'forwards'});
+        step++; break;
+      case 2:
+        statusText.innerText = "Schritt 3: Execute";
+        explanation.innerText = "Die ALU (Arithmetic Logic Unit) führt die eigentliche Operation aus - z. B. eine Addition, Subtraktion oder einen logischen Vergleich. Die Operanden stammen aus den Registern, das Ergebnis wird zwischengespeichert und Statusflags (Zero, Carry, Overflow) werden gesetzt.";
+        setTimeout(() => { packet.animate([{top:'130px',left:'500px'},{top:'260px',left:'430px'}],{duration:800,fill:'forwards'}); }, 500);
+        step++; break;
+      case 3:
+        statusText.innerText = "Schritt 4: Writeback";
+        explanation.innerText = "Das Ergebnis der ALU wird zurück in ein Register oder in den RAM geschrieben. Dieser Schritt schließt den Zyklus ab und stellt sicher, dass das Ergebnis für nachfolgende Befehle zur Verfügung steht. Der Program Counter wird anschließend inkrementiert.";
+        setTimeout(() => { packet.animate([{top:'260px',left:'430px'},{top:'180px',left:'320px'}],{duration:800,fill:'forwards'}); }, 500);
+        step++; break;
+      case 4:
+        statusText.innerText = "Ergebnis gespeichert. Zyklus beendet.";
+        step = 0;
+        btn.innerText = "Neu Starten";
+        explanation.style.display = 'none';
+        explanation.innerText = "";
+        packet.getAnimations().forEach(a => a.cancel());
+        packet.style.display = 'none';
+        packet.style.top = '100px';
+        packet.style.left = '100px';
+        break;
+    }
+  };
+}
+
+// ── GPU Animation ──────────────────────────────────────────────────
+function initGPU() {
+  const TASKS = ['Schatten','Textur','Licht','Normal-Map','Shader','Anti-Alias','Reflexion','Beleuchtung'];
+  const gpuGrid = document.getElementById('gpu-cores');
+  for (let i = 0; i < 256; i++) {
+    const c = document.createElement('div');
+    c.className = 'core gpu-core';
+    c.id = 'gpu-' + i;
+    gpuGrid.appendChild(c);
+  }
+
+  let running = false;
+
+  function reset() {
+    for (let i = 0; i < 4; i++) {
+      document.getElementById('cpu-' + i).classList.remove('active-cpu');
+      document.getElementById('cpu-bar-' + i).style.width = '0%';
+      document.getElementById('cpu-task-' + i).textContent = '–';
+    }
+    document.querySelectorAll('.gpu-core').forEach(c => c.classList.remove('active-gpu'));
+    document.getElementById('cpu-active').textContent = '0';
+    document.getElementById('gpu-active').textContent = '0';
+    document.getElementById('cpu-time').textContent = '–';
+    document.getElementById('gpu-time').textContent = '–';
+    document.getElementById('cpu-speed-bar').style.width = '0%';
+    document.getElementById('gpu-speed-bar').style.width = '0%';
+  }
+
+  async function animateCoreBar(coreIdx, task) {
+    const bar = document.getElementById('cpu-bar-' + coreIdx);
+    const taskEl = document.getElementById('cpu-task-' + coreIdx);
+    taskEl.textContent = task;
+    bar.style.transition = 'none';
+    bar.style.width = '0%';
+    await new Promise(r => setTimeout(r, 20));
+    bar.style.transition = 'width 0.45s linear';
+    bar.style.width = '100%';
+    await new Promise(r => setTimeout(r, 460));
+  }
+
+  window.startAnim = async function() {
+    if (running) return;
+    running = true;
+    document.getElementById('btn-gpu').disabled = true;
+    reset();
+
+    const cpuStart = performance.now();
+    for (let i = 0; i < 4; i++) {
+      document.getElementById('cpu-' + i).classList.add('active-cpu');
+      document.getElementById('cpu-active').textContent = i + 1;
+      await animateCoreBar(i, TASKS[i]);
+      await new Promise(r => setTimeout(r, 150));
+    }
+    await new Promise(r => setTimeout(r, 400));
+    const cpuSek = ((performance.now() - cpuStart) / 1000).toFixed(1);
+    document.getElementById('cpu-time').textContent = cpuSek;
+    document.getElementById('cpu-speed-bar').style.width = '100%';
+    await new Promise(r => setTimeout(r, 700));
+
+    const gpuStart = performance.now();
+    for (let b = 0; b < 256; b += 32) {
+      await new Promise(r => setTimeout(r, 60));
+      for (let i = b; i < Math.min(b + 32, 256); i++) {
+        document.getElementById('gpu-' + i).classList.add('active-gpu');
+      }
+      document.getElementById('gpu-active').textContent = Math.min(b + 32, 256);
+    }
+    await new Promise(r => setTimeout(r, 200));
+    const gpuSek = ((performance.now() - gpuStart) / 1000).toFixed(1);
+    document.getElementById('gpu-time').textContent = gpuSek;
+    const ratio = parseFloat(gpuSek) / parseFloat(cpuSek);
+    document.getElementById('gpu-speed-bar').style.width = Math.round(ratio * 100) + '%';
+    document.getElementById('btn-gpu').disabled = false;
+    document.getElementById('btn-gpu').textContent = 'Nochmal';
+    running = false;
+  };
+}
+
+// ── RAM Animation ──────────────────────────────────────────────────
+function initRAM() {
+  const BITS = ['1','0','1','1','0','0','1','0','1','1','0','1','1','0','0','1','1','0','1','0','1','1','0','0','1','1','0','1','0','0','1','1'];
+  let cells = new Array(32).fill(null);
+  let powerInterval = null;
+
+  function buildGrid() {
+    const g = document.getElementById('cgrid');
+    g.innerHTML = '';
+    for (let i = 0; i < 32; i++) {
+      const d = document.createElement('div');
+      d.id = 'c' + i;
+      d.style.cssText = 'height:44px;border-radius:6px;border:1.5px dashed #ccc;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:all .3s;background:#f1f1f1';
+      d.innerHTML = '<span id="b'+i+'" style="font-size:10px;font-weight:600;color:#bbb;font-family:monospace"> </span>'
+        + '<div id="ch'+i+'" style="width:0px;height:3px;background:#378ADD;border-radius:2px;transition:width .3s"></div>';
+      g.appendChild(d);
+    }
+  }
+
+  function setStatus(t) { document.getElementById('stxt').textContent = t; }
+
+  window.powerOn = function() {
+    document.getElementById('btn-power').disabled = true;
+    document.getElementById('btn-off').disabled = false;
+    let level = 0;
+    clearInterval(powerInterval);
+    powerInterval = setInterval(() => {
+      level = Math.min(100, level + 4);
+      document.getElementById('pfill').style.width = level + '%';
+      if (level >= 100) {
+        clearInterval(powerInterval);
+        document.getElementById('btn-write').disabled = false;
+        setStatus('RAM hat Spannung. Die Speicherzellen sind bereit - aber noch leer. Ohne Strom können sie keine Daten halten.');
+      }
+    }, 30);
+  };
+
+  window.writeData = function() {
+    document.getElementById('btn-write').disabled = true;
+    setStatus('Daten werden in die Speicherzellen geschrieben...');
+    let i = 0;
+    const t = setInterval(() => {
+      if (i >= 32) {
+        clearInterval(t);
+        setStatus('Alle 32 Zellen beschrieben. Jede Zelle hält 1 Bit - eine 0 oder 1. Drücke jetzt "Strom aus".');
         return;
       }
+      cells[i] = BITS[i];
+      const c = document.getElementById('c' + i);
+      c.style.border = '1.5px solid #378ADD';
+      c.style.background = '#E6F1FB';
+      document.getElementById('b' + i).style.color = '#0C447C';
+      document.getElementById('b' + i).textContent = BITS[i];
+      document.getElementById('ch' + i).style.width = '20px';
+      i++;
+    }, 60);
+  };
 
-      try {
-        const response = await fetch(`${API_URL}?slug=${slug}`);
-
-        if (!response.ok) throw new Error('Server nicht erreichbar');
-
-        const daten = await response.json();
-
-        if (daten.length === 0) {
-          zeigeFehlermeldung(`Komponente "${slug}" wurde nicht gefunden.`);
-          return;
-        }
-
-        seitenAufbauen(daten[0]);
-
-      } catch (fehler) {
-        zeigeFehlermeldung(`
-          <strong>⚠️ JSON-Server nicht erreichbar</strong><br>
-          Bitte starte den Server im Terminal:<br>
-          <code>json-server --watch db.json</code><br>
-          <span class="text-muted">Dann lade diese Seite neu.</span>
-        `);
-      }
+  window.powerOff = function() {
+    document.getElementById('btn-off').disabled = true;
+    document.getElementById('btn-write').disabled = true;
+    setStatus('Strom unterbrochen! Die Zellen verlieren ihre Ladung...');
+    let level = 100;
+    clearInterval(powerInterval);
+    powerInterval = setInterval(() => {
+      level = Math.max(0, level - 5);
+      document.getElementById('pfill').style.width = level + '%';
+      if (level <= 0) clearInterval(powerInterval);
+    }, 40);
+    for (let i = 0; i < 32; i++) {
+      setTimeout(() => {
+        const c = document.getElementById('c' + i);
+        c.style.animation = 'flicker .15s ease infinite';
+        setTimeout(() => {
+          c.style.animation = '';
+          c.style.border = '1.5px dashed #ccc';
+          c.style.background = '#f1f1f1';
+          document.getElementById('b' + i).textContent = '?';
+          document.getElementById('b' + i).style.color = '#ccc';
+          document.getElementById('ch' + i).style.width = '0px';
+          cells[i] = null;
+          if (cells.every(x => x === null)) {
+            setTimeout(() => {
+              setStatus('Alle Daten verloren. RAM ist flüchtiger Speicher - ohne Strom hält er nichts. Drücke "Strom ein" um neu zu starten.');
+              document.getElementById('btn-power').disabled = false;
+              buildGrid();
+              cells = new Array(32).fill(null);
+            }, 400);
+          }
+        }, 200);
+      }, Math.random() * 600);
     }
+  };
 
-    function seitenAufbauen(komponente) {
-      // Seitentitel & Browser-Tab
-      document.title = komponente.titel;
-      document.getElementById('seiten-titel').textContent = komponente.titel;
-      document.getElementById('seiten-untertitel').textContent = komponente.untertitel;
+  buildGrid();
+}
 
-      // Abschnitte generieren
-      const abschnitteHTML = komponente.abschnitte.map((abschnitt, index) => {
-        // Erster Abschnitt bekommt das Bild daneben (falls vorhanden)
-        if (index === 0 && komponente.bild) {
-          return `
-            <div class="row align-items-start mb-5">
-              <div class="col-md-7">
-                <h2 class="fw-bold mb-3 border-bottom pb-2">${abschnitt.titel}</h2>
-                <p>${abschnitt.inhalt}</p>
-              </div>
-              <div class="col-md-5 text-center">
-                <img src="${komponente.bild}" class="img-fluid rounded shadow-sm" alt="${komponente.titel}" style="max-height: 260px; object-fit: contain;">
-              </div>
-            </div>
-          `;
-        }
+function zeigeFehlermeldung(text) {
+  document.getElementById('seiten-titel').textContent = 'Fehler';
+  document.getElementById('inhalt-container').innerHTML = `<div class="alert alert-danger">${text}</div>`;
+}
 
-        // Alle weiteren Abschnitte normal
-        return `
-          <h3 class="fw-bold mt-5 mb-3 border-bottom pb-2">${abschnitt.titel}</h3>
-          <p>${abschnitt.inhalt}</p>
-        `;
-      }).join('');
+// ── Start ──────────────────────────────────────────────────────────
+komponenteLaden();
 
-      document.getElementById('inhalt-container').innerHTML = abschnitteHTML;
-    }
-
-    function zeigeFehlermeldung(text) {
-      document.getElementById('seiten-titel').textContent = 'Fehler';
-      document.getElementById('inhalt-container').innerHTML = `
-        <div class="alert alert-danger">${text}</div>
-      `;
-    }
-
-    komponenteLaden();
-  </script>
-
+</script>
 </body>
 </html>

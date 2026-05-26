@@ -6,7 +6,7 @@
       "titel": "CPU - Der Prozessor",
       "untertitel": "Das Gehirn des Computers",
       "datei": "cpu.html",
-      "bild": "img2.png",
+      "bild": "photos/img2.png",
       "kurzBeschreibung": "Die CPU (Central Processing Unit) ist die zentrale Recheneinheit eines Computers. Sie führt Befehle aus, verarbeitet Daten und steuert alle anderen Komponenten.",
       "abschnitte": [
         {
@@ -19,19 +19,19 @@
         },
         {
           "titel": "CPU-Geschwindigkeit",
-          "inhalt": "Die Geschwindigkeit, mit der eine CPU arbeitet, wird in Hertz (Hz) gemessen. Je höher der Hertz-Wert des Prozessors ist, desto schneller kann er Anweisungen verarbeiten. Bei modernen Prozessoren kann die Taktfrequenz zwischen 1 GHz und 5 GHz liegen."
+          "inhalt": "Die Geschwindigkeit, mit der eine CPU arbeitet, wird in Hertz (Hz) gemessen. Je höher der Hertz-Wert des Prozessors ist, desto schneller kann er Anweisungen verarbeiten. Das bedeutet, dass Sie mit einem Prozessor mit einer höheren Taktfrequenz Aufgaben schneller erledigen können als mit einem Prozessor mit einer niedrigeren Taktfrequenz. Bei modernen Prozessoren kann die Taktfrequenz zwischen 1 GHz und 5 GHz liegen."
         },
         {
           "titel": "CPU-Kerne",
-          "inhalt": "Neben der Taktfrequenz haben CPUs auch Kerne. Jeder Kern kann mehrere Befehle gleichzeitig ausführen, was zu einer effizienteren Verarbeitung führt. Moderne Prozessoren verfügen über zwei bis acht Kerne."
+          "inhalt": "Neben der Taktfrequenz haben CPUs auch Kerne, die mit mehreren Verarbeitungseinheiten in einem Chip vergleichbar sind. Jeder Kern kann mehrere Befehle gleichzeitig ausführen, was zu einer effizienteren Verarbeitung von Aufgaben und damit zu einer besseren Leistung im Vergleich zu CPUs mit nur einem Kern führt. Moderne Prozessoren verfügen in der Regel über zwei bis acht Kerne, je nach Verwendungszweck wie Spiele oder produktivitätsbezogene Aufgaben wie Videobearbeitung oder 3D-Rendering."
         },
         {
           "titel": "Was ist CPU-Leistung?",
-          "inhalt": "Die CPU-Leistung bezieht sich darauf, wie schnell eine CPU die Anweisungen ihrer Programme verarbeiten kann. Diese Leistung wird in der Anzahl der Anweisungen pro Sekunde (IPS) gemessen."
+          "inhalt": "Die CPU-Leistung bezieht sich darauf, wie schnell eine CPU die Anweisungen ihrer Programme verarbeiten kann. Diese Leistung wird in der Anzahl der Anweisungen pro Sekunde (IPS) gemessen. Je höher die IPS, desto schneller können die Aufgaben erledigt werden. Die Anzahl der Anweisungen, die eine CPU verarbeiten kann, hängt von ihrer Taktfrequenz und anderen Faktoren wie Architektur und Cache-Größe ab."
         },
         {
           "titel": "Warum ist die CPU-Leistung wichtig?",
-          "inhalt": "Die Leistung der CPU hat einen direkten Einfluss auf die Gesamtleistung des Systems. Ein leistungsstarker Prozessor ermöglicht schnellere Startzeiten, reibungsloseres Multitasking und ein besseres Spielerlebnis."
+          "inhalt": "Die Leistung Ihrer CPU hat einen direkten Einfluss auf die Gesamtleistung des Systems. Ein leistungsstarker Prozessor ermöglicht schnellere Startzeiten für Anwendungen, reibungsloseres Multitasking zwischen Programmen und ein besseres Erlebnis bei Videospielen. Außerdem sorgt ein leistungsstarker Prozessor dafür, dass Ihr Computer mit den neuesten Software-Updates Schritt halten kann. Wenn Ihr Prozessor nicht leistungsfähig genug ist, kann er mit diesen Aktualisierungen nicht Schritt halten und Ihr System wird langsamer oder friert ein."
         }
       ]
     },
@@ -41,7 +41,7 @@
       "titel": "GPU - Grafikkarte",
       "untertitel": "Die Kraft hinter Grafik & Gaming",
       "datei": "gpu.html",
-      "bild": "img3.png",
+      "bild": "photos/img3.png",
       "kurzBeschreibung": "Eine GPU (Graphics Processing Unit) ist der spezialisierte Prozessor, der für die Berechnung von Grafiken zuständig ist – von einfachen Desktopfenstern bis zu komplexen 3D-Welten.",
       "abschnitte": [
         {
@@ -64,7 +64,7 @@
       "titel": "RAM - Arbeitsspeicher",
       "untertitel": "Der schnelle Zwischenspeicher des Computers",
       "datei": "ram.html",
-      "bild": "crucial-ddr3-4gb-dimm-image.avif",
+      "bild": "photos/crucial-ddr3-4gb-dimm-image.png",
       "kurzBeschreibung": "RAM (Random Access Memory) ist der Arbeitsspeicher eines Computers. Er speichert Daten, auf die das System schnell zugreifen muss, während Programme ausgeführt werden.",
       "abschnitte": [
         {
@@ -99,7 +99,7 @@
       "titel": "Mainboard - Das Herz des Computers",
       "untertitel": "Die zentrale Verbindung aller Komponenten",
       "datei": "mainboard.html",
-      "bild": "img4.png",
+      "bild": "photos/img4.png",
       "kurzBeschreibung": "Das Mainboard, auch Motherboard genannt, ist die zentrale Platine eines Computers. Es verbindet alle wichtigen Komponenten wie CPU, RAM, Grafikkarte, Speicher und Netzteil miteinander.",
       "abschnitte": [
         {
@@ -130,7 +130,7 @@
       "titel": "SSD / HDD – Speicherlösungen",
       "untertitel": "Der Platz für deine Daten",
       "datei": "ssd.html",
-      "bild": "img.png",
+      "bild": "photos/img.png",
       "kurzBeschreibung": "SSDs und HDDs sind die wichtigsten Speichergeräte eines Computers. Sie speichern dauerhaft Daten wie Programme, Spiele, Dokumente und das Betriebssystem.",
       "abschnitte": [
         {
@@ -161,7 +161,7 @@
       "titel": "Netzteil - PSU",
       "untertitel": "Die Stromquelle des Computers",
       "datei": "psu.html",
-      "bild": "img5.png",
+      "bild": "photos/img5.png",
       "kurzBeschreibung": "Das Netzteil (PSU - Power Supply Unit) versorgt alle Komponenten des Computers mit Strom. Es wandelt die 230-Volt-Wechselspannung aus der Steckdose in verschiedene Gleichspannungen um.",
       "abschnitte": [
         {
@@ -192,7 +192,7 @@
       "titel": "Kühler - CPU-Kühlung",
       "untertitel": "Hält deinen Prozessor kühl und leistungsfähig",
       "datei": "cooler.html",
-      "bild": "img6.png",
+      "bild": "photos/img6.png",
       "kurzBeschreibung": "Ein CPU-Kühler sorgt dafür, dass der Prozessor nicht überhitzt. Ohne ausreichende Kühlung würde der Prozessor drosseln oder sogar beschädigt werden.",
       "abschnitte": [
         {
@@ -223,7 +223,7 @@
       "titel": "Gehäuse - PC-Case",
       "untertitel": "Das Zuhause aller Komponenten",
       "datei": "case.html",
-      "bild": "",
+      "bild": "photos/img7.png",
       "kurzBeschreibung": "Das PC-Gehäuse ist die äußere Hülle des Computers. Es schützt die Hardware, sorgt für einen guten Luftstrom und bietet Platz für alle Komponenten.",
       "abschnitte": [
         {
@@ -262,7 +262,12 @@
       "id": 2,
       "komponente": "cpu",
       "frage": "In welcher Einheit wird die CPU-Taktfrequenz gemessen?",
-      "antworten": ["Byte", "Watt", "Hertz (Hz)", "Volt"],
+      "antworten": [
+        "Byte",
+        "Watt",
+        "Hertz (Hz)",
+        "Volt"
+      ],
       "richtigeAntwort": 2
     },
     {
@@ -305,21 +310,36 @@
       "id": 6,
       "komponente": "ram",
       "frage": "Welche RAM-Kapazität wird für High-End-Systeme empfohlen?",
-      "antworten": ["4 GB", "8 GB", "16 GB", "32 GB oder mehr"],
+      "antworten": [
+        "4 GB",
+        "8 GB",
+        "16 GB",
+        "32 GB oder mehr"
+      ],
       "richtigeAntwort": 3
     },
     {
       "id": 7,
       "komponente": "mainboard",
       "frage": "Welche Firmware kontrolliert den Startvorgang eines modernen Computers?",
-      "antworten": ["RAM-Controller", "BIOS/UEFI", "Chipsatz-Treiber", "PCIe-Protokoll"],
+      "antworten": [
+        "RAM-Controller",
+        "BIOS/UEFI",
+        "Chipsatz-Treiber",
+        "PCIe-Protokoll"
+      ],
       "richtigeAntwort": 1
     },
     {
       "id": 8,
       "komponente": "mainboard",
       "frage": "Welcher Mainboard-Formfaktor ist der kleinste?",
-      "antworten": ["ATX", "Micro-ATX", "Mini-ITX", "Full-ATX"],
+      "antworten": [
+        "ATX",
+        "Micro-ATX",
+        "Mini-ITX",
+        "Full-ATX"
+      ],
       "richtigeAntwort": 2
     },
     {
@@ -398,7 +418,12 @@
       "id": 15,
       "komponente": "case",
       "frage": "Welches Gehäuse ist für High-End-Systeme am besten geeignet?",
-      "antworten": ["Mini-ITX", "Micro-ATX", "ATX-Tower", "Full-Tower"],
+      "antworten": [
+        "Mini-ITX",
+        "Micro-ATX",
+        "ATX-Tower",
+        "Full-Tower"
+      ],
       "richtigeAntwort": 3
     },
     {
@@ -415,17 +440,73 @@
     }
   ],
   "navigation": [
-    { "id": 1, "label": "Home", "href": "index.html" },
-    { "id": 2, "label": "CPU", "href": "cpu.html", "gruppe": "Komponenten" },
-    { "id": 3, "label": "Grafikkarte", "href": "gpu.html", "gruppe": "Komponenten" },
-    { "id": 4, "label": "RAM", "href": "ram.html", "gruppe": "Komponenten" },
-    { "id": 5, "label": "Mainboard", "href": "mainboard.html", "gruppe": "Komponenten" },
-    { "id": 6, "label": "SSD / HDD", "href": "ssd.html", "gruppe": "Komponenten" },
-    { "id": 7, "label": "Netzteil", "href": "psu.html", "gruppe": "Komponenten" },
-    { "id": 8, "label": "Kühler", "href": "cooler.html", "gruppe": "Komponenten" },
-    { "id": 9, "label": "Gehäuse", "href": "case.html", "gruppe": "Komponenten" },
-    { "id": 10, "label": "Aufbau", "href": "Aufbau.html" },
-    { "id": 11, "label": "Datenfluss", "href": "datenfluss.html" },
-    { "id": 12, "label": "Quiz", "href": "quiz.html" }
+    {
+      "id": 1,
+      "label": "Home",
+      "href": "index.html"
+    },
+    {
+      "id": 2,
+      "label": "CPU",
+      "href": "cpu.html",
+      "gruppe": "Komponenten"
+    },
+    {
+      "id": 3,
+      "label": "Grafikkarte",
+      "href": "gpu.html",
+      "gruppe": "Komponenten"
+    },
+    {
+      "id": 4,
+      "label": "RAM",
+      "href": "ram.html",
+      "gruppe": "Komponenten"
+    },
+    {
+      "id": 5,
+      "label": "Mainboard",
+      "href": "mainboard.html",
+      "gruppe": "Komponenten"
+    },
+    {
+      "id": 6,
+      "label": "SSD / HDD",
+      "href": "ssd.html",
+      "gruppe": "Komponenten"
+    },
+    {
+      "id": 7,
+      "label": "Netzteil",
+      "href": "psu.html",
+      "gruppe": "Komponenten"
+    },
+    {
+      "id": 8,
+      "label": "Kühler",
+      "href": "cooler.html",
+      "gruppe": "Komponenten"
+    },
+    {
+      "id": 9,
+      "label": "Gehäuse",
+      "href": "case.html",
+      "gruppe": "Komponenten"
+    },
+    {
+      "id": 10,
+      "label": "Aufbau",
+      "href": "Aufbau.html"
+    },
+    {
+      "id": 11,
+      "label": "Datenfluss",
+      "href": "datenfluss.html"
+    },
+    {
+      "id": 12,
+      "label": "Quiz",
+      "href": "quiz.html"
+    }
   ]
 }
