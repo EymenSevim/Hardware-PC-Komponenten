@@ -42,7 +42,7 @@
       "untertitel": "Die Kraft hinter Grafik & Gaming",
       "datei": "gpu.html",
       "bild": "photos/img3.png",
-      "kurzBeschreibung": "Eine GPU (Graphics Processing Unit) ist der spezialisierte Prozessor, der für die Berechnung von Grafiken zuständig ist – von einfachen Desktopfenstern bis zu komplexen 3D-Welten.",
+      "kurzBeschreibung": "Eine GPU (Graphics Processing Unit) ist der spezialisierte Prozessor, der für die Berechnung von Grafiken zuständig ist - von einfachen Desktopfenstern bis zu komplexen 3D-Welten.",
       "abschnitte": [
         {
           "titel": "Was ist eine GPU?",
@@ -50,7 +50,7 @@
         },
         {
           "titel": "Vergleich von GPU und CPU",
-          "inhalt": "Während die CPU allgemeine Aufgaben übernimmt, ist die GPU speziell für parallele Berechnungen optimiert – ideal für Spiele, Rendering und Videobearbeitung. Moderne GPUs bestehen aus tausenden kleinen Recheneinheiten, die gleichzeitig arbeiten."
+          "inhalt": "Während die CPU allgemeine Aufgaben übernimmt, ist die GPU speziell für parallele Berechnungen optimiert - ideal für Spiele, Rendering und Videobearbeitung. Moderne GPUs bestehen aus tausenden kleinen Recheneinheiten, die gleichzeitig arbeiten."
         },
         {
           "titel": "GPU-Speicher (VRAM)",
@@ -64,7 +64,7 @@
       "titel": "RAM - Arbeitsspeicher",
       "untertitel": "Der schnelle Zwischenspeicher des Computers",
       "datei": "ram.html",
-      "bild": "photos/crucial-ddr3-4gb-dimm-image.png",
+      "bild": "crucial-ddr3-4gb-dimm-image.png",
       "kurzBeschreibung": "RAM (Random Access Memory) ist der Arbeitsspeicher eines Computers. Er speichert Daten, auf die das System schnell zugreifen muss, während Programme ausgeführt werden.",
       "abschnitte": [
         {
